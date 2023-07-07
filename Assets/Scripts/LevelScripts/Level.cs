@@ -8,10 +8,15 @@ public class Level : MonoBehaviour
     public int levelNumber;
     [SerializeField]
     public List<Wave> waves = new List<Wave>();
+    // levels have: background? anything else?
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+    
+    public void InitLevel() {
+
     }
 
     // Update is called once per frame
@@ -21,6 +26,7 @@ public class Level : MonoBehaviour
     }
 
     public void StartLevel() {
+        InitLevel();
         StartCoroutine(StartWaves());
     }
 
