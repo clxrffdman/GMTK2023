@@ -5,7 +5,18 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [Serializable]
+    public class LevelObject {
+        public LevelObjectType objectType;
+        public SpriteRenderer levelObject;
+        public Sprite sprite;
+        public void SetObject() {
+            levelObject.sprite = sprite;
+        }
+    }
     public int levelNumber;
+    [SerializeField]
+    public List<LevelObject> levelObjects = new List<LevelObject>();
     [SerializeField]
     public List<Wave> waves = new List<Wave>();
     // levels have: background? anything else?
@@ -16,7 +27,7 @@ public class Level : MonoBehaviour
     }
     
     public void InitLevel() {
-
+        SetLevelObjects();
     }
 
     // Update is called once per frame
@@ -47,5 +58,11 @@ public class Level : MonoBehaviour
 
         // waves end
         yield return EndLevel();
+    }
+
+    public void SetLevelObjects() {
+        foreach (LevelObject obj in levelObjects) {
+            obj.SetObject();
+        }
     }
 }

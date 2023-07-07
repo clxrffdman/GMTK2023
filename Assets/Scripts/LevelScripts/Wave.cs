@@ -23,7 +23,7 @@ public class Wave
         */
         Debug.Log("start wave");
         yield return new WaitForSeconds(3f);
-        yield return null;
+        yield return EndWave();
     }
 
     public IEnumerator EndWave() {
