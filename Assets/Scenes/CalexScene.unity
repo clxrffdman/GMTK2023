@@ -364,13 +364,18 @@ MonoBehaviour:
   ballParentTransform: {fileID: 1148785772}
   baseBallReference: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
   throwProfiles:
-  - modifiers:
+  - xOffset: -0.8
+    modifiers:
     - {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
-  - modifiers:
+  - xOffset: 0
+    modifiers:
     - {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
-  - modifiers:
-    - {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
+  - xOffset: -0.7
+    modifiers:
+    - {fileID: 11400000, guid: e209a47d17eb35a409af62bfe4daa22c, type: 2}
   currentThrowIndex: 0
+  courseWidth: 7
+  courseHeightBounds: {x: 40, y: -10}
 --- !u!1 &1148785771
 GameObject:
   m_ObjectHideFlags: 0

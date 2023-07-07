@@ -6,6 +6,7 @@ using NaughtyAttributes;
 public class BallController : MonoBehaviour
 {
     [SerializeField] private List<BallModifier> modifiers = new List<BallModifier>();
+    public CourseController courseController;
     public Rigidbody2D rb;
     public Collider2D ballCollider;
     private float activeTime = 0f;
@@ -23,10 +24,11 @@ public class BallController : MonoBehaviour
     void Update()
     {
         activeTime += Time.deltaTime;
+        float coursePercentage = Mathf.InverseLerp(courseController.courseHeightBounds.x, courseController.courseHeightBounds.y, transform.position.y);
 
         foreach (BallModifier mod in modifiers)
         {
-            mod.OnUpdate(this, activeTime, 0);
+            mod.OnUpdate(this, activeTime, coursePercentage);
         }
 
     }
@@ -43,9 +45,10 @@ public class BallController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        foreach(BallModifier mod in modifiers)
+        for(int i = modifiers.Count-1; i >= 0; i--)
         {
-            mod.OnBounce(this);
+            modifiers[i].OnBounce(this);
         }
+
     }
 }

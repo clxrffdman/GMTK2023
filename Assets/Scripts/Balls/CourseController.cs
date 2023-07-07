@@ -5,13 +5,19 @@ using UnityEngine.AddressableAssets;
 
 public class CourseController : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Transform ballShooterTransform;
     [SerializeField] private Transform ballParentTransform;
-
     public GameObject baseBallReference;
+
+    [Header("Throw List")]
     public List<ThrowProfile> throwProfiles = new List<ThrowProfile>();
 
+    [Header("Current Course Values")]
     public int currentThrowIndex = 0;
+    public float courseWidth = 7;
+    public Vector2 courseHeightBounds = new Vector2();
+
 
     public void Update()
     {
@@ -28,9 +34,11 @@ public class CourseController : MonoBehaviour
 
             var newBall = Instantiate(baseBallReference, ballParentTransform);
             newBall.transform.position = ballShooterTransform.position;
+            newBall.GetComponent<BallController>().courseController = this;
 
             ThrowProfile profile = throwProfiles[currentThrowIndex];
-            foreach(BallModifier mod in profile.modifiers)
+            newBall.transform.position += new Vector3(profile.xOffset * courseWidth, 0, 0);
+            foreach (BallModifier mod in profile.modifiers)
             {
                 newBall.GetComponent<BallController>().AddModifier(mod);
             }
@@ -46,8 +54,4 @@ public class CourseController : MonoBehaviour
         }
     }
 
-    public void ShootNextBall()
-    {
-
-    }
 }
