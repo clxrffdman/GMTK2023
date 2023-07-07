@@ -24,7 +24,10 @@ public class ThrowSCurve : ThrowBase
         base.OnUpdate(controller, activeTime, coursePercentage);
         Debug.Log(coursePercentage);
 
-        //if((coursePercentage / sgapPercentage))
+        if(Mathf.Round(coursePercentage) % sgapPercentage == 0)
+        {
+            
+        }
 
         if(coursePercentage < 0.75)
         {
