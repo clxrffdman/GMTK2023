@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public static class GlobalFunctions {
@@ -17,5 +18,19 @@ public static class GlobalFunctions {
             Debug.Log("ERROR: Could not Find Component");
         }
         return returnVal;
+    }
+}
+
+[Serializable]
+public class LevelObject {
+    public LevelObjectType objectType;
+    public SpriteRenderer levelObject;
+    public Sprite sprite;
+    public LevelObject(LevelObjectType type) {
+        objectType = type;
+    }
+    public void SetObject(Sprite newSprite) {
+        sprite = newSprite;
+        levelObject.sprite = newSprite;
     }
 }

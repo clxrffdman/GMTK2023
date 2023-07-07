@@ -12,6 +12,14 @@ public class CourseController : MonoBehaviour
 
     [Header("Throw List")]
     public List<ThrowProfile> throwProfiles = new List<ThrowProfile>();
+    
+    [SerializeField]
+    public List<LevelObject> levelObjects = new List<LevelObject>() {
+        new LevelObject(LevelObjectType.LeftBumper),
+        new LevelObject(LevelObjectType.RightBumper),
+        new LevelObject(LevelObjectType.Lane),
+        new LevelObject(LevelObjectType.Background)
+    };
 
     [Header("Current Course Values")]
     public int currentThrowIndex = 0;
@@ -54,4 +62,22 @@ public class CourseController : MonoBehaviour
         }
     }
 
+    public IEnumerator StartLevel(Level level) {
+        InitLevel(level);
+        yield return level.StartLevel();
+    }
+
+    public void InitLevel(Level level) {
+        SetLevelObjects(level);
+    }
+
+    public void SetLevelObjects(Level level) {
+        foreach (LevelObject controllerObj in levelObjects) {
+            foreach (LevelObject obj in level.levelObjects) {
+                if (controllerObj.objectType == obj.objectType) {
+                    controllerObj.SetObject(obj.sprite);
+                }
+            }
+        }
+    }
 }

@@ -3,42 +3,29 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Level : MonoBehaviour
-{
-    [Serializable]
-    public class LevelObject {
-        public LevelObjectType objectType;
-        public SpriteRenderer levelObject;
-        public Sprite sprite;
-        public void SetObject() {
-            levelObject.sprite = sprite;
-        }
-    }
+[CreateAssetMenu(menuName = "Level")]
+public class Level : ScriptableObject {
     public int levelNumber;
     [SerializeField]
-    public List<LevelObject> levelObjects = new List<LevelObject>();
+    public List<LevelObject> levelObjects = new List<LevelObject>() {
+        new LevelObject(LevelObjectType.LeftBumper),
+        new LevelObject(LevelObjectType.RightBumper),
+        new LevelObject(LevelObjectType.Lane),
+        new LevelObject(LevelObjectType.Background)
+    };
     [SerializeField]
-    public List<Wave> waves = new List<Wave>();
-    // levels have: background? anything else?
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<Wave> waves = new List<Wave>() {
+        new Wave(1), new Wave(2), new Wave(3), new Wave(4), new Wave(5),
+        new Wave(6), new Wave(7), new Wave(8), new Wave(9), new Wave(10),
+    };
     
     public void InitLevel() {
-        SetLevelObjects();
+ 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void StartLevel() {
+    public IEnumerator StartLevel() {
         InitLevel();
-        StartCoroutine(StartWaves());
+        yield return StartWaves();
     }
 
     public IEnumerator EndLevel() {
@@ -58,11 +45,5 @@ public class Level : MonoBehaviour
 
         // waves end
         yield return EndLevel();
-    }
-
-    public void SetLevelObjects() {
-        foreach (LevelObject obj in levelObjects) {
-            obj.SetObject();
-        }
     }
 }

@@ -7,6 +7,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 {
     [SerializeField]
     public List<Level> levels = new List<Level>();
+    public CourseController course;
     public Level currentLevel;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     }
 
     public void StartLevel() {
-        currentLevel.StartLevel();
+        StartCoroutine(course.StartLevel(currentLevel));
     }
     public void EndLevel() {
         Debug.Log("level finished!");

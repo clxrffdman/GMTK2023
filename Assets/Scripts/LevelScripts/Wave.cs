@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
+[Serializable]
 public class Wave
 {
+    public int waveNum;
     // public List<Thrower> throwers = new List<Thrower>();
     // public List<Ball> balls = new List<Ball>();
     /*
@@ -12,6 +15,9 @@ public class Wave
         when the ball exits the area
 
     */
+    public Wave(int num) {
+        waveNum = num;
+    }
     [HideInInspector] public bool waveComplete = false;
     public IEnumerator StartWave() {
         /* 
