@@ -8,7 +8,6 @@ public class ThrowSCurve : ThrowBase
     public float curveForce = 50;
     private float extraCurveForce = 0;
     public Vector2 curveForceDirection = new Vector2(1, -0.2f);
-    public float sgapPercentage = 0.5f;
 
     [Header("Variance")]
     public float randomExtraCurveForce = 0;
@@ -23,11 +22,6 @@ public class ThrowSCurve : ThrowBase
     {
         base.OnUpdate(controller, activeTime, coursePercentage);
         Debug.Log(coursePercentage);
-
-        if(Mathf.Round(coursePercentage) % sgapPercentage == 0)
-        {
-            
-        }
 
         if(coursePercentage < 0.75)
         {
