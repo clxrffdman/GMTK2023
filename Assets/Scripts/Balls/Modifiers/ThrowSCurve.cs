@@ -24,6 +24,8 @@ public class ThrowSCurve : ThrowBase
         base.OnUpdate(controller, activeTime, coursePercentage);
         Debug.Log(coursePercentage);
 
+        //if((coursePercentage / sgapPercentage))
+
         if(coursePercentage < 0.75)
         {
             controller.rb.AddForce((curveForce + extraCurveForce) * 10 * curveForceDirection * Time.deltaTime, ForceMode2D.Force);
