@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class BallController : MonoBehaviour
 {
-    public List<BallModifier> modifiers = new List<BallModifier>();
+    [SerializeField] private List<BallModifier> modifiers = new List<BallModifier>();
+    public Rigidbody2D rb;
+    public Collider2D ballCollider;
     private float activeTime = 0f;
-
-    public void AddModifier()
-    {
-
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         foreach(BallModifier mod in modifiers)
         {
-            mod.OnSpawn();
+            mod.OnSpawn(this);
         }
     }
 
@@ -28,8 +26,26 @@ public class BallController : MonoBehaviour
 
         foreach (BallModifier mod in modifiers)
         {
-            mod.OnUpdate(activeTime, 0);
+            mod.OnUpdate(this, activeTime, 0);
         }
 
+    }
+
+    public void AddModifier(BallModifier mod)
+    {
+        modifiers.Add(mod);
+    }
+
+    public void RemoveModifier(BallModifier mod)
+    {
+        modifiers.Remove(mod);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        foreach(BallModifier mod in modifiers)
+        {
+            mod.OnBounce(this);
+        }
     }
 }

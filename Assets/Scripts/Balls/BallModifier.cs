@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NaughtyAttributes;
 public abstract class BallModifier : ScriptableObject
 {
-    public void OnSpawn()
+    public virtual void OnSpawn(BallController controller)
     {
 
     }
 
-    public void OnUpdate(float activeTime, float coursePercentage)
+    public virtual void OnUpdate(BallController controller, float activeTime, float coursePercentage)
+    {
+
+    }
+
+    public virtual void OnBounce(BallController controller)
     {
 
     }

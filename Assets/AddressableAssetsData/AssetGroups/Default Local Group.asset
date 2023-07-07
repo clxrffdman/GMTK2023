@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f315a328d482c44182a9c055f450ca2
+    m_Address: Assets/Scripts/Balls/Modifiers/DefaultBallGravity.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f23c725df9bdfa143b475aab7942be7a, type: 2}
   m_SchemaSet:

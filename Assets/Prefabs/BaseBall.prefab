@@ -47,7 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97a5caa5f220b24f9796bc5fcef49f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifiers: []
+  modifiers:
+  - {fileID: 11400000, guid: 5f315a328d482c44182a9c055f450ca2, type: 2}
+  rb: {fileID: 6177650665991377524}
+  ballCollider: {fileID: 7825323956960899246}
 --- !u!50 &6177650665991377524
 Rigidbody2D:
   serializedVersion: 4
@@ -63,8 +66,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 330a5087cb259e642901ece0e161b9b6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -74,7 +77,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &7825323956960899246
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +87,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7130666778165571663}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 330a5087cb259e642901ece0e161b9b6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
