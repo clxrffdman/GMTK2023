@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             playerSprite.flipX = collision.transform.position.x < transform.position.x;
             anim.SetBool("Hit", true);
+            LevelManager.Instance.hasFailedCurrentWave = true;
             StartCoroutine(PlayerHit());
             //cause lose 
         }

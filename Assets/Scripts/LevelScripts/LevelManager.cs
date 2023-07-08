@@ -8,8 +8,8 @@ public class LevelManager : UnitySingleton<LevelManager>
     [SerializeField]
     public List<Level> levels = new List<Level>();
     public Level currentLevel;
-    public float currentLevelWinCount = 0;
-    public float currentWaveIndex = 0;
+    public int currentLevelWinCount = 0;
+    public int currentWaveIndex = 0;
     public bool hasFailedCurrentWave = false;
 
 

@@ -18,6 +18,7 @@ public class Wave
 
     // init the thrower
     public IEnumerator StartWave() {
+        LevelManager.Instance.hasFailedCurrentWave = false;
         CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
 
         yield return new WaitForSeconds(0.8f);
@@ -44,7 +45,9 @@ public class Wave
     public IEnumerator EndWave() {
         Debug.Log("wave over");
         CourseController.Instance.ClearThrowers();
-        
+
+        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
+
         yield return null;
     }
     public bool DoneThrowing() {

@@ -20,6 +20,8 @@ public class ScorecardElement : MonoBehaviour
 
     public void SetScore(bool isWin)
     {
+        scoreImg.color = Color.white;
+
         if (isWin)
         {
             scoreImg.sprite = winSprite;
