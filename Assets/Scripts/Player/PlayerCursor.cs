@@ -20,6 +20,8 @@ public class PlayerCursor : MonoBehaviour
     public float chargeSpeed;
     private bool isLocked = false;
     private bool isReversed = false;
+    public Vector2 startPos;
+    public Vector2 targetPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +66,9 @@ public class PlayerCursor : MonoBehaviour
     public void LockCursorMovement(bool locked)
     {
         isLocked = locked;
+        Vector2 offset = dir * maxRadius;
+        //targetPos = center + offset;
+        //startPos = transform.position;
 
         if (!locked)
         {
@@ -71,17 +76,27 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    public void StartCharge()
+    public void StartCharge(bool isReversed)
     {
-        if (radius < maxRadius && !isReversed)
+        if (!isReversed)
         {
             radius += chargeSpeed * Time.deltaTime;
+        }
+        else
+        {
+            radius -= chargeSpeed * Time.deltaTime;
+        }
+        /*if (radius < maxRadius && !isReversed)
+        {
+            radius += chargeSpeed * Time.deltaTime;
+            //transform.position = Vector2.Lerp(startPos, targetPos, chargeSpeed * Time.deltaTime);
         }
         else
         {
             isReversed = true;
 
             radius -= chargeSpeed * Time.deltaTime;
+            //transform.position = Vector2.Slerp(transform.position, targetPos, chargeSpeed * Time.deltaTime);
 
             if (radius < baseRadius)
             {
@@ -89,7 +104,7 @@ public class PlayerCursor : MonoBehaviour
             }
         }
 
-        //transform.position += new Vector3(.1f, .1f, 0) + Vector3.forward;
+        //transform.position += new Vector3(.1f, .1f, 0) + Vector3.forward;*/
     }
 
     public void ResetCursor()

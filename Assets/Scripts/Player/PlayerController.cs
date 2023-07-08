@@ -7,22 +7,28 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerCursor cursor;
     public Rigidbody2D rb;
-    public float force;
     public bool isHeld = false;
     public float holdDuration;
+    public float charge;
+    public float chargeIncrement;
+    public float maxChargeTimer;
+    public bool isReversed;
 
     public void PlayerMovement(InputAction.CallbackContext context)
     {
         switch (context.phase) {
             case InputActionPhase.Started:
                 cursor.LockCursorMovement(true);
+                rb.velocity = Vector2.zero;
                 isHeld = true;
                 break;
             case InputActionPhase.Canceled:
                 cursor.LockCursorMovement(false);
-                rb.AddForce(cursor.GetCursorPos() * force);
+                rb.AddForce(cursor.GetCursorPos() * charge);
                 isHeld = false;
                 holdDuration = 0;
+                charge = 0;
+                isReversed = false;
                 break;
         }
     }
@@ -31,9 +37,34 @@ public class PlayerController : MonoBehaviour
     {
         if (isHeld)
         {
-            cursor.StartCharge();
+            StartCharge();
             holdDuration += Time.deltaTime;
-            Debug.Log(holdDuration);
         }
+    }
+
+    public void StartCharge()
+    {
+        if (!isReversed)
+        {
+            if (holdDuration >= maxChargeTimer)
+            {
+                isReversed = true;
+                holdDuration = 0;
+            }
+
+            charge += chargeIncrement;
+        }
+        else
+        {
+            if (holdDuration >= maxChargeTimer)
+            {
+                isReversed = false;
+                holdDuration = 0;
+            }
+
+            charge -= chargeIncrement;
+        }
+
+        cursor.StartCharge(isReversed);
     }
 }
