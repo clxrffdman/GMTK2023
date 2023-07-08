@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf226787ededbb4e8f81aefdff72b33, type: 3}
   m_Name: ModifierAccelerate
   m_EditorClassIdentifier: 
-  accelForce: 3
+  description: 
+  accelForce: 1.5
