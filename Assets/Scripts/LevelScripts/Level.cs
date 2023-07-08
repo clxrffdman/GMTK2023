@@ -15,8 +15,8 @@ public class Level : ScriptableObject {
     };
     [SerializeField]
     public List<Wave> waves = new List<Wave>() {
-        new Wave(1), new Wave(2), new Wave(3), new Wave(4), new Wave(5),
-        new Wave(6), new Wave(7), new Wave(8), new Wave(9), new Wave(10),
+        new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
+        new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
     };
     
     public void InitLevel() {
@@ -35,14 +35,14 @@ public class Level : ScriptableObject {
     }
 
     public IEnumerator StartWaves() {
-        // intro
+        // intro 
         yield return new WaitForSeconds(1);
 
-        // waves start
+        // go through all waves
         foreach (Wave wave in waves) {
             yield return wave.StartWave();
         }
-
+        
         // waves end
         yield return EndLevel();
     }

@@ -6,34 +6,29 @@ using UnityEngine;
 [Serializable]
 public class Wave
 {
-    public int waveNum;
-    // public List<Thrower> throwers = new List<Thrower>();
-    // public List<Ball> balls = new List<Ball>();
+    public List<Thrower> throwers = new List<Thrower>();
     /*
     wave procedure:
         have a dude come up and throw the ball
         when the ball exits the area
-
     */
-    public Wave(int num) {
-        waveNum = num;
-    }
     [HideInInspector] public bool waveComplete = false;
     public IEnumerator StartWave() {
-        /* 
         foreach (Thrower thrower in throwers) {
-            
-            balls.Add(thrower.ThrowBall());
+            CourseController.Instance.currentThrowers.Add(thrower);
+            thrower.ThrowBall();
         }
-        yield return new WaitUntil(() => balls.Count <= 0)
-        */
-        Debug.Log("start wave");
+        // wait for all balls to be gone
+        yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
+        // end way in 3
         yield return new WaitForSeconds(3f);
         yield return EndWave();
     }
 
     public IEnumerator EndWave() {
         Debug.Log("wave over");
+        CourseController.Instance.ClearThrowers();
+        
         yield return null;
     }
 }

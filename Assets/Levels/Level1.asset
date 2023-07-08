@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170500a7a5d4483498c794343b9e4f4f, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  levelNumber: 0
+  levelNumber: 1
   levelObjects:
   - objectType: 0
     levelObject: {fileID: 0}
@@ -27,23 +27,13 @@ MonoBehaviour:
     levelObject: {fileID: 0}
     sprite: {fileID: 0}
   waves:
-  - waveNum: 1
-    waveComplete: 0
-  - waveNum: 2
-    waveComplete: 0
-  - waveNum: 3
-    waveComplete: 0
-  - waveNum: 4
-    waveComplete: 0
-  - waveNum: 5
-    waveComplete: 0
-  - waveNum: 6
-    waveComplete: 0
-  - waveNum: 7
-    waveComplete: 0
-  - waveNum: 8
-    waveComplete: 0
-  - waveNum: 9
-    waveComplete: 0
-  - waveNum: 10
-    waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0
+  - waveComplete: 0

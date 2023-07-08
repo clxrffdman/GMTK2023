@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class CourseController : MonoBehaviour
+public class CourseController : UnitySingleton<CourseController>
 {
     [Header("References")]
-    [SerializeField] private Transform ballShooterTransform;
-    [SerializeField] private Transform ballParentTransform;
+    [SerializeField] public Transform ballShooterTransform;
+    [SerializeField] public Transform ballParentTransform;
     public GameObject baseBallReference;
 
     [Header("Throw List")]
@@ -20,6 +20,9 @@ public class CourseController : MonoBehaviour
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
+
+    public List<BallController> currentBalls = new List<BallController>();
+    public List<Thrower> currentThrowers = new List<Thrower>();
 
     [Header("Current Course Values")]
     public int currentThrowIndex = 0;
@@ -79,5 +82,23 @@ public class CourseController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ClearThrowers() {
+        for (int i = currentThrowers.Count-1; i >= 0; i--) {
+            Destroy(currentThrowers[i].gameObject);
+        }
+        currentBalls.Clear();
+        currentThrowers.Clear();
+    }
+
+    public void BallDodged(BallController ball) {
+        currentBalls.Remove(ball);
+        Destroy(ball.gameObject);
+    }
+
+    public void OnTriggerEnter2D(Collider2D coll) {
+        if (coll.gameObject.layer != LayerMask.NameToLayer("Ball")) return;
+        BallDodged(GlobalFunctions.FindComponent<BallController>(coll.gameObject));
     }
 }

@@ -5,7 +5,6 @@ using NaughtyAttributes;
 
 public class BallController : MonoBehaviour
 {
-
     [Header("Current Ball Stats")]
     [SerializeField] private List<BallModifier> modifiers = new List<BallModifier>();
     private float activeTime = 0f;
@@ -50,6 +49,13 @@ public class BallController : MonoBehaviour
             rb.excludeLayers = defaultLayerMask;
         }
 
+    }
+
+    public void Throw(Thrower thrower) {
+        transform.position = thrower.transform.position;
+        transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
+        CourseController.Instance.currentBalls.Add(this);
+        Debug.Log("throw ball i guess");
     }
 
     public void AddModifier(BallModifier mod)

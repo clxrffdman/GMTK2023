@@ -30,6 +30,7 @@ public class LevelObject {
         objectType = type;
     }
     public void SetObject(Sprite newSprite) {
+        if (newSprite == null) return;
         sprite = newSprite;
         levelObject.sprite = newSprite;
     }
