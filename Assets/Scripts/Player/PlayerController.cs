@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviour
         {            
             cooldownTimer -= Time.deltaTime;
         }
-
-        Debug.Log(cooldownTimer);
     }
 
     public void ChargeRoutine(float value)
