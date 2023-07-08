@@ -117,7 +117,7 @@ MonoBehaviour:
       throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
       consecBallOffset: 0.35
       xOffset: -0.5
-      bowlAngle: 0
+      bowlAngle: 30
       ballMods:
       - {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
     numPins: 7

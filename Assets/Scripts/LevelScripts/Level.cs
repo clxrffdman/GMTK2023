@@ -32,7 +32,7 @@ public class Level : ScriptableObject {
 
     public IEnumerator StartWaves() {
         // intro 
-        
+        LevelManager.Instance.currentWaveIndex = 0;
         yield return new WaitForSeconds(1);
 
         // go through all waves

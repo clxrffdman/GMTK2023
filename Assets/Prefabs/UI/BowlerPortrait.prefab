@@ -220,6 +220,9 @@ MonoBehaviour:
   canvasGroup: {fileID: 3969292160373040574}
   portraitText: {fileID: 4901897579783914009}
   portraitSprite: {fileID: 7639013677443920517}
+  portraitQuipText: {fileID: 4901897579783914009}
+  isQuipping: 0
+  currentProfile: {fileID: 0}
 --- !u!1 &6222695754958884653
 GameObject:
   m_ObjectHideFlags: 0
