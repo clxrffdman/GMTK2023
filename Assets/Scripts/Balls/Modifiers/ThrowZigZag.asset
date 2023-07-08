@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: ThrowZigZag
   m_EditorClassIdentifier: 
   description: 
-  throwForce: 10
+  throwForce: 8
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 0
-  zigZagForce: 2000
+  zigZagForce: 1500
   zigZagDirection: {x: 1, y: 0}
   doZigZag: 0
-  zigZagInterval: 0.2
+  zigZagInterval: 0.15
   intervalOffset: 0
