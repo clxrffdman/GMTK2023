@@ -22,6 +22,7 @@ public class PlayerCursor : MonoBehaviour
     private bool isReversed = false;
     public Vector2 startPos;
     public Vector2 targetPos;
+    public Color defaultColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +32,11 @@ public class PlayerCursor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isLocked)
-        {
+        //if (!isLocked)
+        //{
             //Rotate cursor around player's position using mouse position
             dir = GetCursorPos();
-        }
+        //}
 
         center = playerPos.position;
         angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -87,5 +88,10 @@ public class PlayerCursor : MonoBehaviour
     public Vector2 GetDirection()
     {
         return dir;
+    }
+
+    public void ResetColor()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = defaultColor;
     }
 }

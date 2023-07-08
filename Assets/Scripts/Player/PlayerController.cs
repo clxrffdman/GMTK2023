@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("Jump", true);
                 LeanTween.value(this.gameObject, ChargeRoutine, 0, maxChargeTimer, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(cursor.gameObject, cursor.ChargeRoutine, cursor.baseRadius, cursor.maxRadius, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
+                LeanTween.color(cursor.gameObject, Color.red, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
 
                 break;
             case InputActionPhase.Canceled:
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
                 LeanTween.cancel(this.gameObject);
                 LeanTween.cancel(cursor.gameObject);
+                cursor.ResetColor();
                 anim.SetBool("Jump", false);
                 rb.AddForce(cursor.GetDirection() * charge);
                 LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1);

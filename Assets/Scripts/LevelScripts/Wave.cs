@@ -37,7 +37,7 @@ public class Wave
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
         // end way in 3
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         yield return EndWave();
     }
 
