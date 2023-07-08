@@ -28,19 +28,21 @@ public class Thrower : MonoBehaviour
         transform.position += new Vector3(wave.xOffset * CourseController.Instance.courseWidth, 0, 0);
         // something angle idk
         // spawn dudes
-        ThrowBall(wave.ball, wave.ballMods);
+        ThrowBall(wave.balls, wave.ballMods);
     }
 
-    public IEnumerator ThrowBall(GameObject ball, List<BallModifier> ballMods) {
+    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.25f) {
         Debug.Log("begin throw");
         yield return new WaitForSeconds(1f); // do ball throw animation
         Debug.Log("throw ball!");
-        var newBall = Instantiate(ball, CourseController.Instance.ballParentTransform);
-        //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
-        BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
-        ballController.InitBall(this, ballMods);
-        //yield return new WaitForSeconds(.5f);
-        yield return new WaitForSeconds(.2f);
+        for (int i = 0; i < balls.Count; i++) {
+            var newBall = Instantiate(balls[i], CourseController.Instance.ballParentTransform);
+            //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
+            BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
+            ballController.InitBall(this, ballMods);
+            yield return new WaitForSeconds(consecOffset);
+        }
+        
         GameManager.Instance.StartSlowMotion(2f);
         CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         doneThrowing = true;
