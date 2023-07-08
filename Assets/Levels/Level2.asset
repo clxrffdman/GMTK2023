@@ -40,7 +40,7 @@ MonoBehaviour:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       throwerMod: {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
-      consecBallOffset: 0.35
+      consecBallOffset: 2
       xOffset: -1
       bowlAngle: 30
       ballMods: []
@@ -108,9 +108,17 @@ MonoBehaviour:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       throwerMod: {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
       consecBallOffset: 0.35
-      xOffset: 1
-      bowlAngle: 10
+      xOffset: -1
+      bowlAngle: 20
       ballMods:
-      - {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
+      - {fileID: 11400000, guid: fe2eed91b4b9002499719773f6a40e96, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: e209a47d17eb35a409af62bfe4daa22c, type: 2}
+      consecBallOffset: 0.35
+      xOffset: 1
+      bowlAngle: 20
+      ballMods: []
     numPins: 4
     pinPosOffset: 1.5
