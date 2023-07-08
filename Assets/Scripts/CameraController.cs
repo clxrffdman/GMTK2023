@@ -10,6 +10,7 @@ public class CameraController : UnitySingleton<CameraController>
     public CinemachineVirtualCamera bowlerVCam;
     public CinemachineVirtualCamera playerVCam;
     public CinemachineVirtualCamera ballVCam;
+    public CinemachineVirtualCamera currCam;
     public Vignette currentVignette;
 
     [Header("Player Cam Size")]
@@ -33,28 +34,36 @@ public class CameraController : UnitySingleton<CameraController>
         }
 
         currentCameraState = state;
+        playerVCam.enabled = false;
+        bowlerVCam.enabled = false;
+        ballVCam.enabled = false;
 
         switch (state) {
             case CameraState.Player:
                 playerVCam.enabled = true;
-                bowlerVCam.enabled = false;
-                ballVCam.enabled = false;
+                currCam = playerVCam;
                 trackedBall = null;
                 break;
             case CameraState.Bowler:
-                playerVCam.enabled = false;
                 bowlerVCam.enabled = true;
-                ballVCam.enabled = false;
                 trackedBall = null;
+                currCam = bowlerVCam;
                 break;
             case CameraState.Ball:
                 if (ball == null || trackedBall != null) break;
                 trackedBall = ball;
-                playerVCam.enabled = false;
-                bowlerVCam.enabled = false;
                 ballVCam.enabled = true;
+                currCam = ballVCam;
                 break;
         }
+    }
+
+    public void Shake(float str=1f, float dur=1f, float freq=1f) {
+        if (!currCam) {
+            Debug.Log("no current cam");
+            return;
+        }
+        GlobalFunctions.FindComponent<CameraShake>(currCam.gameObject).StartShake(str, dur, freq);
     }
 
     public void Update() {

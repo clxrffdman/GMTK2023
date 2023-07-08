@@ -12,6 +12,8 @@ public class Thrower : MonoBehaviour
     //[ToolTip("range of -90 - 90 degrees")]
     public float xOffset;
     // Start is called before the first frame update
+    public List<ThrowBase> currThrowMods = new List<ThrowBase>();
+    public List<BallController> currThrowerBalls = new List<BallController>();
 
     void Start()
     {
@@ -21,7 +23,9 @@ public class Thrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (ThrowBase mod in currThrowMods) {
+            mod.OnThrowerUpdate(this);
+        }
     }
 
     public void InitBowl(ThrowerWave wave) {
@@ -39,6 +43,7 @@ public class Thrower : MonoBehaviour
             //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
             BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
             ballController.InitBall(this, ballMods);
+            currThrowerBalls.Add(ballController);
             yield return new WaitForSeconds(consecOffset);
         }
         

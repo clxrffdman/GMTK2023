@@ -21,7 +21,7 @@ MonoBehaviour:
   circuitObjects:
   - objectType: 0
     levelObject: {fileID: 0}
-    sprite: {fileID: 21300000, guid: d52cb2a102393f34ea235108e61f6b88, type: 3}
+    sprite: {fileID: 21300000, guid: c9a989bad4174da47abcf825d8699929, type: 3}
   - objectType: 1
     levelObject: {fileID: 0}
-    sprite: {fileID: 21300000, guid: c9a989bad4174da47abcf825d8699929, type: 3}
+    sprite: {fileID: 0}

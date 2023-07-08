@@ -66,6 +66,7 @@ public class CourseController : UnitySingleton<CourseController>
         foreach (LevelObject controllerObj in circuitObjects) {
             foreach (LevelObject obj in circuit.circuitObjects) {
                 if (controllerObj.objectType == obj.objectType) {
+                    Debug.Log("set "+obj.objectType.ToString());
                     controllerObj.SetObject(obj.sprite);
                 }
             }
@@ -81,7 +82,7 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
-        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(), wave.consecBallOffset));
+        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(thrower), wave.consecBallOffset));
     }
 
     public IEnumerator ClearInstances() {

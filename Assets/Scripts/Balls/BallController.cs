@@ -86,6 +86,12 @@ public class BallController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void BallJump(float hgt=0.5f, float dur=0.23f) {
+        LeanTween.value(
+            ballSprite.gameObject, (float val)=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, val);}, 0f, hgt, dur/2f
+        ).setLoopPingPong(1).setEaseOutCirc().setOnComplete(()=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, 0f);});
+    }
+
     public void AddModifier(BallModifier mod)
     {
         modifiers.Add(mod);
