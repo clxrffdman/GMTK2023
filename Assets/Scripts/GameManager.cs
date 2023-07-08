@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GameManager : UnitySingleton<GameManager>
 {
+    [Header("Current Game State")]
+    public bool isPaused = false;
+    public bool hasLost = false;
+    public bool canPause = true;
     public float baseSlowMoDuration = 0;
     public float slowMoDuration = 0;
+
+    public Stack<GameObject> pauseUIPanels = new Stack<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +43,64 @@ public class GameManager : UnitySingleton<GameManager>
         } 
     }
 
-    
+    public void TogglePanel(GameObject panel, bool state)
+    {
+        panel.SetActive(state);
+    }
+
+    public void TogglePause(bool shouldPause)
+    {
+        if (hasLost || !canPause)
+        {
+            return;
+        }
+
+        if (shouldPause)
+        {
+
+            isPaused = true;
+
+            Time.timeScale = 0;
+
+            //Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+
+            if (pauseUIPanels.Count == 0)
+            {
+                pauseUIPanels.Push(GameplayUIManager.Instance.pausePanel);
+                TogglePanel(GameplayUIManager.Instance.pausePanel, true);
+            }
+            else
+            {
+
+                TogglePanel(pauseUIPanels.Peek(), true);
+            }
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isPaused", 1.0f);
+            //ambianceEventInstance.setPaused(true);
+        }
+        else
+        {
+
+            if (pauseUIPanels.Count > 0)
+            {
+                TogglePanel(pauseUIPanels.Pop(), false);
+            }
+
+            if (pauseUIPanels.Count >= 1)
+            {
+                Debug.Log("Panels: " + pauseUIPanels.Peek().name);
+                return;
+            }
+
+            isPaused = false;
+            Time.timeScale = 1;
+
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isPaused", 0.0f);
+        }
+
+    }
+
+
 }
