@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8247ffe202602e4f93e76c81dd24d9d, type: 3}
   m_Name: ThrowSCurve
   m_EditorClassIdentifier: 
+  description: 
   throwForce: 30
   throwDirection: {x: 0, y: -1}
+  throwForceRandomDelta: 0
+  throwAngleRandomDelta: 5
   curveForce: 75
   curveForceDirection: {x: 1, y: -0.2}
   randomExtraCurveForce: 5

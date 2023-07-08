@@ -67,7 +67,13 @@ public class ThrowerWave {
 
     public List<BallModifier> ApplyThrowerMod() {
         List<BallModifier> newModList = new List<BallModifier>(ballMods);
-        newModList.Add(throwerMod);
+        BallModifier modClone = throwerMod.Clone();
+        if(modClone is ThrowBase)
+        {
+            ((ThrowBase)modClone).throwAngleRandomDelta = bowlAngle;
+        }
+        newModList.Add(modClone);
+        
         return newModList;
     }
 }

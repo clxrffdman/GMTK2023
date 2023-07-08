@@ -4,6 +4,8 @@ using UnityEngine;
 using NaughtyAttributes;
 public abstract class BallModifier : ScriptableObject
 {
+    public string description;
+
     public virtual void OnSpawn(BallController controller)
     {
 
