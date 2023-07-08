@@ -738,6 +738,14 @@ PrefabInstance:
       propertyPath: levelObjects.Array.data[1].levelObject
       value: 
       objectReference: {fileID: 930191589}
+    - target: {fileID: 108595208853128557, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+      propertyPath: circuitObjects.Array.data[0].levelObject
+      value: 
+      objectReference: {fileID: 1233959548}
+    - target: {fileID: 108595208853128557, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+      propertyPath: circuitObjects.Array.data[1].levelObject
+      value: 
+      objectReference: {fileID: 930191589}
     - target: {fileID: 1557828345508561164, guid: 53ee63cef12ef8f42970695050339834, type: 3}
       propertyPath: m_Name
       value: CourseController
@@ -803,6 +811,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+--- !u!212 &1233959548 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8496906121296936305, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+  m_PrefabInstance: {fileID: 1233959547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1270254411
 PrefabInstance:
   m_ObjectHideFlags: 0

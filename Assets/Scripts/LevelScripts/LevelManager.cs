@@ -40,6 +40,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 
         currentCircuit = circuits[index];
         currentCircuitLevels = currentCircuit.levels;
+        CourseController.Instance.SetCircuitObjects(currentCircuit);
     }
 
     public IEnumerator StartLevel() {

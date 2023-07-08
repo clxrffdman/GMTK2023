@@ -18,3 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9955457e13b114a41a0201a3279924b2, type: 2}
   - {fileID: 11400000, guid: e818f44fed2b8eb45b42af8c82ec24eb, type: 2}
   - {fileID: 11400000, guid: 994d0fcd0459596409651900dacde4ae, type: 2}
+  circuitObjects:
+  - objectType: 0
+    levelObject: {fileID: 0}
+    sprite: {fileID: 21300000, guid: d52cb2a102393f34ea235108e61f6b88, type: 3}
+  - objectType: 1
+    levelObject: {fileID: 0}
+    sprite: {fileID: 0}
