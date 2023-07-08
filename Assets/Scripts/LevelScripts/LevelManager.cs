@@ -11,7 +11,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        course = CourseController.Instance;
+
     }
 
     public void StartLevel() {
