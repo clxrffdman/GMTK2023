@@ -7,4 +7,5 @@ using UnityEngine.UI;
 public class GameplayUIManager : UnitySingleton<GameplayUIManager>
 {
     public PortraitController portraitController;
+    public BannerQuipController bannerQuipController;
 }
