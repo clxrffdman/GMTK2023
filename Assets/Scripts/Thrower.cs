@@ -30,7 +30,7 @@ public class Thrower : MonoBehaviour
         // spawn dudes
     }
 
-    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=3f) {
+    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.35f) {
         Debug.Log("begin throw");
         yield return new WaitForSeconds(1f); // do ball throw animation
         Debug.Log("throw ball!");
