@@ -227,7 +227,7 @@ Transform:
   - {fileID: 3327646331742946388}
   - {fileID: 2145705434448851559}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &108595208853128557
 MonoBehaviour:
@@ -257,8 +257,10 @@ MonoBehaviour:
   - objectType: 3
     levelObject: {fileID: 0}
     sprite: {fileID: 0}
+  pin: {fileID: 5303660277875686284, guid: c3ce3e1ca9e227942875181b3e10af67, type: 3}
   currentBalls: []
   currentThrowers: []
+  currentPins: []
   courseWidth: 7
   courseHeightBounds: {x: 40, y: -10}
 --- !u!1 &2185027946398090234
