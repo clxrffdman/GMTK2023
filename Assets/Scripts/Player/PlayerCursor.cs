@@ -13,7 +13,7 @@ public class PlayerCursor : MonoBehaviour
     private Vector2 center;
     private float angle;
     private Vector2 offset;
-    private Vector2 dir;
+    public Vector2 dir;
     private float dist;
 
     [Header("Charging")]
@@ -82,5 +82,10 @@ public class PlayerCursor : MonoBehaviour
     public void ChargeRoutine(float value)
     {
         radius = value;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return dir;
     }
 }
