@@ -33,14 +33,14 @@ public class Thrower : MonoBehaviour
 
     public IEnumerator ThrowBall(GameObject ball, List<BallModifier> ballMods) {
         Debug.Log("begin throw");
-        yield return new WaitForSeconds(2f); // do ball throw animation
+        yield return new WaitForSeconds(1f); // do ball throw animation
         Debug.Log("throw ball!");
         var newBall = Instantiate(ball, CourseController.Instance.ballParentTransform);
         //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
         BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
         ballController.InitBall(this, ballMods);
         CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.2f);
         doneThrowing = true;
         // pan back to player
     }
