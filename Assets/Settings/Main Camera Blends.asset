@@ -28,7 +28,29 @@ MonoBehaviour:
     m_To: DefaultVCamera
     m_Blend:
       m_Style: 1
-      m_Time: 0.6
+      m_Time: 1.36
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: BowlerCam
+    m_To: BallCamera
+    m_Blend:
+      m_Style: 3
+      m_Time: 0.44
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: BallCamera
+    m_To: DefaultVCamera
+    m_Blend:
+      m_Style: 1
+      m_Time: 0.7
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

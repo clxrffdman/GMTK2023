@@ -81,7 +81,7 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
-        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(), wave.consecBallOffset));
+        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(), 0.85f));
     }
 
     public IEnumerator ClearInstances() {
