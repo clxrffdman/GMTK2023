@@ -61,6 +61,7 @@ public class Wave
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
         LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         LevelManager.Instance.currentCircuitWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
+        PlayerController.Instance.EndCharge();
     }
     public bool DoneThrowing() {
         foreach (Thrower thrower in CourseController.Instance.currentThrowers) {

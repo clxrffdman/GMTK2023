@@ -9,8 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaf226787ededbb4e8f81aefdff72b33, type: 3}
-  m_Name: ModifierAccelerate
+  m_Script: {fileID: 11500000, guid: 8c0dfb64008392147a52bc6b288fbe15, type: 3}
+  m_Name: ThrowZigZag
   m_EditorClassIdentifier: 
   description: 
-  accelForce: 1.5
+  throwForce: 8
+  throwDirection: {x: 0, y: -1}
+  throwForceRandomDelta: 0
+  throwAngleRandomDelta: 0
+  zigZagForce: 1500
+  zigZagDirection: {x: 1, y: 0}
+  doZigZag: 0
+  zigZagInterval: 0.15
+  intervalOffset: 0

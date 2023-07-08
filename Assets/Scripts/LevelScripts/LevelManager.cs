@@ -92,7 +92,8 @@ public class LevelManager : UnitySingleton<LevelManager>
 
             if (!CheckLevelSuccess())
             {
-                RestartCircuit();
+                currentCircuitWinCount -= currentLevelWinCount;
+                i--;
             }
 
         }
