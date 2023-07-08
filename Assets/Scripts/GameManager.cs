@@ -16,7 +16,8 @@ public class GameManager : UnitySingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        UpdateSlowMotion();    
+        UpdateSlowMotion();   
+
     }
 
     public void StartSlowMotion(float duration) {
@@ -28,6 +29,12 @@ public class GameManager : UnitySingleton<GameManager>
         if (slowMoDuration <= 0) return;
         slowMoDuration = Mathf.Max(slowMoDuration-Time.unscaledDeltaTime, 0f);
         Time.timeScale = Mathf.Max(1f-(slowMoDuration/baseSlowMoDuration), 0.2f);
+        Time.fixedDeltaTime = 0.01666667f * Time.timeScale;
+
+        if (Time.timeScale == 1)
+        {
+            Time.fixedDeltaTime = 0.01666667f;
+        } 
     }
 
     
