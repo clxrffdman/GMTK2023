@@ -63,6 +63,9 @@ public class PlayerController : UnitySingleton<PlayerController>
                 LeanTween.value(this.gameObject, ChargeRoutine, 0, maxChargeTimer, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(cursor.gameObject, cursor.ChargeRoutine, cursor.baseRadius, cursor.maxRadius, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.color(cursor.gameObject, Color.red, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
+                LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, 0, 0.3f, maxChargeTimer).setEaseOutCubic();
+                LeanTween.value(this.gameObject, CameraController.Instance.SetPlayerCamZoom, 
+                    CameraController.Instance.defaultSize, CameraController.Instance.zoomedSize, maxChargeTimer).setEaseOutCubic();
 
                 break;
             case InputActionPhase.Canceled:
@@ -78,7 +81,9 @@ public class PlayerController : UnitySingleton<PlayerController>
                 rb.AddForce(cursor.GetDirection() * charge * rb.mass);
                 playerSprite.transform.localScale = baseSpriteScale;
                 LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1).setOnComplete(()=>{ playerSprite.transform.localScale = baseSpriteScale; });
-                
+                LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, CameraController.Instance.GetVignetteStrength(), 0, baseMovementCooldown).setEaseOutQuint();
+                LeanTween.value(this.gameObject, CameraController.Instance.SetPlayerCamZoom,
+                    CameraController.Instance.GetPlayerCamZoom(), CameraController.Instance.defaultSize, baseMovementCooldown/2).setEaseOutQuint();
                 cursor.LockCursorMovement(false);
 
                 isHeld = false;

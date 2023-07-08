@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 7722122358358538332}
   - component: {fileID: 86371767391591704}
   - component: {fileID: 1680232576908830130}
+  - component: {fileID: 8946785715396983366}
   m_Layer: 6
   m_Name: PlayerPin
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   - {fileID: 8031358764327787105}
   - {fileID: 6438810787925711993}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1024356042106499392
 CapsuleCollider2D:
@@ -196,6 +197,7 @@ MonoBehaviour:
   playerSprite: {fileID: 7764865611104906348}
   anim: {fileID: 0}
   isHeld: 0
+  locked: 1
   holdDuration: 0
   charge: 0
   chargeIncrement: 4000
@@ -340,7 +342,67 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &8946785715396983366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231096366445769732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 264
+  m_IgnoreTag: Player
+  m_UseImpactDirection: 1
+  m_ScaleImpactWithMass: 1
+  m_ScaleImpactWithSpeed: 1
 --- !u!1 &5411771671026342457
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,15 +477,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64a14bd13c9fce546a912ea812dfdd65, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4b5eddc44f498f649a9c04b564786986, type: 3}
+  m_Color: {r: 1, g: 0.95496154, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5022299278258350352
@@ -439,15 +501,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 3881089026325309710}
-  baseRadius: 2
-  maxRadius: 5
-  radius: 2
+  baseRadius: 1.5
+  maxRadius: 2.5
+  radius: 1.5
   dir: {x: 0, y: 0}
   chargeSpeed: 10
   isLocked: 0
   startPos: {x: 0, y: 0}
   targetPos: {x: 0, y: 0}
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultColor: {r: 1, g: 0.9320468, b: 0, a: 1}
 --- !u!1 &6441460755769369352
 GameObject:
   m_ObjectHideFlags: 0
