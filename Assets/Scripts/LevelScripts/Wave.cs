@@ -49,12 +49,19 @@ public class Wave
 
 
 [Serializable]
-public struct ThrowerWave {
+public class ThrowerWave {
     public GameObject thrower;
     public GameObject ball;
+    public BallModifier throwerMod;
     public float xOffset;
     public float bowlAngle;
     public List<BallModifier> ballMods;
+
+    public List<BallModifier> ApplyThrowerMod() {
+        List<BallModifier> newModList = new List<BallModifier>(ballMods);
+        newModList.Add(throwerMod);
+        return newModList;
+    }
 }
 
 /*

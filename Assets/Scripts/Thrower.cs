@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Thrower : MonoBehaviour
 {
-    public List<BallModifier> throwerMods;
+    //public List<BallModifier> throwerMods;
     
     public ThrowerType throwerType;
     public bool doneThrowing = false;
@@ -37,16 +37,15 @@ public class Thrower : MonoBehaviour
         Debug.Log("throw ball!");
         var newBall = Instantiate(ball, CourseController.Instance.ballParentTransform);
         BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
-        ApplyThrowMods(ballController);
         ballController.InitBall(this, ballMods);
         yield return new WaitForSeconds(1f);
         doneThrowing = true;
         // pan back to player
     }
 
-    public void ApplyThrowMods(BallController ball) {
+    /*public void ApplyThrowMods(BallController ball) {
         foreach (BallModifier mod in throwerMods) {
             ball.AddModifier(mod);
         }
-    }
+    }*/
 }
