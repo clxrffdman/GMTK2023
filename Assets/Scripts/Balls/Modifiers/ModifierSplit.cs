@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ModifierSplit : BallModifier
 {
+    [Header("Extra Throw Values")]
     public float splitPercentage = 0.5f;
     public int splitCount = 2;
     public float projectileSpread = 50;
