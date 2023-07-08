@@ -39,8 +39,10 @@ public class Thrower : MonoBehaviour
         //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
         BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
         ballController.InitBall(this, ballMods);
-        CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
+        //yield return new WaitForSeconds(.5f);
         yield return new WaitForSeconds(.2f);
+        GameManager.Instance.StartSlowMotion(2f);
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         doneThrowing = true;
         // pan back to player
     }
