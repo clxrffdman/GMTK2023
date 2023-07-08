@@ -69,6 +69,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     public IEnumerator BeginLoadedLevels()
     {
+        currentLevelWinCount = 0;
         yield return new WaitForSeconds(1f);
         for(int i = 0; i < currentCircuitLevels.Count; i++)
         {
@@ -79,13 +80,21 @@ public class LevelManager : UnitySingleton<LevelManager>
             }
             else
             {
-                currentLevelWinCount = 0;
                 yield return StartLevel();
             }
+
 
             yield return new WaitForSeconds(4f);
 
         }
+
+        StartCoroutine(CircuitCompleteRoutine());
+
+    }
+
+    public IEnumerator CircuitCompleteRoutine()
+    {
+        yield return null;
     }
 
     public Level GetLevel(int levelNum) {

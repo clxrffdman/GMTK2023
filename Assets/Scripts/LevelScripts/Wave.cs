@@ -12,7 +12,8 @@ and each wave would have a variable amount of thrower waves: usually one i guess
 */
 [Serializable]
 public class Wave
-{   
+{
+    public BowlerProfile profile;
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
     public int numPins;
     public float pinPosOffset = 0.5f;
@@ -20,6 +21,7 @@ public class Wave
     // init the thrower
     public IEnumerator StartWave() {
         LevelManager.Instance.hasFailedCurrentWave = false;
+        GameplayUIManager.Instance.portraitController.LoadProfile(profile);
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
@@ -51,6 +53,7 @@ public class Wave
         PlayerController.Instance.anim.SetBool("Hit", false);
         
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
+        LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
     }
     public bool DoneThrowing() {
         foreach (Thrower thrower in CourseController.Instance.currentThrowers) {
@@ -69,7 +72,6 @@ public class ThrowerWave {
     public float consecBallOffset = 0.35f;
     public float xOffset;
     public float bowlAngle;
-    public float bowlAngleOffset;
     public List<BallModifier> ballMods;
 
     public List<BallModifier> ApplyThrowerMod() {

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7db8265bc9f0ab47a1e4f8d7395ea60, type: 3}
-  m_Name: ModifierBoomerang
+  m_Script: {fileID: 11500000, guid: b2f5e12f5db8cd14faee9203419b0b42, type: 3}
+  m_Name: ProfileDJ
   m_EditorClassIdentifier: 
-  description: 
-  boomerangForce: 10
-  boomerangDirection: {x: 0, y: 1}
-  courseThreshhold: 0.8
+  type: 0
+  displayName: DJ Mike
+  portraitSprite: {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
+  quipLines:
+  - 

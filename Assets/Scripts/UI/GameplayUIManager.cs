@@ -9,6 +9,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
     public PortraitController portraitController;
     public BannerQuipController bannerQuipController;
     public ScorecardUIController scorecardUIController;
+    public ScoreResultUIController scoreResultUIController;
     public GameObject pausePanel;
     public GameObject scorePanel;
 
