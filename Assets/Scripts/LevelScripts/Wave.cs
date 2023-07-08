@@ -14,7 +14,8 @@ and each wave would have a variable amount of thrower waves: usually one i guess
 public class Wave
 {   
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
-    public List<Transform> pinPositions = new List<Transform>();
+    public int numPins;
+    public float pinPosOffset = 0.5f;
 
     // init the thrower
     public IEnumerator StartWave() {
@@ -29,7 +30,7 @@ public class Wave
             CourseController.Instance.ThrowBalls(thrower, wave);
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
-
+        CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitUntil(DoneThrowing);
         
 
@@ -44,14 +45,13 @@ public class Wave
 
     public IEnumerator EndWave() {
         Debug.Log("wave over");
-        CourseController.Instance.ClearThrowers();
 
+        CourseController.Instance.ClearInstances();
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
-
         yield return null;
     }
     public bool DoneThrowing() {
-        foreach (Thrower thrower in  CourseController.Instance.currentThrowers) {
+        foreach (Thrower thrower in CourseController.Instance.currentThrowers) {
             if (!thrower.doneThrowing) return false;
         }
         return true;
@@ -62,10 +62,12 @@ public class Wave
 [Serializable]
 public class ThrowerWave {
     public GameObject thrower;
-    public GameObject ball;
+    public List<GameObject> balls;
     public BallModifier throwerMod;
+    public float consecBallOffset = 0.35f;
     public float xOffset;
     public float bowlAngle;
+    public float bowlAngleOffset;
     public List<BallModifier> ballMods;
 
     public List<BallModifier> ApplyThrowerMod() {
