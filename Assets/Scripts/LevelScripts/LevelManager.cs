@@ -8,11 +8,9 @@ public class LevelManager : UnitySingleton<LevelManager>
 {
 
     [Header("Pre Set Information")]
-    [SerializeField]
     public List<Circuit> circuits = new List<Circuit>();
 
     [Header("Current Circuit Information")]
-    [SerializeField]
     public Circuit currentCircuit;
     public int currentCircuitWinCount = 0;
     public List<Level> currentCircuitLevels = new List<Level>();
