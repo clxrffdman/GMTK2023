@@ -257,8 +257,10 @@ MonoBehaviour:
   - objectType: 3
     levelObject: {fileID: 0}
     sprite: {fileID: 0}
+  pin: {fileID: 5303660277875686284, guid: c3ce3e1ca9e227942875181b3e10af67, type: 3}
   currentBalls: []
   currentThrowers: []
+  currentPins: []
   courseWidth: 7
   courseHeightBounds: {x: 40, y: -10}
 --- !u!1 &2185027946398090234
