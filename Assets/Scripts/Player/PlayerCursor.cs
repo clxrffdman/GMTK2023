@@ -18,7 +18,7 @@ public class PlayerCursor : MonoBehaviour
 
     [Header("Charging")]
     public float chargeSpeed;
-    private bool isLocked = false;
+    public bool isLocked = false;
     private bool isReversed = false;
     public Vector2 startPos;
     public Vector2 targetPos;
