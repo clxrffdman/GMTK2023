@@ -15,7 +15,7 @@ public class Circuit : ScriptableObject
         int rv = 0;
         foreach(Level lvl in levels)
         {
-            rv += levels.Count;
+            rv += lvl.waves.Count;
         }
 
         return rv;

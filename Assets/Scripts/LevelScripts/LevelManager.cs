@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
@@ -11,6 +12,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     [Header("Current Circuit Information")]
     public Circuit currentCircuit;
+    public int currentCircuitWinCount = 0;
     public List<Level> currentCircuitLevels = new List<Level>();
     public Level currentLevel;
     public int currentLevelWinCount = 0;
@@ -67,10 +69,11 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     public IEnumerator BeginLoadedLevels()
     {
-        currentLevelWinCount = 0;
+        
         yield return new WaitForSeconds(1f);
         for(int i = 0; i < currentCircuitLevels.Count; i++)
         {
+            currentLevelWinCount = 0;
             currentLevel = currentCircuitLevels[i];
             if (!currentLevel)
             {
@@ -82,7 +85,12 @@ public class LevelManager : UnitySingleton<LevelManager>
             }
 
 
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
+
+            if (!CheckLevelSuccess())
+            {
+                RestartCircuit();
+            }
 
         }
 
@@ -90,8 +98,27 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     }
 
+    public void RestartCircuit()
+    {
+        SaveManager.Instance.forceCircuitPlay = true;
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+
+    public bool CheckLevelSuccess()
+    {
+        if(currentLevelWinCount >= 3)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public IEnumerator CircuitCompleteRoutine()
     {
+        GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
+        GameManager.Instance.TogglePause(true);
+        GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
         yield return null;
     }
 
