@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8107755479362862038}
   - component: {fileID: 7764865611104906348}
   - component: {fileID: 8576979816081001485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7722122358358538332}
   - component: {fileID: 86371767391591704}
   - component: {fileID: 1680232576908830130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerPin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,6 +193,7 @@ MonoBehaviour:
   cursor: {fileID: 5022299278258350352}
   rb: {fileID: 1680232576908830130}
   playerSprite: {fileID: 7764865611104906348}
+  anim: {fileID: 0}
   isHeld: 0
   holdDuration: 0
   charge: 0
@@ -350,7 +351,7 @@ GameObject:
   - component: {fileID: 8031358764327787105}
   - component: {fileID: 1996691772242243595}
   - component: {fileID: 5022299278258350352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
