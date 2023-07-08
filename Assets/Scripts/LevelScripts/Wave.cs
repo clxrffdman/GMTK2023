@@ -19,6 +19,7 @@ public class Wave
 
     // init the thrower
     public IEnumerator StartWave() {
+        LevelManager.Instance.hasFailedCurrentWave = false;
         CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
 
         yield return new WaitForSeconds(0.8f);
@@ -38,14 +39,15 @@ public class Wave
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
         // end way in 3
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         yield return EndWave();
     }
 
     public IEnumerator EndWave() {
         Debug.Log("wave over");
+
         CourseController.Instance.ClearInstances();
-        
+        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
         yield return null;
     }
     public bool DoneThrowing() {
@@ -70,7 +72,13 @@ public class ThrowerWave {
 
     public List<BallModifier> ApplyThrowerMod() {
         List<BallModifier> newModList = new List<BallModifier>(ballMods);
-        newModList.Add(throwerMod);
+        BallModifier modClone = throwerMod.Clone();
+        if(modClone is ThrowBase)
+        {
+            ((ThrowBase)modClone).throwAngleRandomDelta = bowlAngle;
+        }
+        newModList.Add(modClone);
+        
         return newModList;
     }
 }

@@ -33,19 +33,18 @@ public class Thrower : MonoBehaviour
 
     public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.25f) {
         Debug.Log("begin throw");
-        yield return new WaitForSeconds(2f); // do ball throw animation
+        yield return new WaitForSeconds(1f); // do ball throw animation
         Debug.Log("throw ball!");
         for (int i = 0; i < balls.Count; i++) {
             var newBall = Instantiate(balls[i], CourseController.Instance.ballParentTransform);
             //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
             BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
             ballController.InitBall(this, ballMods);
-            if (balls.Count > 1 && i != balls.Count-1) {
-                yield return new WaitForSeconds(consecOffset);
-            }
+            yield return new WaitForSeconds(consecOffset);
         }
+        
+        GameManager.Instance.StartSlowMotion(2f);
         CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
-        yield return new WaitForSeconds(1f);
         doneThrowing = true;
         // pan back to player
     }

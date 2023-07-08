@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abdb885b07d3f247bf4bbacb6686fa6, type: 3}
   m_Name: ThrowBase
   m_EditorClassIdentifier: 
-  throwForce: 30
+  throwForce: 10
   throwDirection: {x: 0, y: -1}
+  throwForceRandomDelta: 0

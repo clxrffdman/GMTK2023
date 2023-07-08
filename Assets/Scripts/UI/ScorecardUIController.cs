@@ -21,4 +21,29 @@ public class ScorecardUIController : MonoBehaviour
     {
         
     }
+
+    public void SetScore(int index, bool isWin)
+    {
+        scorecardElements[index].SetScore(isWin);
+    }
+
+    public void ClearElements()
+    {
+        for(int i = scorecardElements.Count-1; i >= 0; i--)
+        {
+            Destroy(scorecardElements[i].gameObject);
+        }
+
+        scorecardElements.Clear();
+    }
+
+    public void InitScorecard(Level level)
+    {
+        for(int i = 0; i < level.waves.Count; i++)
+        {
+            var newCardElement = Instantiate(scorecardElementPrefab, scorecardElementParent);
+            scorecardElements.Add(newCardElement.GetComponent<ScorecardElement>());
+            newCardElement.GetComponent<ScorecardElement>().indexText.text = (i + 1).ToString();
+        }
+    }
 }

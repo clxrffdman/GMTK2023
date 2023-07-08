@@ -20,7 +20,7 @@ public class Level : ScriptableObject {
     };
     
     public void InitLevel() {
- 
+        
     }
 
     public IEnumerator StartLevel() {
@@ -41,7 +41,9 @@ public class Level : ScriptableObject {
 
         // go through all waves
         foreach (Wave wave in waves) {
+
             yield return wave.StartWave();
+            LevelManager.Instance.currentWaveIndex++;
         }
         
         // waves end

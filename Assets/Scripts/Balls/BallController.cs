@@ -33,9 +33,9 @@ public class BallController : MonoBehaviour
         ignoreBallDuration -= ignoreBallDuration > 0 ? Time.deltaTime : 0;
         float coursePercentage = Mathf.InverseLerp(courseController.courseHeightBounds.x, courseController.courseHeightBounds.y, transform.position.y);
 
-        foreach (BallModifier mod in modifiers)
+        for(int i = modifiers.Count-1; i >= 0; i--)
         {
-            mod.OnUpdate(this, activeTime, coursePercentage);
+            modifiers[i].OnUpdate(this, activeTime, coursePercentage);
         }
 
         if(ignoreBallDuration > 0)
@@ -52,16 +52,22 @@ public class BallController : MonoBehaviour
     }
 
     public void InitBall(Thrower thrower, List<BallModifier> ballMods) {
+
+        courseController = CourseController.Instance;
+        transform.position = thrower.transform.position;
+        CourseController.Instance.currentBalls.Add(this);
+
         foreach (BallModifier mod in ballMods) {
             modifiers.Add(mod);
         }
-        foreach (BallModifier mod in modifiers) {
-            mod.OnSpawn(this);
+
+        for (int i = modifiers.Count - 1; i >= 0; i--)
+        {
+            modifiers[i].OnSpawn(this);
         }
-        courseController = CourseController.Instance;
-        transform.position = thrower.transform.position;
+
         //transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
-        CourseController.Instance.currentBalls.Add(this);
+
         Debug.Log("throw ball i guess");
     }
 
