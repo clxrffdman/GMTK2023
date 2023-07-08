@@ -14,21 +14,29 @@ public class BallController : MonoBehaviour
     public CourseController courseController;
     public Rigidbody2D rb;
     public Collider2D ballCollider;
+    public SpriteRenderer ballSprite;
+    public SpriteRenderer ballShadow;
+    public Animator ballAnim;
     [SerializeField] private LayerMask defaultLayerMask;
     [SerializeField] private LayerMask ballLayerMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*foreach(BallModifier mod in modifiers)
-        {
-            mod.OnSpawn(this);
-        }*/
+        ballAnim.SetBool("thrown", true);
+    }
+
+    void Awake() {
+        ballAnim = ballAnim != null ? ballAnim : GlobalFunctions.FindComponent<Animator>(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!ballAnim.GetBool("thrown")) {
+            // have it follow the thrower
+            return;
+        }
         activeTime += Time.deltaTime;
         ignoreBallDuration -= ignoreBallDuration > 0 ? Time.deltaTime : 0;
         float coursePercentage = Mathf.InverseLerp(courseController.courseHeightBounds.x, courseController.courseHeightBounds.y, transform.position.y);
@@ -69,6 +77,13 @@ public class BallController : MonoBehaviour
         //transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
 
         Debug.Log("throw ball i guess");
+    }
+
+    public IEnumerator DeleteBall(float timer = 0.4f) {
+        GlobalFunctions.FadeOut(ballShadow, timer);
+        yield return GlobalFunctions.FadeOut(ballSprite, timer);
+        CourseController.Instance.currentPins.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     public void AddModifier(BallModifier mod)

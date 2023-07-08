@@ -9,9 +9,8 @@ public class CourseController : UnitySingleton<CourseController>
     [SerializeField] public Transform ballShooterTransform;
     [SerializeField] public Transform ballParentTransform;
     [SerializeField] public Collider2D randomPinArea;
+    [SerializeField] public Transform playerSpawnPosition;
     [SerializeField] public List<LevelObject> levelObjects = new List<LevelObject>() {
-        new LevelObject(LevelObjectType.LeftBumper),
-        new LevelObject(LevelObjectType.RightBumper),
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
@@ -85,20 +84,39 @@ public class CourseController : UnitySingleton<CourseController>
         StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(), wave.consecBallOffset));
     }
 
-    public void ClearInstances() {
+    public IEnumerator ClearInstances() {
         for (int i = currentThrowers.Count-1; i >= 0; i--) {
             Destroy(currentThrowers[i].gameObject);
         }
+        currentThrowers.Clear();
+        StartCoroutine(DeleteBalls(false));
+        yield return DeletePins();
+    }
+
+    public IEnumerator DeletePins(bool wait=true) {
+        float destroyTimer = 0.4f;
         for (int i = currentPins.Count-1; i >= 0; i--) {
-            Destroy(currentPins[i].gameObject);
+            StartCoroutine(GlobalFunctions.FindComponent<HazardPin>(currentPins[i]).DeletePin(destroyTimer));
+        }
+        if (wait) {
+            yield return new WaitForSeconds(destroyTimer);
         }
         currentPins.Clear();
+    }
+
+    public IEnumerator DeleteBalls(bool wait=true) {
+        float destroyTimer = 0.4f;
+        for (int i = currentBalls.Count-1; i >= 0; i--) {
+            StartCoroutine(GlobalFunctions.FindComponent<BallController>(currentBalls[i].gameObject).DeleteBall(destroyTimer));
+        }
+        if (wait) {
+            yield return new WaitForSeconds(destroyTimer);
+        }
         currentBalls.Clear();
-        currentThrowers.Clear();
     }
 
     public void BallDodged(BallController ball) {
         currentBalls.Remove(ball);
-        Destroy(ball.gameObject);
+        StartCoroutine(ball.DeleteBall());
     }
 }

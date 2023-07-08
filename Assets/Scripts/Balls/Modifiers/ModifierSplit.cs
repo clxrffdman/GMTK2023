@@ -30,6 +30,7 @@ public class ModifierSplit : BallModifier
             SpawnNewBall(controller, spread);
         }
         controller.RemoveModifier(this);
+        CourseController.Instance.currentBalls.Remove(controller);
         Destroy(controller.gameObject);
     }
 
@@ -37,10 +38,12 @@ public class ModifierSplit : BallModifier
     {
         Vector2 dir = Vector2Extension.Rotate(controller.GetComponent<Rigidbody2D>().velocity.normalized, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
-        bullet.transform.GetComponent<BallController>().RemoveModifier(this);
-        bullet.transform.GetComponent<BallController>().rb.velocity = Vector2.zero;
-        bullet.transform.GetComponent<BallController>().rb.AddForce(dir * spreadForce, ForceMode2D.Impulse);
-        bullet.transform.GetComponent<BallController>().SetIgnoreBallDuration(0.2f);
+        BallController ballCont = GlobalFunctions.FindComponent<BallController>(bullet.gameObject);
+        ballCont.RemoveModifier(this);
+        ballCont.rb.velocity = Vector2.zero;
+        ballCont.rb.AddForce(dir * spreadForce, ForceMode2D.Impulse);
+        ballCont.SetIgnoreBallDuration(0.2f);
+        CourseController.Instance.currentBalls.Add(ballCont);
 
     }
 }

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : UnitySingleton<PlayerController>
 {
     public PlayerCursor cursor;
     public Rigidbody2D rb;
     public SpriteRenderer playerSprite;
     public Animator anim;
     public bool isHeld = false;
+    public bool locked = true;
     public float holdDuration;
     public float charge;
     public float chargeIncrement;
@@ -20,15 +21,35 @@ public class PlayerController : MonoBehaviour
     private float cooldownTimer;
     private Vector3 baseSpriteScale;
 
-    public void Awake() {
+    public override void Awake() {
+        base.Awake();
         playerSprite = playerSprite != null ? playerSprite : GlobalFunctions.FindComponent<SpriteRenderer>(gameObject);
         baseSpriteScale = playerSprite.transform.localScale;
         anim = anim != null ? anim : GlobalFunctions.FindComponent<Animator>(gameObject);
     }
+    public void Start() {
+        StartCoroutine(SpawnAnim());
+    }
+
+    public IEnumerator SpawnAnim() {
+        transform.position = CourseController.Instance.playerSpawnPosition.position;
+        rb.velocity = Vector2.zero;
+        locked = true;
+        isHeld = false;
+        anim.SetBool("Jump", false);
+        anim.Play("PlayerIdle");
+        Color spriteColor = playerSprite.color;
+        Color prevColor = spriteColor;
+        prevColor.a = 0f;
+        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, spriteColor, 0.2f);
+        LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 5f, 0f, 0.3f);
+        yield return new WaitForSeconds(0.6f);
+        locked = false;
+    }
 
     public void PlayerMovement(InputAction.CallbackContext context)
     {
-        if (cooldownTimer >= 0 || anim.GetBool("Hit"))
+        if (cooldownTimer >= 0 || anim.GetBool("Hit") || locked)
         {
             return;
         }
@@ -54,8 +75,9 @@ public class PlayerController : MonoBehaviour
                 LeanTween.cancel(cursor.gameObject);
                 cursor.ResetColor();
                 anim.SetBool("Jump", false);
-                rb.AddForce(cursor.GetDirection() * charge);
-                LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1);
+                rb.AddForce(cursor.GetDirection() * charge * rb.mass);
+                playerSprite.transform.localScale = baseSpriteScale;
+                LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1).setOnComplete(()=>{ playerSprite.transform.localScale = baseSpriteScale; });
                 
                 cursor.LockCursorMovement(false);
 
@@ -90,14 +112,14 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Hazard")
         {
             playerSprite.flipX = collision.transform.position.x < transform.position.x;
-            anim.SetBool("Hit", true);
-            LevelManager.Instance.hasFailedCurrentWave = true;
             StartCoroutine(PlayerHit());
             //cause lose 
         }
     }
     public IEnumerator PlayerHit() {
-        yield return new WaitForSeconds(3f);
-        anim.SetBool("Hit", false);
+        anim.SetBool("Hit", true);
+        LevelManager.Instance.hasFailedCurrentWave = true;
+        StartCoroutine(CourseController.Instance.ClearInstances());
+        yield return null;
     }
 }

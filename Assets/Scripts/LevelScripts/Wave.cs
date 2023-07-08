@@ -20,8 +20,13 @@ public class Wave
     // init the thrower
     public IEnumerator StartWave() {
         LevelManager.Instance.hasFailedCurrentWave = false;
-        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
+        yield return PlayerController.Instance.SpawnAnim();
+        PlayerController.Instance.locked = true;
+        CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
+        yield return new WaitForSeconds(1.3f);
 
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
+    
         yield return new WaitForSeconds(0.8f);
 
         foreach (ThrowerWave wave in throwerWaves) {
@@ -30,25 +35,22 @@ public class Wave
             CourseController.Instance.ThrowBalls(thrower, wave);
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
-        CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitUntil(DoneThrowing);
-        
-
-
-        Debug.Log("done throwing baby");
+        PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
-        // end way in 3
         yield return new WaitForSeconds(1f);
-        yield return EndWave();
+        yield return CourseController.Instance.ClearInstances();
+        // end wave in 1
+        yield return new WaitForSeconds(2f);
+        EndWave();
     }
 
-    public IEnumerator EndWave() {
+    public void EndWave() {
         Debug.Log("wave over");
-
-        CourseController.Instance.ClearInstances();
+        PlayerController.Instance.anim.SetBool("Hit", false);
+        
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
-        yield return null;
     }
     public bool DoneThrowing() {
         foreach (Thrower thrower in CourseController.Instance.currentThrowers) {

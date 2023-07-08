@@ -8,8 +8,6 @@ public class Level : ScriptableObject {
     public int levelNumber;
     [SerializeField]
     public List<LevelObject> levelObjects = new List<LevelObject>() {
-        new LevelObject(LevelObjectType.LeftBumper),
-        new LevelObject(LevelObjectType.RightBumper),
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
@@ -18,13 +16,11 @@ public class Level : ScriptableObject {
         new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
         new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
     };
-    
-    public void InitLevel() {
-        
-    }
+
+    public Wave currWave;
 
     public IEnumerator StartLevel() {
-        InitLevel();
+        PlayerController.Instance.locked = true;
         yield return StartWaves();
     }
 
@@ -41,7 +37,7 @@ public class Level : ScriptableObject {
 
         // go through all waves
         foreach (Wave wave in waves) {
-
+            currWave = wave;
             yield return wave.StartWave();
             LevelManager.Instance.currentWaveIndex++;
         }

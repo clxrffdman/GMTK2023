@@ -26,6 +26,13 @@ public static class GlobalFunctions {
             UnityEngine.Random.Range(bounds.min.z, bounds.max.z)
         );
     }
+    public static IEnumerator FadeOut(SpriteRenderer sprite, float timer = 0.4f) {
+        Color spriteColor = sprite.color;
+        Color newColor = spriteColor;
+        newColor.a = 0f;
+        LeanTween.value(sprite.gameObject, (Color val) => { sprite.color = val; }, spriteColor, newColor, timer);
+        yield return new WaitForSeconds(timer);
+    }
 
 }
 
