@@ -60,7 +60,7 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
-        StartCoroutine(thrower.ThrowBall(wave.ball, wave.ballMods));
+        StartCoroutine(thrower.ThrowBall(wave.ball, wave.ApplyThrowerMod()));
     }
 
     public void ClearThrowers() {
