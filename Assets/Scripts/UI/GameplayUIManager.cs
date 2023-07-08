@@ -8,12 +8,13 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
 {
     public PortraitController portraitController;
     public BannerQuipController bannerQuipController;
+    public ScorecardUIController scorecardUIController;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            bannerQuipController.RequestBannerQuip("Spared!", 0.2f, 3f, 0.1f);
+            bannerQuipController.RequestBannerQuip("Spared!", 0.2f, 2f, 0.1f);
         }
     }
 }

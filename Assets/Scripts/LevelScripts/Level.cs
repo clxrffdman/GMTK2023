@@ -36,6 +36,7 @@ public class Level : ScriptableObject {
 
     public IEnumerator StartWaves() {
         // intro 
+        
         yield return new WaitForSeconds(1);
 
         // go through all waves

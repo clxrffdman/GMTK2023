@@ -18,13 +18,21 @@ public class Wave
 
     // init the thrower
     public IEnumerator StartWave() {
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
+
+        yield return new WaitForSeconds(0.8f);
+
         foreach (ThrowerWave wave in throwerWaves) {
             Thrower thrower = CourseController.Instance.InitThrower(wave.thrower);
             thrower.InitBowl(wave);
             CourseController.Instance.ThrowBalls(thrower, wave);
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
+
         yield return new WaitUntil(DoneThrowing);
+        
+
+
         Debug.Log("done throwing baby");
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
