@@ -20,7 +20,7 @@ public class Level : ScriptableObject {
     };
     
     public void InitLevel() {
- 
+        
     }
 
     public IEnumerator StartLevel() {

@@ -49,6 +49,7 @@ MonoBehaviour:
       bowlAngle: 50
       ballMods:
       - {fileID: 11400000, guid: fe2eed91b4b9002499719773f6a40e96, type: 2}
+      - {fileID: 11400000, guid: 31f874a86c80dc14e9ee6f26291bea9c, type: 2}
     pinPositions: []
   - throwerWaves:
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
