@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4b1624f5acb65408b973da9983c963, type: 3}
   m_Name: ModifierSplit
   m_EditorClassIdentifier: 
+  description: 
   splitPercentage: 0.6
-  splitCount: 3
+  splitCount: 2
   projectileSpread: 100
-  spreadForce: 15
+  spreadForce: 10

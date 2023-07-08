@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 [CreateAssetMenu(menuName = "Bowling/Circuit")]
 public class Circuit : ScriptableObject
 {
