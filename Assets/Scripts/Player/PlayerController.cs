@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerCursor cursor;
     public Rigidbody2D rb;
+    public SpriteRenderer playerSprite;
+    public Animator anim;
     public bool isHeld = false;
     public float holdDuration;
     public float charge;
@@ -16,10 +18,17 @@ public class PlayerController : MonoBehaviour
     public Vector2 minimumVelocity;
     public float baseMovementCooldown;
     private float cooldownTimer;
+    private Vector3 baseSpriteScale;
+
+    public void Awake() {
+        playerSprite = playerSprite != null ? playerSprite : GlobalFunctions.FindComponent<SpriteRenderer>(gameObject);
+        baseSpriteScale = playerSprite.transform.localScale;
+        anim = anim != null ? anim : GlobalFunctions.FindComponent<Animator>(gameObject);
+    }
 
     public void PlayerMovement(InputAction.CallbackContext context)
     {
-        if (cooldownTimer >= 0)
+        if (cooldownTimer >= 0 || anim.GetBool("Hit"))
         {
             return;
         }
@@ -29,6 +38,7 @@ public class PlayerController : MonoBehaviour
                 cursor.LockCursorMovement(true);
                 rb.velocity = Vector2.zero;
                 isHeld = true;
+                anim.SetBool("Jump", true);
                 LeanTween.value(this.gameObject, ChargeRoutine, 0, maxChargeTimer, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(cursor.gameObject, cursor.ChargeRoutine, cursor.baseRadius, cursor.maxRadius, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
 
@@ -41,9 +51,10 @@ public class PlayerController : MonoBehaviour
 
                 LeanTween.cancel(this.gameObject);
                 LeanTween.cancel(cursor.gameObject);
-
+                anim.SetBool("Jump", false);
                 rb.AddForce(cursor.GetDirection() * charge);
-                            
+                LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1);
+                
                 cursor.LockCursorMovement(false);
 
                 isHeld = false;
@@ -61,8 +72,9 @@ public class PlayerController : MonoBehaviour
         {            
             cooldownTimer -= Time.deltaTime;
         }
-
-        Debug.Log(cooldownTimer);
+        if (!cursor.isLocked && !anim.GetBool("Hit")) {
+            playerSprite.flipX = cursor.GetCursorPos().x < 0;
+        }
     }
 
     public void ChargeRoutine(float value)
@@ -73,9 +85,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Hazard")
+        if(collision.gameObject.tag == "Hazard")
         {
+            playerSprite.flipX = collision.transform.position.x < transform.position.x;
+            anim.SetBool("Hit", true);
+            StartCoroutine(PlayerHit());
             //cause lose 
         }
+    }
+    public IEnumerator PlayerHit() {
+        yield return new WaitForSeconds(3f);
+        anim.SetBool("Hit", false);
     }
 }
