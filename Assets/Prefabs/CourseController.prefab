@@ -149,7 +149,7 @@ Transform:
   - {fileID: 3327646331742946388}
   - {fileID: 2145705434448851559}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &108595208853128557
 MonoBehaviour:
@@ -165,17 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballShooterTransform: {fileID: 3327646331742946388}
   ballParentTransform: {fileID: 2145705434448851559}
-  baseBallReference: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
-  throwProfiles:
-  - xOffset: -0.8
-    modifiers:
-    - {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
-  - xOffset: 0
-    modifiers:
-    - {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
-  - xOffset: -0.7
-    modifiers:
-    - {fileID: 11400000, guid: e209a47d17eb35a409af62bfe4daa22c, type: 2}
   levelObjects:
   - objectType: 0
     levelObject: {fileID: 2495161704193531959}
@@ -189,7 +178,8 @@ MonoBehaviour:
   - objectType: 3
     levelObject: {fileID: 0}
     sprite: {fileID: 0}
-  currentThrowIndex: 0
+  currentBalls: []
+  currentThrowers: []
   courseWidth: 7
   courseHeightBounds: {x: 40, y: -10}
 --- !u!1 &2185027946398090234
@@ -236,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4903793173053842}
   - component: {fileID: 2486990259621312352}
+  - component: {fileID: 8225028057890544775}
   m_Layer: 0
   m_Name: BallDetectionZone
   m_TagString: Untagged
@@ -251,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2525528269873311533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.1, z: 0}
+  m_LocalPosition: {x: 0, y: -11.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -303,6 +294,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &8225028057890544775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525528269873311533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40952b0ebc1e73479d47db438505a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2899549165930762171
 GameObject:
   m_ObjectHideFlags: 0
