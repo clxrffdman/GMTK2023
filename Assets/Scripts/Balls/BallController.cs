@@ -5,7 +5,6 @@ using NaughtyAttributes;
 
 public class BallController : MonoBehaviour
 {
-
     [Header("Current Ball Stats")]
     [SerializeField] private List<BallModifier> modifiers = new List<BallModifier>();
     private float activeTime = 0f;
@@ -21,10 +20,10 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(BallModifier mod in modifiers)
+        /*foreach(BallModifier mod in modifiers)
         {
             mod.OnSpawn(this);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -50,6 +49,20 @@ public class BallController : MonoBehaviour
             rb.excludeLayers = defaultLayerMask;
         }
 
+    }
+
+    public void InitBall(Thrower thrower, List<BallModifier> ballMods) {
+        foreach (BallModifier mod in ballMods) {
+            modifiers.Add(mod);
+        }
+        foreach (BallModifier mod in modifiers) {
+            mod.OnSpawn(this);
+        }
+        courseController = CourseController.Instance;
+        transform.position = thrower.transform.position;
+        //transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
+        CourseController.Instance.currentBalls.Add(this);
+        Debug.Log("throw ball i guess");
     }
 
     public void AddModifier(BallModifier mod)

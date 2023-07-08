@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170500a7a5d4483498c794343b9e4f4f, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  levelObjects:
+  - objectType: 0
+    levelObject: {fileID: 0}
+    sprite: {fileID: 0}
+  - objectType: 1
+    levelObject: {fileID: 0}
+    sprite: {fileID: 0}
+  - objectType: 2
+    levelObject: {fileID: 0}
+    sprite: {fileID: 0}
+  - objectType: 3
+    levelObject: {fileID: 0}
+    sprite: {fileID: 0}
+  waves:
+  - throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      ball: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      xOffset: -0.5
+      bowlAngle: 0
+      ballMods: []
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      ball: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      xOffset: 0.5
+      bowlAngle: 0
+      ballMods:
+      - {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
+    pinPositions: []
