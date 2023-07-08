@@ -8,6 +8,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
 {
     public PortraitController portraitController;
     public BannerQuipController bannerQuipController;
+    public ScorecardUIController scorecardUIController;
 
     private void Update()
     {
