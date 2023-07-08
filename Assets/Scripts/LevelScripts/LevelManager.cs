@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
+
+    [Header("Pre Set Information")]
     [SerializeField]
-    public List<Level> levels = new List<Level>();
+    public List<Circuit> circuits = new List<Circuit>();
+
+    [Header("Current Circuit Information")]
+    [SerializeField]
+    public Circuit currentCircuit;
+    public List<Level> currentCircuitLevels = new List<Level>();
     public Level currentLevel;
     public int currentLevelWinCount = 0;
     public int currentWaveIndex = 0;
@@ -16,13 +23,29 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-
+        SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
+        if (SaveManager.Instance.forceCircuitPlay)
+        {
+            StartCoroutine(BeginLoadedLevels());
+        }
     }
 
-    public void StartLevel() {
+    public void SetCurrentCircuitFromIndex(int index)
+    {
+        if(index < 0 || index > circuits.Count)
+        {
+            Debug.Log("circuit " + index + " is an invalid circuit (too small or too large index)");
+            return;
+        }
+
+        currentCircuit = circuits[index];
+        currentCircuitLevels = currentCircuit.levels;
+    }
+
+    public IEnumerator StartLevel() {
         GameplayUIManager.Instance.scorecardUIController.ClearElements();
         GameplayUIManager.Instance.scorecardUIController.InitScorecard(currentLevel);
-        StartCoroutine(CourseController.Instance.StartLevel(currentLevel));
+        yield return CourseController.Instance.StartLevel(currentLevel);
     }
 
     public void EndLevel() {
@@ -39,13 +62,34 @@ public class LevelManager : UnitySingleton<LevelManager>
                 return;
             }
             currentLevelWinCount = 0;
-            StartLevel();
+            StartCoroutine(StartLevel());
             // start level one
         }
     }
 
+    public IEnumerator BeginLoadedLevels()
+    {
+        yield return new WaitForSeconds(1f);
+        for(int i = 0; i < currentCircuitLevels.Count; i++)
+        {
+            currentLevel = currentCircuitLevels[i];
+            if (!currentLevel)
+            {
+                Debug.Log("level " + i + " not found");
+            }
+            else
+            {
+                currentLevelWinCount = 0;
+                yield return StartLevel();
+            }
+
+            yield return new WaitForSeconds(4f);
+
+        }
+    }
+
     public Level GetLevel(int levelNum) {
-        foreach (Level level in levels) {
+        foreach (Level level in currentCircuitLevels) {
             if (levelNum == level.levelNumber) {
                 return level;
             }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Level")]
+[CreateAssetMenu(menuName = "Bowling/Level")]
 public class Level : ScriptableObject {
     public int levelNumber;
     [SerializeField]

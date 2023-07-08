@@ -50,7 +50,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 1
-  m_AngularDrag: 0.2
+  m_AngularDrag: 0.15
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 204c3241e7a76734aab475765690aa93, type: 2}
   m_IncludeLayers:
@@ -95,8 +95,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012999997, y: -0.10813535}
-  m_Size: {x: 0.2830098, y: 0.66590536}
+  m_Offset: {x: 0.03, y: -0.29}
+  m_Size: {x: 0.42, y: 1.35}
   m_Direction: 0
 --- !u!114 &-8488051869351603830
 MonoBehaviour:

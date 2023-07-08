@@ -10,6 +10,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
     public BannerQuipController bannerQuipController;
     public ScorecardUIController scorecardUIController;
     public GameObject pausePanel;
+    public GameObject scorePanel;
 
     private void Update()
     {
