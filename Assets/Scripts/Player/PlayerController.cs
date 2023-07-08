@@ -124,8 +124,9 @@ public class PlayerController : UnitySingleton<PlayerController>
         if(collision.gameObject.tag == "Hazard")
         {
             playerSprite.flipX = collision.transform.position.x < transform.position.x;
-            if (!anim.GetBool("Hit"))
+            if (!anim.GetBool("Hit") || !LevelManager.Instance.currentLevel.currWave.waveDone) {
                 StartCoroutine(PlayerHit());
+            }
             //cause lose 
         }
     }

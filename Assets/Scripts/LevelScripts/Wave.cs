@@ -17,9 +17,11 @@ public class Wave
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
     public int numPins;
     public float pinPosOffset = 0.5f;
+    [HideInInspector] public bool waveDone = false;
 
     // init the thrower
     public IEnumerator StartWave() {
+        waveDone = false;
         LevelManager.Instance.hasFailedCurrentWave = false;
         GameplayUIManager.Instance.portraitController.LoadProfile(profile);
         yield return PlayerController.Instance.SpawnAnim();
@@ -44,6 +46,7 @@ public class Wave
         PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
+        waveDone = true;
         yield return new WaitForSeconds(1f);
         yield return CourseController.Instance.ClearInstances();
         // end wave in 1
