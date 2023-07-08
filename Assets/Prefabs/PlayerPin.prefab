@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2803183111844342331}
   - component: {fileID: 7722122358358538332}
   - component: {fileID: 86371767391591704}
-  - component: {fileID: 7001300621551937140}
+  - component: {fileID: 1680232576908830130}
   m_Layer: 0
   m_Name: PlayerPin
   m_TagString: Untagged
@@ -137,13 +137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 5022299278258350352}
-  rb: {fileID: 7001300621551937140}
+  rb: {fileID: 1680232576908830130}
   isHeld: 0
   holdDuration: 0
   charge: 0
-  chargeIncrement: 5000
+  chargeIncrement: 4000
   maxChargeTimer: 0.5
-  isReversed: 0
+  invalidMovement: 0
+  minimumVelocity: {x: 0, y: 0}
+  baseMovementCooldown: 0.2
 --- !u!114 &86371767391591704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!50 &7001300621551937140
+--- !u!50 &1680232576908830130
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -281,7 +283,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &5411771671026342457
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +385,7 @@ MonoBehaviour:
   baseRadius: 2
   maxRadius: 5
   radius: 2
+  dir: {x: 0, y: 0}
   chargeSpeed: 10
   startPos: {x: 0, y: 0}
   targetPos: {x: 0, y: 0}
