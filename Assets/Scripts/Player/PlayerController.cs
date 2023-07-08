@@ -68,4 +68,12 @@ public class PlayerController : MonoBehaviour
         holdDuration = value;
         charge = value * chargeIncrement;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Hazard")
+        {
+            //cause lose 
+        }
+    }
 }

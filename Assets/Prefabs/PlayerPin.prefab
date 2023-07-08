@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2803183111844342331}
   - component: {fileID: 7722122358358538332}
   - component: {fileID: 86371767391591704}
+  - component: {fileID: 1680232576908830130}
   m_Layer: 0
   m_Name: PlayerPin
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 8031358764327787105}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1024356042106499392
 CapsuleCollider2D:
@@ -43,7 +44,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5231096366445769732}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -68,8 +69,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: -0.5}
+  m_Size: {x: 0.85, y: 2}
   m_Direction: 0
 --- !u!212 &2803183111844342331
 SpriteRenderer:
@@ -135,6 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc084450e98dcd348aad45806965cc9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 5022299278258350352}
+  rb: {fileID: 1680232576908830130}
+  isHeld: 0
+  holdDuration: 0
+  charge: 0
+  chargeIncrement: 4000
+  maxChargeTimer: 0.5
+  invalidMovement: 0
+  minimumVelocity: {x: 0, y: 0}
+  baseMovementCooldown: 0.2
 --- !u!114 &86371767391591704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: c5fb14b45cccaf844bd8f5048d8c0618, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -159,12 +170,120 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/Shaul
+      Eizikovich vJoy - Virtual Joystick/stick,/Shaul Eizikovich vJoy - Virtual Joystick1/stick,/Shaul
+      Eizikovich vJoy - Virtual Joystick2/stick,/Shaul Eizikovich vJoy - Virtual
+      Joystick3/stick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
+    m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7722122358358538332}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayerMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
+    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton,/Shaul
+      Eizikovich vJoy - Virtual Joystick/trigger,/Shaul Eizikovich vJoy - Virtual
+      Joystick1/trigger,/Shaul Eizikovich vJoy - Virtual Joystick2/trigger,/Shaul
+      Eizikovich vJoy - Virtual Joystick3/trigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Shaul
+      Eizikovich vJoy - Virtual Joystick/stick/up,/Shaul Eizikovich vJoy - Virtual
+      Joystick1/stick/up,/Shaul Eizikovich vJoy - Virtual Joystick2/stick/up,/Shaul
+      Eizikovich vJoy - Virtual Joystick3/stick/up,/Shaul Eizikovich vJoy - Virtual
+      Joystick/stick/down,/Shaul Eizikovich vJoy - Virtual Joystick1/stick/down,/Shaul
+      Eizikovich vJoy - Virtual Joystick2/stick/down,/Shaul Eizikovich vJoy - Virtual
+      Joystick3/stick/down,/Shaul Eizikovich vJoy - Virtual Joystick/stick/left,/Shaul
+      Eizikovich vJoy - Virtual Joystick1/stick/left,/Shaul Eizikovich vJoy - Virtual
+      Joystick2/stick/left,/Shaul Eizikovich vJoy - Virtual Joystick3/stick/left,/Shaul
+      Eizikovich vJoy - Virtual Joystick/stick/right,/Shaul Eizikovich vJoy - Virtual
+      Joystick1/stick/right,/Shaul Eizikovich vJoy - Virtual Joystick2/stick/right,/Shaul
+      Eizikovich vJoy - Virtual Joystick3/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0489e84a-4833-4c40-bfae-cea84b696689
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44b200b1-1557-4083-816c-b22cbdf77ddf
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!50 &1680232576908830130
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231096366445769732}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 532dabb7658ca3040b9d612b7aff2369, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5411771671026342457
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +309,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5411771671026342457}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -262,7 +381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285d3c619f852d3419e5d46cbc1513fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  rotateSpeed: 10
-  isEnabled: 1
   playerPos: {fileID: 3881089026325309710}
+  baseRadius: 2
+  maxRadius: 5
+  radius: 2
+  dir: {x: 0, y: 0}
+  chargeSpeed: 10
+  startPos: {x: 0, y: 0}
+  targetPos: {x: 0, y: 0}

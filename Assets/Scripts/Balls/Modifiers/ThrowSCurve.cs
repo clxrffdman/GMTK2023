@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
-public class ThrowCurve : ThrowBase
+public class ThrowSCurve : ThrowBase
 {
     [Header("Extra Throw Values")]
     public float curveForce = 50;
@@ -22,8 +21,18 @@ public class ThrowCurve : ThrowBase
     public override void OnUpdate(BallController controller, float activeTime, float coursePercentage)
     {
         base.OnUpdate(controller, activeTime, coursePercentage);
+        Debug.Log(coursePercentage);
 
-        controller.rb.AddForce((curveForce + extraCurveForce) * 10 * curveForceDirection * Time.deltaTime, ForceMode2D.Force);
+        if(coursePercentage < 0.75)
+        {
+            controller.rb.AddForce((curveForce + extraCurveForce) * 10 * curveForceDirection * Time.deltaTime, ForceMode2D.Force);
+        }
+        else
+        {
+            controller.rb.AddForce((curveForce + extraCurveForce) * -20 * curveForceDirection * Time.deltaTime, ForceMode2D.Force);
+        }
+
+        
     }
 
     public override void OnBounce(BallController controller)
@@ -32,6 +41,4 @@ public class ThrowCurve : ThrowBase
 
         controller.RemoveModifier(this);
     }
-
-
 }

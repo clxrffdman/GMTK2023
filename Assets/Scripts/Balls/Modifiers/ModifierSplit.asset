@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 960e27a6b253dfa409e6001d0eaf4e24, type: 3}
-  m_Name: ThrowCurve
+  m_Script: {fileID: 11500000, guid: 6e4b1624f5acb65408b973da9983c963, type: 3}
+  m_Name: ModifierSplit
   m_EditorClassIdentifier: 
-  throwForce: 30
-  throwDirection: {x: 0, y: -1}
-  curveForce: 50
-  curveForceDirection: {x: 1, y: -0.2}
-  randomExtraCurveForce: 10
+  splitPercentage: 0.6
+  splitCount: 2
+  projectileSpread: 90
+  spreadForce: 10
