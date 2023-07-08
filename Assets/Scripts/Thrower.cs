@@ -28,10 +28,9 @@ public class Thrower : MonoBehaviour
         transform.position += new Vector3(wave.xOffset * CourseController.Instance.courseWidth, 0, 0);
         // something angle idk
         // spawn dudes
-        ThrowBall(wave.balls, wave.ballMods);
     }
 
-    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.25f) {
+    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=3f) {
         Debug.Log("begin throw");
         yield return new WaitForSeconds(1f); // do ball throw animation
         Debug.Log("throw ball!");
@@ -43,8 +42,6 @@ public class Thrower : MonoBehaviour
             yield return new WaitForSeconds(consecOffset);
         }
         
-        GameManager.Instance.StartSlowMotion(2f);
-        CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         doneThrowing = true;
         // pan back to player
     }
