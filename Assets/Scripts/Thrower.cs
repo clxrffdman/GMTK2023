@@ -36,8 +36,10 @@ public class Thrower : MonoBehaviour
         yield return new WaitForSeconds(2f); // do ball throw animation
         Debug.Log("throw ball!");
         var newBall = Instantiate(ball, CourseController.Instance.ballParentTransform);
+        //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
         BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
         ballController.InitBall(this, ballMods);
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         yield return new WaitForSeconds(1f);
         doneThrowing = true;
         // pan back to player
