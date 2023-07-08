@@ -1024,7 +1024,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: chargeIncrement
-      value: 5000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: minimumVelocity.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: minimumVelocity.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: baseMovementCooldown
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8031358764327787105, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: m_LocalRotation.w

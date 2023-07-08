@@ -12,10 +12,18 @@ public class PlayerController : MonoBehaviour
     public float charge;
     public float chargeIncrement;
     public float maxChargeTimer;
-    public bool isReversed;
+    public bool invalidMovement;
+    public Vector2 minimumVelocity;
+    public float baseMovementCooldown;
+    private float cooldownTimer;
 
     public void PlayerMovement(InputAction.CallbackContext context)
     {
+        if (cooldownTimer >= 0)
+        {
+            return;
+        }
+
         switch (context.phase) {
             case InputActionPhase.Started:
                 cursor.LockCursorMovement(true);
@@ -26,12 +34,18 @@ public class PlayerController : MonoBehaviour
 
                 break;
             case InputActionPhase.Canceled:
-                cursor.LockCursorMovement(false);
+                if (isHeld)
+                {
+                    cooldownTimer = baseMovementCooldown;
+                }
 
                 LeanTween.cancel(this.gameObject);
                 LeanTween.cancel(cursor.gameObject);
 
-                rb.AddForce(cursor.GetCursorPos() * charge);
+                rb.AddForce(cursor.GetDirection() * charge);
+                            
+                cursor.LockCursorMovement(false);
+
                 isHeld = false;
 
                 holdDuration = 0;
@@ -43,7 +57,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (cooldownTimer >= 0)
+        {            
+            cooldownTimer -= Time.deltaTime;
+        }
 
+        Debug.Log(cooldownTimer);
     }
 
     public void ChargeRoutine(float value)
