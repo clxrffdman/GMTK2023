@@ -6,12 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Bowling/Level")]
 public class Level : ScriptableObject {
     public int levelNumber;
-    [SerializeField]
     public List<LevelObject> levelObjects = new List<LevelObject>() {
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
-    [SerializeField]
     public List<Wave> waves = new List<Wave>() {
         new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
         new Wave(), new Wave(), new Wave(), new Wave(), new Wave(),
