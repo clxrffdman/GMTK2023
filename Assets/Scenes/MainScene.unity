@@ -519,6 +519,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1996691772242243595, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ed641309c54dc24ca95d5752e1cf8bc, type: 3}
     - target: {fileID: 3881089026325309710, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -566,6 +570,14 @@ PrefabInstance:
     - target: {fileID: 5231096366445769732, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: m_Name
       value: PlayerPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031358764327787105, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031358764327787105, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

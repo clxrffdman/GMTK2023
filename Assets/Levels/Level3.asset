@@ -29,9 +29,8 @@ MonoBehaviour:
       throwerMod: {fileID: 11400000, guid: ca482b85eb921d64b99b4ad107a23f43, type: 2}
       consecBallOffset: 0.35
       xOffset: 0
-      bowlAngle: 50
-      ballMods:
-      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+      bowlAngle: 0
+      ballMods: []
     numPins: 7
     pinPosOffset: 0.5
     waveDone: 1
@@ -55,7 +54,7 @@ MonoBehaviour:
       ballMods: []
     numPins: 7
     pinPosOffset: 0.5
-    waveDone: 0
+    waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
     throwerWaves:
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
@@ -123,8 +122,7 @@ MonoBehaviour:
       consecBallOffset: 0.35
       xOffset: 0
       bowlAngle: 0
-      ballMods:
-      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+      ballMods: []
     numPins: 7
     pinPosOffset: 0.5
     waveDone: 1
