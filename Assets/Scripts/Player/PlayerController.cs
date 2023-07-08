@@ -21,50 +21,34 @@ public class PlayerController : MonoBehaviour
                 cursor.LockCursorMovement(true);
                 rb.velocity = Vector2.zero;
                 isHeld = true;
+                LeanTween.value(this.gameObject, ChargeRoutine, 0, maxChargeTimer, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
+                LeanTween.value(cursor.gameObject, cursor.ChargeRoutine, cursor.baseRadius, cursor.maxRadius, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
+
                 break;
             case InputActionPhase.Canceled:
                 cursor.LockCursorMovement(false);
+
+                LeanTween.cancel(this.gameObject);
+                LeanTween.cancel(cursor.gameObject);
+
                 rb.AddForce(cursor.GetCursorPos() * charge);
                 isHeld = false;
+
                 holdDuration = 0;
                 charge = 0;
-                isReversed = false;
+
                 break;
         }
     }
 
     void Update()
     {
-        if (isHeld)
-        {
-            StartCharge();
-            holdDuration += Time.deltaTime;
-        }
+
     }
 
-    public void StartCharge()
+    public void ChargeRoutine(float value)
     {
-        if (!isReversed)
-        {
-            if (holdDuration >= maxChargeTimer)
-            {
-                isReversed = true;
-                holdDuration = 0;
-            }
-
-            charge += chargeIncrement;
-        }
-        else
-        {
-            if (holdDuration >= maxChargeTimer)
-            {
-                isReversed = false;
-                holdDuration = 0;
-            }
-
-            charge -= chargeIncrement;
-        }
-
-        cursor.StartCharge(isReversed);
+        holdDuration = value;
+        charge = value * chargeIncrement;
     }
 }

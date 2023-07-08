@@ -9,7 +9,7 @@ public class PlayerCursor : MonoBehaviour
     public Transform playerPos;
     public float baseRadius;
     public float maxRadius;
-    private float radius;
+    public float radius;
     private Vector2 center;
     private float angle;
     private Vector2 offset;
@@ -67,8 +67,6 @@ public class PlayerCursor : MonoBehaviour
     {
         isLocked = locked;
         Vector2 offset = dir * maxRadius;
-        //targetPos = center + offset;
-        //startPos = transform.position;
 
         if (!locked)
         {
@@ -76,40 +74,13 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    public void StartCharge(bool isReversed)
-    {
-        if (!isReversed)
-        {
-            radius += chargeSpeed * Time.deltaTime;
-        }
-        else
-        {
-            radius -= chargeSpeed * Time.deltaTime;
-        }
-        /*if (radius < maxRadius && !isReversed)
-        {
-            radius += chargeSpeed * Time.deltaTime;
-            //transform.position = Vector2.Lerp(startPos, targetPos, chargeSpeed * Time.deltaTime);
-        }
-        else
-        {
-            isReversed = true;
-
-            radius -= chargeSpeed * Time.deltaTime;
-            //transform.position = Vector2.Slerp(transform.position, targetPos, chargeSpeed * Time.deltaTime);
-
-            if (radius < baseRadius)
-            {
-                isReversed = false;
-            }
-        }
-
-        //transform.position += new Vector3(.1f, .1f, 0) + Vector3.forward;*/
-    }
-
     public void ResetCursor()
     {
         radius = baseRadius;
-        //this.dist = transform.position.x - playerPos.position.x;
+    }
+
+    public void ChargeRoutine(float value)
+    {
+        radius = value;
     }
 }

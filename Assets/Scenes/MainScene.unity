@@ -558,7 +558,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 532dabb7658ca3040b9d612b7aff2369, type: 2}
@@ -1020,11 +1020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: maxChargeTimer
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7722122358358538332, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: chargeIncrement
-      value: 20
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 8031358764327787105, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: m_LocalRotation.w
