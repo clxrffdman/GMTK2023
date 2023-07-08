@@ -9,21 +9,23 @@ public class CameraController : UnitySingleton<CameraController>
 {
     public CinemachineVirtualCamera bowlerVCam;
     public CinemachineVirtualCamera playerVCam;
+    public CinemachineVirtualCamera ballVCam;
     public Vignette currentVignette;
 
     [Header("Player Cam Size")]
     public float defaultSize;
     public float zoomedSize;
 
-    public enum CameraState {Player, Bowler};
+    public enum CameraState {Player, Bowler, Ball};
     public CameraState currentCameraState;
+    public BallController trackedBall = null;
 
     private void Start()
     {
         Camera.main.GetComponent<Volume>().profile.TryGet(out currentVignette);
     }
 
-    public void SetCameraState(CameraState state)
+    public void SetCameraState(CameraState state, BallController ball=null)
     {
         if(currentCameraState == state)
         {
@@ -36,12 +38,28 @@ public class CameraController : UnitySingleton<CameraController>
             case CameraState.Player:
                 playerVCam.enabled = true;
                 bowlerVCam.enabled = false;
+                ballVCam.enabled = false;
+                trackedBall = null;
                 break;
             case CameraState.Bowler:
                 playerVCam.enabled = false;
                 bowlerVCam.enabled = true;
+                ballVCam.enabled = false;
+                trackedBall = null;
                 break;
+            case CameraState.Ball:
+                if (ball == null || trackedBall != null) break;
+                trackedBall = ball;
+                playerVCam.enabled = false;
+                bowlerVCam.enabled = false;
+                ballVCam.enabled = true;
+                break;
+        }
+    }
 
+    public void Update() {
+        if (currentCameraState == CameraState.Ball && (trackedBall != null)) {
+            ballVCam.transform.position = new Vector3(ballVCam.transform.position.x, trackedBall.transform.position.y, ballVCam.transform.position.z);
         }
     }
 

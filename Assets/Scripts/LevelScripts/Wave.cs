@@ -38,6 +38,9 @@ public class Wave
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
         yield return new WaitUntil(DoneThrowing);
+        yield return new WaitUntil(() => CameraController.Instance.currentCameraState == CameraController.CameraState.Player);
+        GameManager.Instance.StartSlowMotion(2f);
+        //CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
