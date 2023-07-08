@@ -80,6 +80,7 @@ public class BallController : MonoBehaviour
     }
 
     public IEnumerator DeleteBall(float timer = 0.4f) {
+        ballCollider.enabled = false;
         GlobalFunctions.FadeOut(ballShadow, timer);
         yield return GlobalFunctions.FadeOut(ballSprite, timer);
         CourseController.Instance.currentPins.Remove(gameObject);

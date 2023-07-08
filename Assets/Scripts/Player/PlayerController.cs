@@ -119,7 +119,7 @@ public class PlayerController : UnitySingleton<PlayerController>
     public IEnumerator PlayerHit() {
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;
-        StartCoroutine(CourseController.Instance.ClearInstances());
+        StartCoroutine(CourseController.Instance.DeleteBalls(false));
         yield return null;
     }
 }

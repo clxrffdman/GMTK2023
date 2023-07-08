@@ -20,6 +20,7 @@ public class HazardPin : MonoBehaviour
     }
 
     public IEnumerator DeletePin(float destroyTimer=0.4f) {
+        GlobalFunctions.FindComponent<Collider2D>(gameObject).enabled = false;
         yield return GlobalFunctions.FadeOut(sprite, destroyTimer);
         CourseController.Instance.currentPins.Remove(gameObject);
         Destroy(gameObject);
@@ -30,7 +31,7 @@ public class HazardPin : MonoBehaviour
     {
         
     }
-    public void OnCollisionEnter2D(Collider2D coll) {
+    public void OnCollisionEnter2D(Collision2D collider) {
         shadow.SetActive(false);
     }
 }
