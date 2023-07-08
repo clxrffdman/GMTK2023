@@ -20,10 +20,10 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(BallModifier mod in modifiers)
+        /*foreach(BallModifier mod in modifiers)
         {
             mod.OnSpawn(this);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -51,9 +51,16 @@ public class BallController : MonoBehaviour
 
     }
 
-    public void Throw(Thrower thrower) {
+    public void InitBall(Thrower thrower, List<BallModifier> ballMods) {
+        foreach (BallModifier mod in ballMods) {
+            modifiers.Add(mod);
+        }
+        foreach (BallModifier mod in modifiers) {
+            mod.OnSpawn(this);
+        }
+        courseController = CourseController.Instance;
         transform.position = thrower.transform.position;
-        transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
+        //transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
         CourseController.Instance.currentBalls.Add(this);
         Debug.Log("throw ball i guess");
     }

@@ -27,13 +27,16 @@ MonoBehaviour:
     levelObject: {fileID: 0}
     sprite: {fileID: 0}
   waves:
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
-  - waveComplete: 0
+  - throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      ball: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      xOffset: -0.5
+      bowlAngle: 0
+      ballMods: []
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      ball: {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      xOffset: 0.5
+      bowlAngle: 0
+      ballMods:
+      - {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
+    pinPositions: []

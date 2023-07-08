@@ -8,24 +8,18 @@ public class CourseController : UnitySingleton<CourseController>
     [Header("References")]
     [SerializeField] public Transform ballShooterTransform;
     [SerializeField] public Transform ballParentTransform;
-    public GameObject baseBallReference;
-
-    [Header("Throw List")]
-    public List<ThrowProfile> throwProfiles = new List<ThrowProfile>();
-    
-    [SerializeField]
-    public List<LevelObject> levelObjects = new List<LevelObject>() {
+    [SerializeField] public List<LevelObject> levelObjects = new List<LevelObject>() {
         new LevelObject(LevelObjectType.LeftBumper),
         new LevelObject(LevelObjectType.RightBumper),
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
 
+    [Header("Throw List")]
     public List<BallController> currentBalls = new List<BallController>();
     public List<Thrower> currentThrowers = new List<Thrower>();
 
     [Header("Current Course Values")]
-    public int currentThrowIndex = 0;
     public float courseWidth = 7;
     public Vector2 courseHeightBounds = new Vector2();
 
@@ -34,34 +28,7 @@ public class CourseController : UnitySingleton<CourseController>
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (baseBallReference == null)
-            {
-                return;
-            }
 
-            if (currentThrowIndex >= throwProfiles.Count) {
-                return;
-            }
-
-            var newBall = Instantiate(baseBallReference, ballParentTransform);
-            newBall.transform.position = ballShooterTransform.position;
-            newBall.GetComponent<BallController>().courseController = this;
-
-            ThrowProfile profile = throwProfiles[currentThrowIndex];
-            newBall.transform.position += new Vector3(profile.xOffset * courseWidth, 0, 0);
-            foreach (BallModifier mod in profile.modifiers)
-            {
-                newBall.GetComponent<BallController>().AddModifier(mod);
-            }
-
-            currentThrowIndex++;
-            
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            currentThrowIndex = 0;
         }
     }
 
@@ -84,6 +51,18 @@ public class CourseController : UnitySingleton<CourseController>
         }
     }
 
+    public Thrower InitThrower(GameObject throwerObj) {
+        Debug.Log("spawn thrower!");
+        var newThrower = Instantiate(throwerObj, CourseController.Instance.ballShooterTransform);
+        Thrower thrower = GlobalFunctions.FindComponent<Thrower>(newThrower);
+        currentThrowers.Add(thrower);
+        return thrower;
+    }
+
+    public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
+        StartCoroutine(thrower.ThrowBall(wave.ball, wave.ballMods));
+    }
+
     public void ClearThrowers() {
         for (int i = currentThrowers.Count-1; i >= 0; i--) {
             Destroy(currentThrowers[i].gameObject);
@@ -95,10 +74,5 @@ public class CourseController : UnitySingleton<CourseController>
     public void BallDodged(BallController ball) {
         currentBalls.Remove(ball);
         Destroy(ball.gameObject);
-    }
-
-    public void OnTriggerEnter2D(Collider2D coll) {
-        if (coll.gameObject.layer != LayerMask.NameToLayer("Ball")) return;
-        BallDodged(GlobalFunctions.FindComponent<BallController>(coll.gameObject));
     }
 }
