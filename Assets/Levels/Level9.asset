@@ -133,7 +133,7 @@ MonoBehaviour:
       - {fileID: 4171927873816399681, guid: 6a9912e7a4f23bb40b711a2520708cfe, type: 3}
       throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
       consecBallOffset: 1
-      xOffset: -0.3
+      xOffset: -0.6
       bowlAngle: 30
       ballMods:
       - {fileID: 11400000, guid: 31f874a86c80dc14e9ee6f26291bea9c, type: 2}
@@ -142,8 +142,8 @@ MonoBehaviour:
       - {fileID: 4171927873816399681, guid: 0d277f2fc5cf0a8409fd153422cc1536, type: 3}
       throwerMod: {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
       consecBallOffset: 1
-      xOffset: 0.4
-      bowlAngle: 30
+      xOffset: 0.6
+      bowlAngle: 0
       ballMods: []
     numPins: 8
     pinPosOffset: 1.5
