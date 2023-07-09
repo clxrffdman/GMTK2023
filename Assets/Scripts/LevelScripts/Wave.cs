@@ -25,16 +25,15 @@ public class Wave
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
         LevelManager.Instance.hasFailedCurrentWave = false;
+        LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
+        GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].throwerMod);
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitForSeconds(1.3f);
-
-        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
-    
-        yield return new WaitForSeconds(0.8f);
 
         foreach (ThrowerWave wave in throwerWaves) {
             Thrower thrower = CourseController.Instance.InitThrower(wave.thrower);
@@ -42,9 +41,13 @@ public class Wave
             CourseController.Instance.ThrowBalls(thrower, wave);
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
+
         //yield return new WaitUntil(DoneThrowing);
         yield return new WaitUntil(() => CameraController.Instance.currentCameraState == CameraController.CameraState.Player);
         GameManager.Instance.StartSlowMotion(2f);
+        LevelManager.Instance.currentCourseState = CourseState.Throwing;
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         //CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
@@ -53,6 +56,9 @@ public class Wave
         yield return new WaitForSeconds(1f);
         yield return CourseController.Instance.ClearInstances();
         // end wave in 1
+        LevelManager.Instance.currentCourseState = LevelManager.Instance.hasFailedCurrentWave ? CourseState.RoundEndFail : CourseState.RoundEndSuccess;
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
+
         yield return new WaitForSeconds(2f);
         EndWave();
     }

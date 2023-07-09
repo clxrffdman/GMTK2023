@@ -16,6 +16,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public EventInstance circuitMusic;
 
     [Header("Current Circuit Information")]
+    public CourseState currentCourseState;
     public Circuit currentCircuit;
     public int currentCircuitWinCount = 0;
     public List<Level> currentCircuitLevels = new List<Level>();
@@ -128,6 +129,16 @@ public class LevelManager : UnitySingleton<LevelManager>
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
+        if (SaveManager.Instance.scoreDictionary.ContainsKey(SaveManager.Instance.circuitIndex))
+        {
+            SaveManager.Instance.scoreDictionary[SaveManager.Instance.circuitIndex] = 
+                Mathf.Max(SaveManager.Instance.scoreDictionary[SaveManager.Instance.circuitIndex], currentCircuitWinCount);
+        }
+        else
+        {
+            SaveManager.Instance.scoreDictionary[SaveManager.Instance.circuitIndex] = currentCircuitWinCount;
+        }
+        
         yield return null;
     }
 

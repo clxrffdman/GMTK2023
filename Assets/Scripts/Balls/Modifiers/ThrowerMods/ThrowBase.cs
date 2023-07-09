@@ -19,14 +19,17 @@ public class ThrowBase : BallModifier
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
-
-        if (useCustomSprite)
-        {
-            controller.ballSprite.sprite = customSprite;
-        }
+        SetCustomSprite(controller.ballSprite);
 
         controller.rb.AddForce(Vector2Extension.Rotate((throwDirection * (throwForce + Random.Range(-throwForceRandomDelta, throwForceRandomDelta))), 
             Random.Range(-throwAngleRandomDelta, throwAngleRandomDelta)), ForceMode2D.Impulse); 
+    }
+    public bool SetCustomSprite(SpriteRenderer sprite) {
+        if (useCustomSprite) {
+            sprite.sprite = customSprite;
+            return true;
+        }
+        return false;
     }
     public virtual void OnThrowerSpawn(Thrower thrower) {
         return;

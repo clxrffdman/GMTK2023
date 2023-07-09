@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ModifierGrow
   m_EditorClassIdentifier: 
   description: 
-  hasColorOverride: 1
-  outlineColor: {r: 0.9014714, g: 5.9921575, b: 0, a: 0}
+  hasColorOverride: 0
+  outlineColor: {r: 8, g: 8, b: 8, a: 0}
   scalePerSecond: 0.3
   scaleCap: 3

@@ -18,6 +18,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9955457e13b114a41a0201a3279924b2, type: 2}
   - {fileID: 11400000, guid: e818f44fed2b8eb45b42af8c82ec24eb, type: 2}
   - {fileID: 11400000, guid: 994d0fcd0459596409651900dacde4ae, type: 2}
+  circuitMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   circuitObjects:
   - objectType: 0
     levelObject: {fileID: 0}
