@@ -28,19 +28,19 @@ public class ScoreResultUIController : MonoBehaviour
     {
         medalText.text = score + "/" + LevelManager.Instance.currentCircuit.GetMaxFrames();
 
-        if(score >= 15)
+        if(score >= 18)
         {
             medalImg.sprite = medalSprites[3];
             return;
         }
 
-        if (score >= 13)
+        if (score >= 15)
         {
             medalImg.sprite = medalSprites[2];
             return;
         }
 
-        if (score >= 11)
+        if (score >= 13)
         {
             medalImg.sprite = medalSprites[1];
             return;
