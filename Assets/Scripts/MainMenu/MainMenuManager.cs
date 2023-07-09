@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
+using FMODUnity;
 
 public class MainMenuManager : MonoBehaviour
 {
 
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
+
+    public EventInstance menuMusic;
+    [SerializeField] private EventReference menuMusicReference;
 
     public CanvasGroup promptGroup;
     public CanvasGroup buttonGroup;
@@ -17,6 +22,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
+        menuMusic.start();
         promptGroup.alpha = 1;
 
         LeanTween.value(this.gameObject, SetPromptAlpha, 0, 1, 0.8f).setLoopPingPong();
@@ -97,6 +104,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadCircuit(int index)
     {
+        menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuMusic.release();
         SaveManager.Instance.forceCircuitPlay = true;
         SaveManager.Instance.circuitIndex = index;
         SceneManager.LoadScene(1, LoadSceneMode.Single);

@@ -18,6 +18,7 @@ public class HazardPin : MonoBehaviour
         prevColor.a = 0f;
         LeanTween.value(sprite.gameObject, (Color val) => { sprite.color = val; }, prevColor, spriteColor, 0.3f);
         LeanTween.value(sprite.gameObject, (float val) => { sprite.transform.localPosition = new Vector2(0f, val); }, 5f, 0f, 0.5f);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.PinPlaced, sprite.transform.position);
     }
 
     public IEnumerator DeletePin(float destroyTimer=0.4f) {
