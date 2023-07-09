@@ -68,6 +68,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: SumoThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: displayName
+      value: Sumo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: portraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b244bf2996ed904418bdfb4f111742ad, type: 3}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[0]
+      value: SUMO THROW!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[1]
+      value: HYAHHHH!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[2]
+      value: DOSUKOI!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[0]
+      value: I'M GONNA FLATTEN YOU!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[1]
+      value: YOU AREN'T SURVIVING THIS ONE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[0]
+      value: YOU'RE STRONG!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[1]
+      value: Aw man...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[0]
+      value: TASTE MY 100-DAN SLAPS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[1]
+      value: HA HA HA HA!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460717524836791878, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 154962273, guid: 3c7db57ab10dab240a84e781788e60c8, type: 3}
     m_RemovedComponents:
     - {fileID: 3930509157719138779, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
     m_RemovedGameObjects: []

@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7270586965908117740, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 5fa0e2765a9358f43b6557a9d8f249df, type: 2}
+      objectReference: {fileID: 22100000, guid: 16ae9aa92b64c6d499a245a2a3908885, type: 2}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
       value: DJMikeThrower
@@ -72,6 +72,58 @@ PrefabInstance:
       propertyPath: portraitSprite
       value: 
       objectReference: {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[0]
+      value: Drop the bass!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[1]
+      value: Rocking the house!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[0]
+      value: DJ Mike will take you down!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[1]
+      value: You're about to join my top ten hits!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[0]
+      value: My technique has fallen flat!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[1]
+      value: This mix has become a miss!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[0]
+      value: This rhythm feels so right!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[1]
+      value: Music to my ears!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460717524836791878, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2108484248, guid: 544b1e95558837143863391c9936f028, type: 3}
     m_RemovedComponents:
     - {fileID: 1539864510303653810, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
     m_RemovedGameObjects: []

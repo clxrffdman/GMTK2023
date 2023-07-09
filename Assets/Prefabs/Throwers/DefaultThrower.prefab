@@ -54,7 +54,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
-      value: Thrower
+      value: DefaultThrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: portraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2dd645ec01a34d147a84c6155fcb3055, type: 3}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[0]
+      value: Aim with confidence!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[1]
+      value: Smooth as silk!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[0]
+      value: I only bowl perfect 300s!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[1]
+      value: Lace up your shoes!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[0]
+      value: A cursed split...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[1]
+      value: A foul delivery...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[0]
+      value: Strikes across the board!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[1]
+      value: A clean finish!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

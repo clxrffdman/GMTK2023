@@ -64,6 +64,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: SamuraiThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: displayName
+      value: Samurai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: portraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 684257652610205469740cfba8fd2b18, type: 3}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[0]
+      value: For the shogun!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[1]
+      value: Taste my blade!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[0]
+      value: Get ready for an honorable serve!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[1]
+      value: A steady blade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[0]
+      value: There is always something to learn, even for a master.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[1]
+      value: Such is the way of the sword...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[0]
+      value: There are no accidents.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[1]
+      value: Hmph. A simple task.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460717524836791878, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1993869845, guid: d66113b3b5bbe4c4d837e64ede1e3350, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

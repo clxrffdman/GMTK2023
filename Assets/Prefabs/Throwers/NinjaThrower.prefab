@@ -64,6 +64,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: NinjaThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: displayName
+      value: Ninja
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: portraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 38e7f2b9c0b373c40ae66382ab8cf11a, type: 3}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[0]
+      value: Gliding across the lane...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: onThrowLines.Array.data[1]
+      value: Quieter than a feather, steady as the river.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[0]
+      value: You will never see me coming.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: preThrowLines.Array.data[1]
+      value: Emerging from the shadows...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[0]
+      value: Unbelievable!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverWinLines.Array.data[1]
+      value: I fell for the ruse!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[0]
+      value: Believe it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[1]
+      value: This is my ninja way!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[2]
+      value: A classic misdirection.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: roundOverLoseLines.Array.data[3]
+      value: Your ending will be swift.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460717524836791878, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2039669057, guid: e7d4c9932a1a0de4890a04b2351619d7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
