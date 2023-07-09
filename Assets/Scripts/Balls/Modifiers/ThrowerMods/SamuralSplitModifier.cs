@@ -9,6 +9,9 @@ public class SamuralSplitModifier : ThrowBase
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 30;
+
+    public bool hasSplit = false;
+    public float coursePercentSplit = 0.4f;
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
@@ -19,15 +22,32 @@ public class SamuralSplitModifier : ThrowBase
     {
         if (!thrower.doneThrowing) return;
         base.OnThrowerUpdate(thrower);
+
+        /*
+
         currentSplitTimer -= Time.deltaTime;
         if (currentSplitTimer < 0f)
         {
             thrower.StartCoroutine(SamuraiSplit(thrower));
             thrower.currThrowMods.Remove(this);
         }
+
+        */
     }
 
-    public IEnumerator SamuraiSplit(Thrower thrower)
+    public override void OnUpdate(BallController controller, float activeTime, float coursePercentage)
+    {
+        base.OnUpdate(controller, activeTime, coursePercentage);
+
+        if(coursePercentage >= coursePercentSplit && !hasSplit)
+        {
+            hasSplit = true;
+            controller.StartCoroutine(SamuraiSplit());
+            controller.RemoveModifier(this);
+        }
+    }
+
+    public IEnumerator SamuraiSplit()
     {
         GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
         FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlowdown);

@@ -27,3 +27,5 @@ MonoBehaviour:
   splitCount: 2
   projectileSpread: 50
   spreadForce: 15
+  hasSplit: 0
+  coursePercentSplit: 0.3
