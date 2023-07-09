@@ -41,7 +41,8 @@ public class SumoThrowModifier : ThrowBase
     public void Stomp() {
         CameraController.Instance.Shake(1.5f, 0.3f, 5f);
         Vector2 dir = left ? Vector2.left : Vector2.right;
-            
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SumoStomp);
+
         foreach (BallController ball in CourseController.Instance.currentBalls) {
             dir = Vector2Extension.Rotate(dir, Random.Range(0, stompAngleVariance));
             float force = (stompForce + Random.Range(-stompForceVariance, stompForceVariance));
