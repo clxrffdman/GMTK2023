@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DJAnimator
+  m_Name: headlessAnimator
   m_Controller: {fileID: 9100000, guid: aefb9c258029f3f469eaae8ea2e36186, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 31353c8bac7f6e5468e4bafb36a1d875, type: 2}
