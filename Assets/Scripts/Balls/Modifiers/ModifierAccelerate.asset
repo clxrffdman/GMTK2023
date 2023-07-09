@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ModifierAccelerate
   m_EditorClassIdentifier: 
   description: 
-  accelForce: 1.5
+  accelForce: 0.8

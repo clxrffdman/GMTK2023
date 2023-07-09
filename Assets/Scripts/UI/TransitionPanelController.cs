@@ -44,7 +44,7 @@ public class TransitionPanelController : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 0;
 
-        LeanTween.alphaCanvas(canvasGroup, 1, inDuration);
+        LeanTween.alphaCanvas(canvasGroup, .95f, inDuration);
 
         yield return new WaitForSeconds(inDuration + lingerDuration);
 
