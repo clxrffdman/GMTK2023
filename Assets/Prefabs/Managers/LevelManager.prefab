@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4317101671490052853
 MonoBehaviour:
@@ -48,7 +48,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e1b0c808175ed742a3638c98e0bd590, type: 2}
   - {fileID: 11400000, guid: 83f45f4e7391f7241a16d04ed52b35f8, type: 2}
   - {fileID: 11400000, guid: f281680c517c3984396d1a2fc8ca7f65, type: 2}
+  - {fileID: 11400000, guid: fb3468fde54314f4597723e3941a7028, type: 2}
+  - {fileID: 11400000, guid: 55251782b3d06b347814726c9f3f4491, type: 2}
+  lastNormalLevelIndex: 2
+  currentCircuitMusic:
+    Guid:
+      Data1: 734634999
+      Data2: 1268949039
+      Data3: -1192849753
+      Data4: 1312539233
+    Path: event:/BowlingAlley_Music
+  currentCourseState: 0
   currentCircuit: {fileID: 0}
+  currentCircuitWinCount: 0
   currentCircuitLevels: []
   currentLevel: {fileID: 0}
   currentLevelWinCount: 0

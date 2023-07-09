@@ -9,6 +9,7 @@ public class ScoreResultUIController : MonoBehaviour
 {
     [SerializeField] private Image medalImg;
     [SerializeField] private TextMeshProUGUI medalText;
+    [SerializeField] private GameObject nextCircuitButton;
 
     public List<Sprite> medalSprites;
 
@@ -22,6 +23,11 @@ public class ScoreResultUIController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DisableNextCircuitButton()
+    {
+        nextCircuitButton.SetActive(false);
     }
 
     public void SetScore(int score)

@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170500a7a5d4483498c794343b9e4f4f, type: 3}
+  m_Name: Wacy1
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  waves:
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.35
+      xOffset: 0
+      bowlAngle: 30
+      ballMods:
+      - {fileID: 11400000, guid: 31f874a86c80dc14e9ee6f26291bea9c, type: 2}
+      - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 1
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 4fd6d4649b5ddc94b930e2978a877310, type: 2}
+      consecBallOffset: 0.5
+      xOffset: -0.5
+      bowlAngle: 60
+      ballMods:
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 1
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: cb6ac6be144436b4daf8e83e748734af, type: 2}
+      consecBallOffset: 0.5
+      xOffset: 0.2
+      bowlAngle: 30
+      ballMods:
+      - {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 0
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.35
+      xOffset: -0.2
+      bowlAngle: 50
+      ballMods:
+      - {fileID: 11400000, guid: c3aaf93efd4d627419268ce2cd05168d, type: 2}
+      - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.35
+      xOffset: 0.2
+      bowlAngle: 0
+      ballMods:
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 1
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 7f645c0f5fb1db846bb4701d578a4a7e, type: 2}
+      consecBallOffset: 0.5
+      xOffset: 0
+      bowlAngle: 50
+      ballMods: []
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: e209a47d17eb35a409af62bfe4daa22c, type: 2}
+      consecBallOffset: 0.5
+      xOffset: 0
+      bowlAngle: 50
+      ballMods:
+      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
+      - {fileID: 11400000, guid: 5deeb23c90eb66c4398e7a5a9ba5d0e8, type: 2}
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 1
+  - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: ca482b85eb921d64b99b4ad107a23f43, type: 2}
+      consecBallOffset: 0.35
+      xOffset: -0.5
+      bowlAngle: 40
+      ballMods:
+      - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: e209a47d17eb35a409af62bfe4daa22c, type: 2}
+      consecBallOffset: 0.35
+      xOffset: -0.3
+      bowlAngle: 60
+      ballMods:
+      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
+      - {fileID: 11400000, guid: 31f874a86c80dc14e9ee6f26291bea9c, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.35
+      xOffset: 0.3
+      bowlAngle: 60
+      ballMods:
+      - {fileID: 11400000, guid: cb6ac6be144436b4daf8e83e748734af, type: 2}
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.5
+      xOffset: 0.5
+      bowlAngle: 60
+      ballMods:
+      - {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
+    numPins: 10
+    pinPosOffset: 1.5
+    waveDone: 0
+  currWave:
+    profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
+    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    throwerWaves:
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: ca482b85eb921d64b99b4ad107a23f43, type: 2}
+      consecBallOffset: 0.5
+      xOffset: 0.2
+      bowlAngle: 30
+      ballMods:
+      - {fileID: 11400000, guid: 7130a00115d231c408d50a425b932d83, type: 2}
+    - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: cb6ac6be144436b4daf8e83e748734af, type: 2}
+      consecBallOffset: 0.35
+      xOffset: -0.2
+      bowlAngle: 30
+      ballMods: []
+    numPins: 10
+    pinPosOffset: 2
+    waveDone: 0
