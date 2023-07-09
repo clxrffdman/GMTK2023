@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using FMODUnity;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
