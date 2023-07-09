@@ -1190,6 +1190,20 @@ MonoBehaviour:
       Data3: -1192849753
       Data4: 1312539233
     Path: event:/BowlingAlley_Music
+  <JapaneseMusic>k__BackingField:
+    Guid:
+      Data1: 1953602185
+      Data2: 1194128798
+      Data3: 1584465553
+      Data4: -499837597
+    Path: event:/Japanese_Music
+  <HalloweenMusic>k__BackingField:
+    Guid:
+      Data1: 1410806886
+      Data2: 1105905912
+      Data3: 1612482700
+      Data4: -1120119816
+    Path: event:/Halloween_Music
   <Success>k__BackingField:
     Guid:
       Data1: 1425495773

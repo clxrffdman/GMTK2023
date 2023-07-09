@@ -7,6 +7,9 @@ public class FMODEventReferences : MonoBehaviour
 {
     [field: Header("Music")]
     [field: SerializeField] public EventReference BowlingAlleyMusic {get; private set;}
+    [field: SerializeField] public EventReference JapaneseMusic {get; private set;}    
+    [field: SerializeField] public EventReference HalloweenMusic {get; private set;}
+    [field: SerializeField] public EventReference MainMenuMusic {get; private set;}        
 
     [field: Header("Menu/Game SFX")]
     [field: SerializeField] public EventReference Success {get; private set;}   

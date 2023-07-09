@@ -11,8 +11,8 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     [Header("Pre Set Information")]
     public List<Circuit> circuits = new List<Circuit>();
+    public List<EventReference> musicReferences = new List<EventReference>();
     public int lastNormalLevelIndex;
-    public FMODUnity.EventReference currentCircuitMusic;
     public EventInstance circuitMusic;
 
     [Header("Current Circuit Information")]
@@ -29,9 +29,13 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        circuitMusic = AudioManager.instance.CreateEventInstance(currentCircuitMusic);
-        circuitMusic.start();
+        musicReferences.Add(FMODEventReferences.instance.BowlingAlleyMusic);
+        musicReferences.Add(FMODEventReferences.instance.JapaneseMusic);
+        musicReferences.Add(FMODEventReferences.instance.HalloweenMusic);
+        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
+        circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
+        circuitMusic.start();
         if (SaveManager.Instance.forceCircuitPlay)
         {
             StartCoroutine(BeginLoadedLevels());
