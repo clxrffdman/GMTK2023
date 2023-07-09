@@ -71,4 +71,9 @@ public class ScoreResultUIController : MonoBehaviour
         SaveManager.Instance.forceCircuitPlay = true;
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+    }
 }
