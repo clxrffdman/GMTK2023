@@ -61,11 +61,10 @@ MonoBehaviour:
       consecBallOffset: 0.5
       xOffset: 0.2
       bowlAngle: 0
-      ballMods:
-      - {fileID: 11400000, guid: c3aaf93efd4d627419268ce2cd05168d, type: 2}
+      ballMods: []
     numPins: 5
     pinPosOffset: 1.5
-    waveDone: 1
+    waveDone: 0
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
     leadBowler: {fileID: 0}
     throwerWaves:
@@ -143,4 +142,4 @@ MonoBehaviour:
       - {fileID: 11400000, guid: c3aaf93efd4d627419268ce2cd05168d, type: 2}
     numPins: 5
     pinPosOffset: 1.5
-    waveDone: 1
+    waveDone: 0
