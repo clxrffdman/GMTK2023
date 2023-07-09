@@ -10,8 +10,9 @@ public class PortraitController : MonoBehaviour
     public TextMeshProUGUI portraitText;
     public Image portraitSprite;
 
-    [Header("Portrait Quip")]
-    public TextMeshProUGUI portraitQuipText;
+    [Header("Ball Info")]
+    public TextMeshProUGUI ballInfoText;
+    public Image ballImg;
     public bool isQuipping;
 
     public Thrower currentThrower = null;
@@ -45,6 +46,27 @@ public class PortraitController : MonoBehaviour
         portraitSprite.sprite = profile.portraitSprite;
         portraitSprite.color = Color.white;
         portraitText.text = profile.displayName;
+    }
+
+    public void LoadBallType(BallModifier throwType)
+    {
+        if(throwType == null || !(throwType is ThrowBase))
+        {
+            return;
+        }
+
+        if(((ThrowBase)throwType).useCustomSprite && ((ThrowBase)throwType).customSprite != null)
+        {
+            ballImg.sprite = ((ThrowBase)throwType).customSprite;
+            ballImg.color = Color.white;
+            ballInfoText.text = throwType.description;
+        }
+        else
+        {
+            ballImg.sprite = null;
+            ballImg.color = Color.clear;
+            ballInfoText.text = "";
+        }
     }
 
     public void RequestPortraitQuip()

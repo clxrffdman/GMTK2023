@@ -401,9 +401,10 @@ MonoBehaviour:
   canvasGroup: {fileID: 3969292160373040574}
   portraitText: {fileID: 4901897579783914009}
   portraitSprite: {fileID: 7639013677443920517}
-  portraitQuipText: {fileID: 4901897579783914009}
+  ballInfoText: {fileID: 69928229933753568}
+  ballImg: {fileID: 8772289200354767613}
   isQuipping: 0
-  currentProfile: {fileID: 0}
+  currentThrower: {fileID: 0}
 --- !u!1 &5767027715249835566
 GameObject:
   m_ObjectHideFlags: 0
