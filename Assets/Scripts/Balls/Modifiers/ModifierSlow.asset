@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ModifierSlow
   m_EditorClassIdentifier: 
   description: 
-  hasColorOverride: 0
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  hasColorOverride: 1
+  outlineColor: {r: 0.11320734, g: 3.316352, b: 8, a: 0}
   slowAmount: 0.5

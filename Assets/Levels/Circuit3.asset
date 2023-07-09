@@ -15,9 +15,9 @@ MonoBehaviour:
   displayName: Circuit Three
   isEndless: 0
   levels:
-  - {fileID: 11400000, guid: d5d04683e6c43e64ab4a0b44b4a54895, type: 2}
   - {fileID: 11400000, guid: 29c0486dad64bef44a4ab8e2e1433bd6, type: 2}
   - {fileID: 11400000, guid: 9053bea308d89d4469585a68b4367714, type: 2}
+  - {fileID: 11400000, guid: d5d04683e6c43e64ab4a0b44b4a54895, type: 2}
   circuitMusic:
     Guid:
       Data1: 0
