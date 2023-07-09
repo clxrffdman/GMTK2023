@@ -11,12 +11,16 @@ public class GameManager : UnitySingleton<GameManager>
     public float baseSlowMoDuration = 0;
     public float slowMoDuration = 0;
 
+    public SpriteRenderer bgSr;
+    public List<Sprite> bgList = new List<Sprite>();
+
     public Stack<GameObject> pauseUIPanels = new Stack<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
+        bgSr.sprite = bgList[SaveManager.Instance.circuitIndex];
     }
 
     // Update is called once per frame

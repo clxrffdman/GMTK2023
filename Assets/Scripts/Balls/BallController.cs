@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using FMOD.Studio;
 
 public class BallController : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class BallController : MonoBehaviour
     public Animator ballAnim;
     public LayerMask defaultLayerMask;
     public LayerMask ballLayerMask;
+
+    //audio instance
+    private EventInstance ballRolling;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,7 @@ public class BallController : MonoBehaviour
         ignoreBallDuration -= ignoreBallDuration > 0 ? Time.deltaTime : 0;
         float coursePercentage = Mathf.InverseLerp(courseController.courseHeightBounds.x, courseController.courseHeightBounds.y, transform.position.y);
 
+
         for(int i = modifiers.Count-1; i >= 0; i--)
         {
             modifiers[i].OnUpdate(this, activeTime, coursePercentage);
@@ -73,9 +78,13 @@ public class BallController : MonoBehaviour
 
     public void InitBall(Thrower thrower, List<BallModifier> ballMods) {
 
+        ballRolling = AudioManager.instance.CreateEventInstance(FMODEventReferences.instance.BallRolling);
+        ballRolling.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        ballRolling.start();
         courseController = CourseController.Instance;
         transform.position = thrower.transform.position;
         CourseController.Instance.currentBalls.Add(this);
+
 
         foreach (BallModifier mod in ballMods) {
             BallModifier clonedMod = mod.Clone();
@@ -86,13 +95,14 @@ public class BallController : MonoBehaviour
         {
             modifiers[i].OnSpawn(this);
         }
-
         //transform.position += new Vector3(thrower.xOffset * CourseController.Instance.courseWidth, 0, 0);
 
         Debug.Log("throw ball i guess");
     }
 
     public IEnumerator DeleteBall(float timer = 0.4f) {
+        ballRolling.stop(STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallPit);
         GlobalFunctions.FadeOut(ballShadow, timer);
         yield return GlobalFunctions.FadeOut(ballSprite, timer);
         CourseController.Instance.currentPins.Remove(gameObject);
@@ -144,6 +154,9 @@ public class BallController : MonoBehaviour
         {
             modifiers[i].OnBounce(this);
         }
-
+        if(collision.gameObject.tag == "Bumper")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallBumper, ballCollider.transform.position);
+        }
     }
 }

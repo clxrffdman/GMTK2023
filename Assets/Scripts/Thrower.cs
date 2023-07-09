@@ -12,7 +12,16 @@ public class Thrower : MonoBehaviour
     public Sprite portraitSprite;
 
     [ResizableTextArea]
-    public List<string> quipLines;
+    public List<string> preThrowLines = new List<string>();
+
+    [ResizableTextArea]
+    public List<string> onThrowLines = new List<string>();
+
+    [ResizableTextArea]
+    public List<string> roundOverLoseLines = new List<string>();
+
+    [ResizableTextArea]
+    public List<string> roundOverWinLines = new List<string>();
 
     public ThrowerType throwerType;
     public bool doneThrowing = false;

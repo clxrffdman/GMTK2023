@@ -25,7 +25,11 @@ public class Wave
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
         LevelManager.Instance.hasFailedCurrentWave = false;
+        LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
+        GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
+        GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].throwerMod);
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
@@ -42,6 +46,8 @@ public class Wave
         //yield return new WaitUntil(DoneThrowing);
         yield return new WaitUntil(() => CameraController.Instance.currentCameraState == CameraController.CameraState.Player);
         GameManager.Instance.StartSlowMotion(2f);
+        LevelManager.Instance.currentCourseState = CourseState.Throwing;
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         //CameraController.Instance.SetCameraState(CameraController.CameraState.Player);
         PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
@@ -50,6 +56,9 @@ public class Wave
         yield return new WaitForSeconds(1f);
         yield return CourseController.Instance.ClearInstances();
         // end wave in 1
+        LevelManager.Instance.currentCourseState = LevelManager.Instance.hasFailedCurrentWave ? CourseState.RoundEndFail : CourseState.RoundEndSuccess;
+        GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
+
         yield return new WaitForSeconds(2f);
         EndWave();
     }
@@ -58,7 +67,7 @@ public class Wave
         Debug.Log("wave over");
         PlayerController.Instance.anim.SetBool("Hit", false);
         
-        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
+        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, !LevelManager.Instance.hasFailedCurrentWave);
         LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         LevelManager.Instance.currentCircuitWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         PlayerController.Instance.EndCharge();

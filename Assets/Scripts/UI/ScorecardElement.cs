@@ -8,6 +8,10 @@ public class ScorecardElement : MonoBehaviour
 {
     public TextMeshProUGUI indexText;
     public Image scoreImg;
+    public Image frontDropImg;
+
+    public Sprite selectedSprite;
+    public Sprite unselectedSprite;
 
     public Sprite winSprite;
     public Sprite loseSprite;
@@ -30,5 +34,10 @@ public class ScorecardElement : MonoBehaviour
         {
             scoreImg.sprite = loseSprite;
         }
+    }
+
+    public void SetSelected(bool isSelected)
+    {
+        frontDropImg.sprite = isSelected ? selectedSprite : unselectedSprite;
     }
 }
