@@ -29,8 +29,8 @@ public class SamuralSplitModifier : ThrowBase
 
     public IEnumerator SamuraiSplit(Thrower thrower)
     {
-        GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 1.15f, 2.5f);
-        yield return new WaitForSeconds(3f);
+        GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
+        yield return new WaitForSeconds(2.9f);
 
         GameplayUIManager.Instance.transitionPanelController.BeginFlash(0.05f, 0.05f, 0.02f);
         yield return new WaitForSeconds(0.1f);
