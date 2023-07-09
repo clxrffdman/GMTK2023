@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
+using FMODUnity;
+
 
 public class MainMenuManager : MonoBehaviour
 {
 
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
+
+    public EventInstance menuMusic;
+    [SerializeField] private EventReference menuMusicReference;
 
     public CanvasGroup promptGroup;
     public CanvasGroup buttonGroup;
@@ -17,6 +23,9 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
+        menuMusic.start();
+
         Time.timeScale = 1;
         promptGroup.alpha = 1;
 
@@ -100,6 +109,8 @@ public class MainMenuManager : MonoBehaviour
     {
         SaveManager.Instance.forceCircuitPlay = true;
         SaveManager.Instance.circuitIndex = index;
+        menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuMusic.release();
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 

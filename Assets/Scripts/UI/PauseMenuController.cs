@@ -7,6 +7,7 @@ public class PauseMenuController : MonoBehaviour
 {
     public void MainMenu()
     {
+        LevelManager.Instance.StopCircuitMusic();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 

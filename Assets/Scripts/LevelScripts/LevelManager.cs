@@ -128,8 +128,16 @@ public class LevelManager : UnitySingleton<LevelManager>
         return false;
     }
 
+    public void StopCircuitMusic()
+    {
+        circuitMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        circuitMusic.release();
+    }
+
     public IEnumerator CircuitCompleteRoutine()
     {
+        StopCircuitMusic();
+
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
