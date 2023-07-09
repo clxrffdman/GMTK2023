@@ -12,10 +12,15 @@ public abstract class BallModifier : ScriptableObject
 
     public virtual void OnSpawn(BallController controller)
     {
+        SetOutlineColor(controller.ballSprite);
+    }
+    public bool SetOutlineColor(SpriteRenderer sprite) {
         if (hasColorOverride)
         {
-            controller.ballSprite.material.SetColor("_GlowColor", outlineColor);
+            sprite.material.SetColor("_GlowColor", outlineColor);
+            return true;
         }
+        return false;
     }
 
     public virtual void OnUpdate(BallController controller, float activeTime, float coursePercentage)

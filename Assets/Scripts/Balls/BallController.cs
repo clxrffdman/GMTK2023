@@ -108,7 +108,19 @@ public class BallController : MonoBehaviour
                 CameraController.Instance.Shake(1f, 0.2f, 5f);
             }
         });
-        
+    }
+
+    public void BallThrow() {
+        Vector3 initPos = ballSprite.transform.localPosition;
+        float initHght = 0.3f;
+        ballSprite.transform.localPosition = new Vector3(initPos.x, initPos.y+initHght, initPos.z);
+        float jumpHght = 0.2f;
+        LeanTween.moveLocal(ballSprite.gameObject, new Vector3(initPos.x, ballSprite.transform.localPosition.y+jumpHght, initPos.z), 0.1f).setEaseOutCirc().setOnComplete(() => {
+            LeanTween.moveLocal(ballSprite.gameObject, initPos, 0.2f).setEaseInCubic().setOnComplete(()=>{
+                ballSprite.transform.localPosition = initPos;
+                CameraController.Instance.Shake(1f, 0.2f, 5f);
+            });
+        });
     }
 
     public void AddModifier(BallModifier mod)

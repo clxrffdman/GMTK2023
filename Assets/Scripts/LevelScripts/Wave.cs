@@ -31,16 +31,14 @@ public class Wave
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitForSeconds(1.3f);
 
-        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
-    
-        yield return new WaitForSeconds(0.8f);
-
         foreach (ThrowerWave wave in throwerWaves) {
             Thrower thrower = CourseController.Instance.InitThrower(wave.thrower);
             thrower.InitBowl(wave);
             CourseController.Instance.ThrowBalls(thrower, wave);
             //yield return thrower.ThrowBall(wave.ball, wave.ballMods);
         }
+        CameraController.Instance.SetCameraState(CameraController.CameraState.Bowler);
+
         //yield return new WaitUntil(DoneThrowing);
         yield return new WaitUntil(() => CameraController.Instance.currentCameraState == CameraController.CameraState.Player);
         GameManager.Instance.StartSlowMotion(2f);
