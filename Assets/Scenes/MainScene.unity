@@ -1190,48 +1190,6 @@ MonoBehaviour:
       Data3: -1192849753
       Data4: 1312539233
     Path: event:/BowlingAlley_Music
-  <JapaneseMusic>k__BackingField:
-    Guid:
-      Data1: 1953602185
-      Data2: 1194128798
-      Data3: 1584465553
-      Data4: -499837597
-    Path: event:/Japanese_Music
-  <HalloweenMusic>k__BackingField:
-    Guid:
-      Data1: 1410806886
-      Data2: 1105905912
-      Data3: 1612482700
-      Data4: -1120119816
-    Path: event:/Halloween_Music
-  <MainMenuMusic>k__BackingField:
-    Guid:
-      Data1: -823350768
-      Data2: 1178742541
-      Data3: -889139549
-      Data4: 2005616952
-    Path: event:/MainMenu_Music
-  <Success>k__BackingField:
-    Guid:
-      Data1: 1425495773
-      Data2: 1261359837
-      Data3: 850256556
-      Data4: 227913699
-    Path: event:/Level_Success
-  <Failure>k__BackingField:
-    Guid:
-      Data1: 1673290333
-      Data2: 1317126032
-      Data3: -1565911106
-      Data4: -1419486350
-    Path: event:/Level_Failure
-  <MenuClick>k__BackingField:
-    Guid:
-      Data1: -1065020556
-      Data2: 1309800515
-      Data3: -1163959400
-      Data4: -1456304942
-    Path: event:/Menu_Click
   <BallRolling>k__BackingField:
     Guid:
       Data1: -2078121415
@@ -1253,13 +1211,6 @@ MonoBehaviour:
       Data3: -1285326968
       Data4: 1419893355
     Path: event:/Ball_Pit
-  <BallOnBall>k__BackingField:
-    Guid:
-      Data1: -358442449
-      Data2: 1209572985
-      Data3: 1088779423
-      Data4: -1985392349
-    Path: event:/Ball_BallHit
   <ChargingSound>k__BackingField:
     Guid:
       Data1: 78194214
@@ -1281,52 +1232,3 @@ MonoBehaviour:
       Data3: -1504635518
       Data4: 765672206
     Path: event:/Pin_Ballhit
-  <PinPlaced>k__BackingField:
-    Guid:
-      Data1: 473748334
-      Data2: 1289708540
-      Data3: 804126135
-      Data4: -634568653
-    Path: event:/Pin_Place
-  <SumoStomp>k__BackingField:
-    Guid:
-      Data1: 1385181728
-      Data2: 1163991026
-      Data3: -2069571188
-      Data4: 1744409867
-    Path: event:/Sumo_Stomp
-  <SamuraiSlowdown>k__BackingField:
-    Guid:
-      Data1: -1213337638
-      Data2: 1178118063
-      Data3: -267877980
-      Data4: 1989129329
-    Path: event:/Samurai_Slowdown
-  <SamuraiSlash>k__BackingField:
-    Guid:
-      Data1: -602148502
-      Data2: 1294005200
-      Data3: -61036413
-      Data4: -558093638
-    Path: event:/Samurai_Slash
-  <Dialogue>k__BackingField:
-    Guid:
-      Data1: 1727860448
-      Data2: 1318753807
-      Data3: 322260377
-      Data4: -328082255
-    Path: event:/Thrower_Dialogue
-  <SamuraiSlowSnapshot>k__BackingField:
-    Guid:
-      Data1: -1803665841
-      Data2: 1107554180
-      Data3: -377644113
-      Data4: -1520982349
-    Path: snapshot:/SamuraiSlow
-  <PauseMenu>k__BackingField:
-    Guid:
-      Data1: 1982434354
-      Data2: 1187104997
-      Data3: -1788973675
-      Data4: 195767099
-    Path: snapshot:/PauseMenu

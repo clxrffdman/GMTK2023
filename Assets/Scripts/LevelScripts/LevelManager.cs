@@ -4,15 +4,14 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
-using FMODUnity;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
 
     [Header("Pre Set Information")]
     public List<Circuit> circuits = new List<Circuit>();
-    public List<EventReference> musicReferences = new List<EventReference>();
     public int lastNormalLevelIndex;
+    public FMODUnity.EventReference currentCircuitMusic;
     public EventInstance circuitMusic;
 
     [Header("Current Circuit Information")]
@@ -29,14 +28,9 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        musicReferences.Add(FMODEventReferences.instance.BowlingAlleyMusic);
-        musicReferences.Add(FMODEventReferences.instance.JapaneseMusic);
-        musicReferences.Add(FMODEventReferences.instance.HalloweenMusic);
-        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
-        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);        
-        SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
-        circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
+        circuitMusic = AudioManager.instance.CreateEventInstance(currentCircuitMusic);
         circuitMusic.start();
+        SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
         if (SaveManager.Instance.forceCircuitPlay)
         {
             StartCoroutine(BeginLoadedLevels());
@@ -131,8 +125,6 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     public IEnumerator CircuitCompleteRoutine()
     {
-        circuitMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        circuitMusic.release();
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);

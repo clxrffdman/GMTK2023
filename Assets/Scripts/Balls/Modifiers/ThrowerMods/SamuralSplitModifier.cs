@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
-using FMOD.Studio;
 
 public class SamuralSplitModifier : ThrowBase
 {
@@ -11,9 +9,6 @@ public class SamuralSplitModifier : ThrowBase
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 30;
-
-    private EventInstance SamuraiSlowEffect;
-
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
@@ -35,14 +30,9 @@ public class SamuralSplitModifier : ThrowBase
     public IEnumerator SamuraiSplit(Thrower thrower)
     {
         GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
-        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlowdown);
-        SamuraiSlowEffect = AudioManager.instance.CreateEventInstance(FMODEventReferences.instance.SamuraiSlowSnapshot);
-        SamuraiSlowEffect.start();
         yield return new WaitForSeconds(2.9f);
 
         GameplayUIManager.Instance.transitionPanelController.BeginFlash(0.05f, 0.05f, 0.02f);
-        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlash);
-        SamuraiSlowEffect.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         yield return new WaitForSeconds(0.1f);
 
         for (int i = CourseController.Instance.currentBalls.Count - 1; i >= 0; i--)
