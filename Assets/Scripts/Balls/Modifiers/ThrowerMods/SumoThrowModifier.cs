@@ -45,7 +45,7 @@ public class SumoThrowModifier : ThrowBase
         foreach (BallController ball in CourseController.Instance.currentBalls) {
             dir = Vector2Extension.Rotate(dir, Random.Range(0, stompAngleVariance));
             float force = (stompForce + Random.Range(-stompForceVariance, stompForceVariance));
-            ball.BallJump();
+            ball.BallJump(0.5f, 0.23f, false);
             ball.rb.AddForce(dir*force, ForceMode2D.Impulse);
         }
     }

@@ -86,10 +86,16 @@ public class BallController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void BallJump(float hgt=0.5f, float dur=0.23f) {
+    public void BallJump(float hgt=0.5f, float dur=0.23f, bool shake=true) {
         LeanTween.value(
             ballSprite.gameObject, (float val)=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, val);}, 0f, hgt, dur/2f
-        ).setLoopPingPong(1).setEaseOutCirc().setOnComplete(()=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, 0f);});
+        ).setLoopPingPong(1).setEaseOutCirc().setOnComplete(()=>{
+            ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, 0f);
+            if (shake) {
+                CameraController.Instance.Shake(1f, 0.2f, 5f);
+            }
+        });
+        
     }
 
     public void AddModifier(BallModifier mod)
