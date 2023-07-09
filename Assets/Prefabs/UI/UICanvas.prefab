@@ -1285,9 +1285,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7346355830696186101}
     m_Modifications:
+    - target: {fileID: 69928229933753568, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 69928229933753568, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 1390174794459309462, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_Name
       value: BowlerPortrait
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901897579783914009, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901897579783914009, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_fontSize
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 4906319667827338256, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_Pivot.x
@@ -1371,6 +1387,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906319667827338256, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639013677443920517, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772289200354767613, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

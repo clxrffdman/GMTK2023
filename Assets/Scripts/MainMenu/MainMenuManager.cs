@@ -31,8 +31,6 @@ public class MainMenuManager : MonoBehaviour
                     return;
                 }
 
-                showHidden = false;
-
                 if (score >= 15)
                 {
                     medalDisplays[i].sprite = medalSprites[2];
