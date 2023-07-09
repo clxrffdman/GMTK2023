@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class Thrower : MonoBehaviour
 {
     //public List<BallModifier> throwerMods;
     
+    public ThrowerType type;
+    public string displayName;
+    public Sprite portraitSprite;
+
+    [ResizableTextArea]
+    public List<string> quipLines;
+
     public ThrowerType throwerType;
     public bool doneThrowing = false;
 
@@ -23,8 +31,9 @@ public class Thrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (ThrowBase mod in currThrowMods) {
-            mod.OnThrowerUpdate(this);
+        for(int i = currThrowMods.Count-1; i >= 0; i--)
+        {
+            currThrowMods[i].OnThrowerUpdate(this);
         }
     }
 

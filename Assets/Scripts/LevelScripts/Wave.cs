@@ -14,6 +14,7 @@ and each wave would have a variable amount of thrower waves: usually one i guess
 public class Wave
 {
     public BowlerProfile profile;
+    [HideInInspector] public Thrower leadBowler;
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
     public int numPins;
     public float pinPosOffset = 0.5f;
@@ -22,8 +23,9 @@ public class Wave
     // init the thrower
     public IEnumerator StartWave() {
         waveDone = false;
+        leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
         LevelManager.Instance.hasFailedCurrentWave = false;
-        GameplayUIManager.Instance.portraitController.LoadProfile(profile);
+        GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);

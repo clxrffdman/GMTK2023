@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576437c5427b50b4a84406b80603e6d5, type: 3}
-  m_Name: ModifierGrow
+  m_Script: {fileID: 11500000, guid: 4ab434fc858f6814f8760a1ef6a2252e, type: 3}
+  m_Name: ModifierSlow
   m_EditorClassIdentifier: 
   description: 
-  hasColorOverride: 1
-  outlineColor: {r: 0.9014714, g: 5.9921575, b: 0, a: 0}
-  scalePerSecond: 0.4
-  scaleCap: 3
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  slowAmount: 0.5

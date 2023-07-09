@@ -11,9 +11,19 @@ public class ThrowBase : BallModifier
     public float throwForceRandomDelta = 0;
     public float throwAngleRandomDelta = 20;
     public bool applyToThrower = false;
+
+    public bool useCustomSprite;
+    [ShowIf("useCustomSprite")]
+    public Sprite customSprite;
+
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
+
+        if (useCustomSprite)
+        {
+            controller.ballSprite.sprite = customSprite;
+        }
 
         controller.rb.AddForce(Vector2Extension.Rotate((throwDirection * (throwForce + Random.Range(-throwForceRandomDelta, throwForceRandomDelta))), 
             Random.Range(-throwAngleRandomDelta, throwAngleRandomDelta)), ForceMode2D.Impulse); 
