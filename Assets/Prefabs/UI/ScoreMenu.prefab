@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   medalImg: {fileID: 6193059717986344186}
   medalText: {fileID: 6008516672973600815}
+  nextCircuitButton: {fileID: 6291858048966600606}
   medalSprites:
   - {fileID: 21300000, guid: 010fea2c4a4c7574e8fe81054363b607, type: 3}
   - {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
@@ -761,6 +762,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+--- !u!1 &6291858048966600606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+  m_PrefabInstance: {fileID: 2492137389735335795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7552010916861709979 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5358149041526856168, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
