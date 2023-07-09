@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3715fcaea6c33354e8325904cdb27b85, type: 3}
   m_Name: NinjaThrowModifier
   m_EditorClassIdentifier: 
-  description: 
+  description: Shadowball
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 7
@@ -20,8 +20,8 @@ MonoBehaviour:
   throwForceRandomDelta: 1
   throwAngleRandomDelta: 20
   applyToThrower: 0
-  useCustomSprite: 0
-  customSprite: {fileID: 0}
+  useCustomSprite: 1
+  customSprite: {fileID: 2039669057, guid: e7d4c9932a1a0de4890a04b2351619d7, type: 3}
   fakeBallModifier: {fileID: 11400000, guid: 984eadbb9a1c24d4c9185693b222a118, type: 2}
   fakeAnim: {fileID: 22100000, guid: 830fe4f510e1e824cbfb4a87ff82443f, type: 2}
   splitCount: 2

@@ -590,7 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 67.85
+      value: 61.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 61.83
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
@@ -1401,7 +1405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 68
+      value: 61.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 61.83
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
@@ -1695,7 +1703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 61.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 61.83
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
@@ -2019,6 +2031,14 @@ PrefabInstance:
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_text
       value: Circuit 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSize
+      value: 61.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 61.83
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name

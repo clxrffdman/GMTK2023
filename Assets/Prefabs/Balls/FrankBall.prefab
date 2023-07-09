@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1361261420, guid: a047d8f8c43dfe546a2f22dd87895e5c, type: 3}
+    - target: {fileID: 5719259362889700187, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      propertyPath: displayName
+      value: Monster Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 6182808276054253719, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       propertyPath: m_Controller
       value: 

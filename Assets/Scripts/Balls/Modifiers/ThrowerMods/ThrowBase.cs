@@ -26,7 +26,7 @@ public class ThrowBase : BallModifier
     }
     public bool SetCustomSprite(SpriteRenderer sprite) {
         if (useCustomSprite) {
-            sprite.sprite = customSprite;
+            //sprite.sprite = customSprite;
             return true;
         }
         return false;

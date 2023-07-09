@@ -11,6 +11,7 @@ public class BallController : MonoBehaviour
     private float activeTime = 0f;
     private float ignoreBallDuration = 0f;
     public float lifetime = 14;
+    public string displayName;
 
     [Header("References")]
     public CourseController courseController;

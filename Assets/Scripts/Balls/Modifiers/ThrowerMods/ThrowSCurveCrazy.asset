@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8247ffe202602e4f93e76c81dd24d9d, type: 3}
   m_Name: ThrowSCurveCrazy
   m_EditorClassIdentifier: 
+  description: Curveball
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 10
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
+  throwAngleRandomDelta: 20
+  applyToThrower: 0
+  useCustomSprite: 1
+  customSprite: {fileID: 1709124153, guid: 94e30b8484850324b8169e1e4add6044, type: 3}
   curveForce: 75
   curveForceDirection: {x: 1, y: -0.2}
   randomExtraCurveForce: 5

@@ -29,7 +29,7 @@ public class Wave
         LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
-        GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].throwerMod);
+        GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].balls[0].GetComponent<BallController>());
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;

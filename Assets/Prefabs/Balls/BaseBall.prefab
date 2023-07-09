@@ -157,6 +157,7 @@ MonoBehaviour:
   modifiers:
   - {fileID: 11400000, guid: 5f315a328d482c44182a9c055f450ca2, type: 2}
   lifetime: 14
+  displayName: Bowling Ball
   courseController: {fileID: 0}
   rb: {fileID: 6177650665991377524}
   ballCollider: {fileID: 7825323956960899246}

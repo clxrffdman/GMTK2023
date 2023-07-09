@@ -157,7 +157,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;
         StartCoroutine(CourseController.Instance.DeleteBalls(false));
-        GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("You suck!", 0.25f, 1.5f, 0.15f);
+        GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("Strike!", 0.25f, 1.5f, 0.15f);
         yield return null;
     }
 
