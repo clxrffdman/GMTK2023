@@ -44,7 +44,7 @@ public class BallController : MonoBehaviour
     }
 
     void Awake() {
-        ballAnim = ballAnim != null ? ballAnim : GlobalFunctions.FindComponent<Animator>(gameObject);
+        ballAnim = ballAnim != null ? ballAnim : GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

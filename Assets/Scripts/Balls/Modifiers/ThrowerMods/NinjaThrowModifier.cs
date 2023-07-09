@@ -51,8 +51,8 @@ public class NinjaThrowModifier : ThrowBase
     {
         Vector2 dir = Vector2Extension.Rotate(baseDir, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
-        GlobalFunctions.FindComponent<Animator>(bullet.gameObject).runtimeAnimatorController = fakeAnim;
-        GlobalFunctions.FindComponent<Animator>(bullet.gameObject).SetBool("thrown", true);
+        bullet.gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = fakeAnim;
+        bullet.gameObject.GetComponentInChildren<Animator>().SetBool("thrown", true);
         bullet.transform.GetComponent<BallController>().AddModifier(fakeBallModifier);
         bullet.transform.GetComponent<BallController>().defaultLayerMask = ignoreCollLayermask;
         bullet.transform.GetComponent<BallController>().rb.velocity = dir * controller.rb.velocity.magnitude;

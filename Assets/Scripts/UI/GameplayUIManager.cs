@@ -18,7 +18,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        /*if (Input.GetKeyDown(KeyCode.Y))
         {
             bannerQuipController.RequestBannerQuip("Spared!", 0.2f, 2f, 0.1f);
         }
@@ -26,7 +26,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
         if (Input.GetKeyDown(KeyCode.U))
         {
             transitionPanelController.BeginTransition(0.3f, 2, 0.2f);
-        }
+        }*/
     }
 
     public void RequestTogglePause()

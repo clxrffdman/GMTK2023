@@ -195,7 +195,7 @@ MonoBehaviour:
   cursor: {fileID: 5022299278258350352}
   rb: {fileID: 1680232576908830130}
   playerSprite: {fileID: 7764865611104906348}
-  anim: {fileID: 0}
+  anim: {fileID: 8576979816081001485}
   isHeld: 0
   locked: 1
   holdDuration: 0

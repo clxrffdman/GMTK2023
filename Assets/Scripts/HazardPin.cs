@@ -8,7 +8,7 @@ public class HazardPin : MonoBehaviour
     public SpriteRenderer sprite;
     public GameObject shadow;
     void Awake() {
-        sprite = sprite != null ? sprite : GlobalFunctions.FindComponent<SpriteRenderer>(gameObject);
+        sprite = sprite != null ? sprite : GetComponent<SpriteRenderer>();
     }
     // Start is called before the first frame update
     void Start()

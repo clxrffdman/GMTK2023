@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TransitionPanelController : MonoBehaviour
-{
+public class TransitionPanelController : MonoBehaviour {
     public CanvasGroup canvasGroup;
     public Image backdrop;
     public bool isFlashing = false;
@@ -58,6 +57,37 @@ public class TransitionPanelController : MonoBehaviour
         gameObject.SetActive(false);
 
     }
+
+    public void SetBlack() {
+        backdrop.color = Color.black;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1;
+        Debug.Log("set to black pleeeeeeease man");
+    }
+
+    public IEnumerator FadeToBlack(float dur, bool fadeBack=true) {
+        isTransitioning = true;
+        backdrop.color = Color.black;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 0;
+
+        LeanTween.alphaCanvas(canvasGroup, 1f, dur);
+        yield return new WaitForSeconds(dur);
+        if (fadeBack) {
+            yield return FadeFromBlack(0.5f);
+        }
+    }
+
+    public IEnumerator FadeFromBlack(float dur) {
+        LeanTween.alphaCanvas(canvasGroup, 0, dur);
+        yield return new WaitForSeconds(dur);
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0;
+        isTransitioning = false;
+        gameObject.SetActive(false);
+    }
+
+    
 
     public IEnumerator FlashRoutine(float inDuration, float lingerDuration, float exitDuration)
     {

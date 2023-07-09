@@ -26,9 +26,9 @@ public class PlayerController : UnitySingleton<PlayerController>
 
     public override void Awake() {
         base.Awake();
-        playerSprite = playerSprite != null ? playerSprite : GlobalFunctions.FindComponent<SpriteRenderer>(gameObject);
+        playerSprite = playerSprite != null ? playerSprite : GetComponentInChildren<SpriteRenderer>();
         baseSpriteScale = playerSprite.transform.localScale;
-        anim = anim != null ? anim : GlobalFunctions.FindComponent<Animator>(gameObject);
+        anim = anim != null ? anim : GetComponent<Animator>();
     }
     public void Start() {
         StartCoroutine(SpawnAnim());
@@ -105,6 +105,9 @@ public class PlayerController : UnitySingleton<PlayerController>
         }
         if (!cursor.isLocked && !GameManager.Instance.isPaused && !anim.GetBool("Hit")) {
             playerSprite.flipX = cursor.GetCursorPos().x < 0;
+        }
+        if (locked || anim.GetBool("Hit") && isHeld) {
+            EndCharge();
         }
     }
 

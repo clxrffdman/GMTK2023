@@ -56,6 +56,7 @@ public class CourseController : UnitySingleton<CourseController>
 
     public IEnumerator StartLevel(Level level) {
         InitLevel(level);
+        PlayerController.Instance.locked = true;
         yield return level.StartLevel();
     }
 
@@ -77,7 +78,7 @@ public class CourseController : UnitySingleton<CourseController>
     public Thrower InitThrower(GameObject throwerObj) {
         Debug.Log("spawn thrower!");
         var newThrower = Instantiate(throwerObj, CourseController.Instance.ballShooterTransform);
-        Thrower thrower = GlobalFunctions.FindComponent<Thrower>(newThrower);
+        Thrower thrower = newThrower.GetComponent<Thrower>();
         currentThrowers.Add(thrower);
         return thrower;
     }
@@ -106,7 +107,7 @@ public class CourseController : UnitySingleton<CourseController>
     public IEnumerator DeletePins(bool wait=true) {
         float destroyTimer = 0.4f;
         for (int i = currentPins.Count-1; i >= 0; i--) {
-            StartCoroutine(GlobalFunctions.FindComponent<HazardPin>(currentPins[i]).DeletePin(destroyTimer));
+            StartCoroutine(currentPins[i].GetComponent<HazardPin>().DeletePin(destroyTimer));
         }
         if (wait) {
             yield return new WaitForSeconds(destroyTimer);
@@ -117,7 +118,7 @@ public class CourseController : UnitySingleton<CourseController>
     public IEnumerator DeleteBalls(bool wait=true) {
         float destroyTimer = 0.4f;
         for (int i = currentBalls.Count-1; i >= 0; i--) {
-            StartCoroutine(GlobalFunctions.FindComponent<BallController>(currentBalls[i].gameObject).DeleteBall(destroyTimer));
+            StartCoroutine(currentBalls[i].gameObject.GetComponent<BallController>().DeleteBall(destroyTimer));
         }
         if (wait) {
             yield return new WaitForSeconds(destroyTimer);
