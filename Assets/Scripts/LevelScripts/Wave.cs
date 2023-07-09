@@ -24,7 +24,6 @@ public class Wave
     public IEnumerator StartWave() {
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
-        GameManager.Instance.canPause = false;
         LevelManager.Instance.hasFailedCurrentWave = false;
         LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);

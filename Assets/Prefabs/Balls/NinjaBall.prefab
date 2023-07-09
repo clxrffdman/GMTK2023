@@ -56,6 +56,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2039669057, guid: e7d4c9932a1a0de4890a04b2351619d7, type: 3}
+    - target: {fileID: 2984955532576276719, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984955532576276719, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984955532576276719, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5719259362889700187, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       propertyPath: displayName
       value: Shadow Ball
