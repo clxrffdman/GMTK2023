@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 530, y: -238}
+  m_AnchoredPosition: {x: 530, y: 260}
   m_SizeDelta: {x: 717, y: 267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356622818
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -450, y: -654}
+  m_AnchoredPosition: {x: -450, y: -724}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &853101825
@@ -912,11 +912,11 @@ RectTransform:
   m_Father: {fileID: 1599213875}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 178, y: -478}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -42, y: 40}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1718722226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +971,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1556,7 +1556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358149041526856168, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -340
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 5358149041526856168, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1727,6 +1727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7554387172550115345, guid: aca35175ed5a2d34896dcefb15ad5a1d, type: 3}
+      propertyPath: logo
+      value: 
+      objectReference: {fileID: 356622816}
     - target: {fileID: 7554387172550115345, guid: aca35175ed5a2d34896dcefb15ad5a1d, type: 3}
       propertyPath: buttonGroup
       value: 

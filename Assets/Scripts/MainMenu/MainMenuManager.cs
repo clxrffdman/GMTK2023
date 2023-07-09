@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
 
     public CanvasGroup promptGroup;
     public CanvasGroup buttonGroup;
+    public GameObject logo;
     public bool hasPrompted = false;
     public GameObject hiddenCircuitButton;
 
@@ -83,7 +84,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void MoveButtonX(float xVal)
     {
-        buttonGroup.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(xVal, -654, 0);
+        buttonGroup.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(xVal, -724, 0);
+    }
+
+    public void MoveLogoY(float yVal)
+    {
+        logo.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(530, yVal, 0);
     }
 
     public void Update()
@@ -102,6 +108,11 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         LeanTween.alphaCanvas(promptGroup, 0, 0.2f);
         LeanTween.value(this.gameObject, MoveButtonX, -450, 190, 0.8f);
+        LeanTween.value(this.gameObject, MoveLogoY, 260, -238, 0.8f);
+
+        yield return new WaitForSeconds(0.85f);
+
+        LeanTween.value(this.gameObject, MoveLogoY, -238, -251, 0.8f).setEaseInOutQuad().setLoopPingPong();
 
     }
 

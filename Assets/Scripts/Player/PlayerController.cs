@@ -103,7 +103,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         {            
             cooldownTimer -= Time.deltaTime;
         }
-        if (!cursor.isLocked && !anim.GetBool("Hit")) {
+        if (!cursor.isLocked && !GameManager.Instance.isPaused && !anim.GetBool("Hit")) {
             playerSprite.flipX = cursor.GetCursorPos().x < 0;
         }
     }
