@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 public class PauseMenuController : MonoBehaviour
 {
+
     public void MainMenu()
     {
         LevelManager.Instance.StopCircuitMusic();
@@ -15,4 +18,8 @@ public class PauseMenuController : MonoBehaviour
     {
         GameManager.Instance.TogglePause(false);
     }
+
+    
+
+
 }
