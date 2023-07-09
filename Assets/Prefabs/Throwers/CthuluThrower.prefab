@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: displayName
-      value: Cthulu
+      value: Cthulhu
       objectReference: {fileID: 0}
     - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: portraitSprite
