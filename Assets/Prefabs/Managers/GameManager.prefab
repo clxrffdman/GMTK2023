@@ -53,10 +53,10 @@ MonoBehaviour:
   bgSr: {fileID: 1153984670148095832}
   bgList:
   - {fileID: 21300000, guid: 58c6b2b320b4b4941826883da50384b5, type: 3}
-  - {fileID: 21300000, guid: 58c6b2b320b4b4941826883da50384b5, type: 3}
-  - {fileID: 21300000, guid: 58c6b2b320b4b4941826883da50384b5, type: 3}
-  - {fileID: 21300000, guid: 58c6b2b320b4b4941826883da50384b5, type: 3}
-  - {fileID: 21300000, guid: 58c6b2b320b4b4941826883da50384b5, type: 3}
+  - {fileID: 21300000, guid: 4ec6b26aa4768e6469b7de6857fc9fcf, type: 3}
+  - {fileID: 21300000, guid: 2105e244f23e7d34686b522a177a3bd8, type: 3}
+  - {fileID: 21300000, guid: 2105e244f23e7d34686b522a177a3bd8, type: 3}
+  - {fileID: 21300000, guid: 2105e244f23e7d34686b522a177a3bd8, type: 3}
 --- !u!1 &8348522745691937017
 GameObject:
   m_ObjectHideFlags: 0
