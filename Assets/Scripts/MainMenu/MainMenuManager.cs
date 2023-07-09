@@ -15,10 +15,20 @@ public class MainMenuManager : MonoBehaviour
     public EventInstance menuMusic;
     [SerializeField] private EventReference menuMusicReference;
 
+    public CanvasGroup promptGroup;
+    public CanvasGroup buttonGroup;
+    public bool hasPrompted = false;
+    public GameObject hiddenCircuitButton;
+
     private void Start()
     {
         menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
         menuMusic.start();
+        promptGroup.alpha = 1;
+
+        LeanTween.value(this.gameObject, SetPromptAlpha, 0, 1, 0.8f).setLoopPingPong();
+
+        bool showHidden = true;
 
         for(int i = 0; i < medalDisplays.Count; i++)
         {
@@ -52,10 +62,44 @@ public class MainMenuManager : MonoBehaviour
                     medalDisplays[i].sprite = medalSprites[0];
                     return;
                 }
-
-                
             }
+            else if (i < 3)
+            {
+                showHidden = false;
+            }
+
         }
+
+        hiddenCircuitButton.SetActive(showHidden);
+    }
+
+    public void SetPromptAlpha(float alpha)
+    {
+        promptGroup.alpha = alpha;
+    }
+
+    public void MoveButtonX(float xVal)
+    {
+        buttonGroup.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(xVal, -654, 0);
+    }
+
+    public void Update()
+    {
+        if (Input.anyKeyDown && !hasPrompted)
+        {
+            hasPrompted = true;
+            LeanTween.cancel(this.gameObject);
+            StartCoroutine(TweenRoutine());
+        }
+    }
+
+
+    public IEnumerator TweenRoutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        LeanTween.alphaCanvas(promptGroup, 0, 0.2f);
+        LeanTween.value(this.gameObject, MoveButtonX, -450, 190, 0.8f);
+
     }
 
     public void LoadCircuit(int index)
