@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameplayUIManager : UnitySingleton<GameplayUIManager>
 {
     public PortraitController portraitController;
+    public BowlerQuipController portraitQuipController;
     public BannerQuipController bannerQuipController;
     public ScorecardUIController scorecardUIController;
     public ScoreResultUIController scoreResultUIController;

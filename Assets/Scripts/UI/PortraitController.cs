@@ -31,6 +31,7 @@ public class PortraitController : MonoBehaviour
         portraitSprite.sprite = profile.portraitSprite;
         portraitSprite.color = Color.white;
         portraitText.text = profile.displayName;
+        GameplayUIManager.Instance.portraitQuipController.RequestQuip("You suck at baseball!", 3f);
     }
 
     public void LoadProfile(Thrower profile)
@@ -47,6 +48,7 @@ public class PortraitController : MonoBehaviour
         portraitSprite.sprite = profile.portraitSprite;
         portraitSprite.color = Color.white;
         portraitText.text = profile.displayName;
+        GameplayUIManager.Instance.portraitQuipController.RequestQuip("You suck at baseball!", 3f);
     }
 
     public void RequestPortraitQuip()
