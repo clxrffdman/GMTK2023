@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
 
 public class PlayerController : UnitySingleton<PlayerController>
 {
@@ -20,6 +21,8 @@ public class PlayerController : UnitySingleton<PlayerController>
     public float baseMovementCooldown;
     private float cooldownTimer;
     private Vector3 baseSpriteScale;
+    private EventInstance chargingSound;
+    private float convertedRadius;
 
     public override void Awake() {
         base.Awake();
@@ -29,6 +32,7 @@ public class PlayerController : UnitySingleton<PlayerController>
     }
     public void Start() {
         StartCoroutine(SpawnAnim());
+        chargingSound = AudioManager.instance.CreateEventInstance(FMODEventReferences.instance.ChargingSound);        
     }
 
     public IEnumerator SpawnAnim() {
@@ -66,20 +70,25 @@ public class PlayerController : UnitySingleton<PlayerController>
                 LeanTween.color(cursor.gameObject, Color.red, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, 0, 0.3f, maxChargeTimer).setEaseOutCubic();
                 LeanTween.value(this.gameObject, CameraController.Instance.SetPlayerCamZoom, 
-                    CameraController.Instance.defaultSize, CameraController.Instance.zoomedSize, maxChargeTimer).setEaseOutCubic();
-
+                CameraController.Instance.defaultSize, CameraController.Instance.zoomedSize, maxChargeTimer).setEaseOutCubic();
+                PLAYBACK_STATE playbackState;
+                chargingSound.getPlaybackState(out playbackState);
+                if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                    chargingSound.start();
+                }
                 break;
             case InputActionPhase.Canceled:
                 if (isHeld)
                 {
                     cooldownTimer = baseMovementCooldown;
                 }
-
                 anim.SetBool("Jump", false);
+                chargingSound.stop(STOP_MODE.ALLOWFADEOUT);
                 rb.AddForce(cursor.GetDirection() * charge * rb.mass);
                 playerSprite.transform.localScale = baseSpriteScale;
                 LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1).setOnComplete(()=>{ playerSprite.transform.localScale = baseSpriteScale; });
-
+                FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.JumpSound);
                 EndCharge();
 
 
@@ -103,6 +112,8 @@ public class PlayerController : UnitySingleton<PlayerController>
     {
         holdDuration = value;
         charge = value * chargeIncrement;
+        convertedRadius = cursor.radius/cursor.maxRadius;
+        chargingSound.setParameterByName("PlayerCursorRadius", convertedRadius);
     }
 
     public void SlowTime(float value)
