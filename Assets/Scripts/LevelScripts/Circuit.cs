@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+
 
 [CreateAssetMenu(menuName = "Bowling/Circuit")]
 public class Circuit : ScriptableObject
@@ -14,6 +16,11 @@ public class Circuit : ScriptableObject
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
+    [ShowIf("isEndless")]
+    public List<BallModifier> ballThrowMods = new List<BallModifier>();
+    [ShowIf("isEndless")]
+    public List<BallModifier> ballMods = new List<BallModifier>();
+
 
     public int GetMaxFrames()
     {
