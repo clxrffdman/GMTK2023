@@ -91,7 +91,7 @@ public class PlayerController : UnitySingleton<PlayerController>
 
     public void PlayerMovement(InputAction.CallbackContext context)
     {
-        if (cooldownTimer >= 0 || anim.GetBool("Hit") || locked)
+        if (cooldownTimer >= 0 || anim.GetBool("Hit") || locked || GameManager.Instance.isPaused)
         {
             return;
         }
@@ -158,7 +158,10 @@ public class PlayerController : UnitySingleton<PlayerController>
 
     public void SlowTime(float value)
     {
-        Debug.Log(Time.timeScale);
+        if (GameManager.Instance.isPaused)
+        {
+            return;
+        }
         Time.timeScale = value;
     }
 
@@ -173,7 +176,13 @@ public class PlayerController : UnitySingleton<PlayerController>
         holdDuration = 0;
         charge = 0;
         cursor.LockCursorMovement(false);
-        Time.timeScale = 1;
+
+        if (!GameManager.Instance.isPaused)
+        {
+            Time.timeScale = 1;
+        }
+
+        
 
         LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, CameraController.Instance.GetVignetteStrength(), 0, baseMovementCooldown).setEaseOutQuint();
         LeanTween.value(this.gameObject, CameraController.Instance.SetPlayerCamZoom,

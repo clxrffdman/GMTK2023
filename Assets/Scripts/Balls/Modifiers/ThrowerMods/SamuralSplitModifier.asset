@@ -22,8 +22,11 @@ MonoBehaviour:
   applyToThrower: 1
   useCustomSprite: 1
   customSprite: {fileID: -1993869845, guid: d66113b3b5bbe4c4d837e64ede1e3350, type: 3}
-  splitTime: 0
-  currentSplitTimer: 0.5
   splitCount: 2
   projectileSpread: 50
   spreadForce: 15
+  hasStarted: 0
+  hasSplit: 0
+  currentCoursePercent: 0
+  coursePercentDark: 0.65
+  coursePercentSplit: 0.7

@@ -17,7 +17,7 @@ public class VolumeSliderController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Start()
     {
         float vol;
         RuntimeManager.GetBus("bus:/").getVolume(out vol);

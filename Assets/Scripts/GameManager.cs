@@ -24,9 +24,13 @@ public class GameManager : UnitySingleton<GameManager>
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        UpdateSlowMotion();   
+        if (!isPaused)
+        {
+            UpdateSlowMotion();
+        }
+         
 
     }
 
@@ -61,13 +65,8 @@ public class GameManager : UnitySingleton<GameManager>
 
         if (shouldPause)
         {
-
-            isPaused = true;
-
             Time.timeScale = 0;
-
-            //Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            isPaused = true;
 
 
             if (pauseUIPanels.Count == 0)

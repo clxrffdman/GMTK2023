@@ -24,17 +24,18 @@ public class Wave
     public IEnumerator StartWave() {
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
-        GameManager.Instance.canPause = false;
         LevelManager.Instance.hasFailedCurrentWave = false;
         LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
         GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].balls[0].GetComponent<BallController>());
+        Debug.Log("portraiting");
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         if (LevelManager.Instance.currentWaveIndex != 0) {
             yield return PlayerController.Instance.SpawnAnim();
         }
         PlayerController.Instance.locked = true;
+        Debug.Log("begin placing pins");
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitForSeconds(1.3f);
 

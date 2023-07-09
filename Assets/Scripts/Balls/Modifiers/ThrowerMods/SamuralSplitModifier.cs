@@ -4,37 +4,54 @@ using UnityEngine;
 
 public class SamuralSplitModifier : ThrowBase
 {
-    public float splitTime;
-    public float currentSplitTimer = 0f;
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 30;
+
+    public bool hasStarted = false;
+    public bool hasSplit = false;
+    public float currentCoursePercent = 0;
+    public float coursePercentDark = 0.5f;
+    public float coursePercentSplit = 0.7f;
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
-        currentSplitTimer = splitTime;
     }
 
     public override void OnThrowerUpdate(Thrower thrower)
     {
         if (!thrower.doneThrowing) return;
         base.OnThrowerUpdate(thrower);
-        currentSplitTimer -= Time.deltaTime;
-        if (currentSplitTimer < 0f)
+        
+    }
+
+    public override void OnUpdate(BallController controller, float activeTime, float coursePercentage)
+    {
+        base.OnUpdate(controller, activeTime, coursePercentage);
+
+        currentCoursePercent = coursePercentage;
+        if (coursePercentage >= coursePercentDark && !hasStarted)
         {
-            thrower.StartCoroutine(SamuraiSplit(thrower));
-            thrower.currThrowMods.Remove(this);
+            hasStarted = true;
+            controller.StartCoroutine(SamuraiSplit(controller));
+        }
+
+        if (coursePercentage >= coursePercentSplit && !hasSplit && hasStarted)
+        {
+            hasSplit = true;
         }
     }
 
-    public IEnumerator SamuraiSplit(Thrower thrower)
+    public IEnumerator SamuraiSplit(BallController controller)
     {
-        GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
+        controller.StartCoroutine(GameplayUIManager.Instance.transitionPanelController.FadeToBlack(0.35f, 0, false));
         FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlowdown);
-        yield return new WaitForSeconds(2.9f);
-
+        yield return new WaitUntil(() => (currentCoursePercent >= coursePercentSplit));
+        hasSplit = true;
         GameplayUIManager.Instance.transitionPanelController.BeginFlash(0.05f, 0.05f, 0.02f);
         FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlash);
+        yield return new WaitForSeconds(0.12f);
+        controller.StartCoroutine(GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.1f));
         yield return new WaitForSeconds(0.1f);
 
         for (int i = CourseController.Instance.currentBalls.Count - 1; i >= 0; i--)
@@ -43,6 +60,8 @@ public class SamuralSplitModifier : ThrowBase
         }
 
         GameManager.Instance.StartSlowMotion(1f);
+
+        controller.RemoveModifier(this);
 
     }
 
