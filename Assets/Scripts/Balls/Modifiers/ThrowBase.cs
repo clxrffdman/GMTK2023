@@ -10,12 +10,19 @@ public class ThrowBase : BallModifier
     public Vector2 throwDirection;
     public float throwForceRandomDelta = 0;
     public float throwAngleRandomDelta = 20;
+    public bool applyToThrower = false;
     public override void OnSpawn(BallController controller)
     {
         base.OnSpawn(controller);
 
         controller.rb.AddForce(Vector2Extension.Rotate((throwDirection * (throwForce + Random.Range(-throwForceRandomDelta, throwForceRandomDelta))), 
             Random.Range(-throwAngleRandomDelta, throwAngleRandomDelta)), ForceMode2D.Impulse); 
+    }
+    public virtual void OnThrowerSpawn(Thrower thrower) {
+        return;
+    }
+    public virtual void OnThrowerUpdate(Thrower thrower) {
+        return;
     }
 
 }

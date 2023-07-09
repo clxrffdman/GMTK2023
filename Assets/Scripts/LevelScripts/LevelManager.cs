@@ -10,6 +10,8 @@ public class LevelManager : UnitySingleton<LevelManager>
     [Header("Pre Set Information")]
     public List<Circuit> circuits = new List<Circuit>();
 
+    public FMODUnity.EventReference currentCircuitMusic;
+
     [Header("Current Circuit Information")]
     public Circuit currentCircuit;
     public int currentCircuitWinCount = 0;
@@ -40,6 +42,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 
         currentCircuit = circuits[index];
         currentCircuitLevels = currentCircuit.levels;
+        CourseController.Instance.SetCircuitObjects(currentCircuit);
     }
 
     public IEnumerator StartLevel() {

@@ -10,7 +10,7 @@ public class CourseController : UnitySingleton<CourseController>
     [SerializeField] public Transform ballParentTransform;
     [SerializeField] public Collider2D randomPinArea;
     [SerializeField] public Transform playerSpawnPosition;
-    [SerializeField] public List<LevelObject> levelObjects = new List<LevelObject>() {
+    [SerializeField] public List<LevelObject> circuitObjects = new List<LevelObject>() {
         new LevelObject(LevelObjectType.Lane),
         new LevelObject(LevelObjectType.Background)
     };
@@ -59,13 +59,14 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void InitLevel(Level level) {
-        SetLevelObjects(level);
+        //SetLevelObjects(level);
     }
 
-    public void SetLevelObjects(Level level) {
-        foreach (LevelObject controllerObj in levelObjects) {
-            foreach (LevelObject obj in level.levelObjects) {
+    public void SetCircuitObjects(Circuit circuit) {
+        foreach (LevelObject controllerObj in circuitObjects) {
+            foreach (LevelObject obj in circuit.circuitObjects) {
                 if (controllerObj.objectType == obj.objectType) {
+                    Debug.Log("set "+obj.objectType.ToString());
                     controllerObj.SetObject(obj.sprite);
                 }
             }
@@ -81,7 +82,7 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
-        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(), wave.consecBallOffset));
+        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(thrower), wave.consecBallOffset));
     }
 
     public IEnumerator ClearInstances() {

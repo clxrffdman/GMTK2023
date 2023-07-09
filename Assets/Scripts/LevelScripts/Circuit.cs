@@ -9,6 +9,11 @@ public class Circuit : ScriptableObject
     public string displayName;
     public bool isEndless = false;
     public List<Level> levels;
+    public FMODUnity.EventReference circuitMusic;
+    public List<LevelObject> circuitObjects = new List<LevelObject>() {
+        new LevelObject(LevelObjectType.Lane),
+        new LevelObject(LevelObjectType.Background)
+    };
 
     public int GetMaxFrames()
     {

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3512056764390877961}
   - component: {fileID: 284938921712966898}
+  - component: {fileID: 7565187559156156608}
   m_Layer: 0
   m_Name: BowlerCam
   m_TagString: Untagged
@@ -72,6 +73,24 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4999091309869008541}
+--- !u!114 &7565187559156156608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446496047973899360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7cff5ba1902ca469a27623fd36a4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  baseDuration: 1
+  strength: 1
+  permaShake: 0
+  shaking: 0
+  frequency: 1
 --- !u!1 &3792980209184965025
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +142,7 @@ MonoBehaviour:
   bowlerVCam: {fileID: 284938921712966898}
   playerVCam: {fileID: 7181738136686599005}
   ballVCam: {fileID: 2995288066201704675}
+  currCam: {fileID: 0}
   currentVignette: {fileID: 0}
   defaultSize: 10
   zoomedSize: 9.5
@@ -139,6 +159,7 @@ GameObject:
   - component: {fileID: 2145539310914615628}
   - component: {fileID: 7181738136686599005}
   - component: {fileID: 129167337312182612}
+  - component: {fileID: 1795288901590797515}
   m_Layer: 0
   m_Name: DefaultVCamera
   m_TagString: Untagged
@@ -224,6 +245,24 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &1795288901590797515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328694461670404596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7cff5ba1902ca469a27623fd36a4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  baseDuration: 1
+  strength: 1
+  permaShake: 0
+  shaking: 0
+  frequency: 1
 --- !u!1 &5305698421229143309
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6506273232625338326}
   - component: {fileID: 5667150609283803392}
+  - component: {fileID: 7170002861303905910}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -268,6 +308,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7170002861303905910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305698421229143309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &5849373164635030057
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4999091309869008541}
   - component: {fileID: 7261521003669723930}
+  - component: {fileID: 7455174158248315266}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -312,6 +370,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7455174158248315266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849373164635030057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &6503223284480203240
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +398,7 @@ GameObject:
   - component: {fileID: 1215490714670169894}
   - component: {fileID: 2995288066201704675}
   - component: {fileID: 253743237966556984}
+  - component: {fileID: 6841967643112144196}
   m_Layer: 0
   m_Name: BallCamera
   m_TagString: Untagged
@@ -408,6 +484,24 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &6841967643112144196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503223284480203240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7cff5ba1902ca469a27623fd36a4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  baseDuration: 1
+  strength: 1
+  permaShake: 0
+  shaking: 0
+  frequency: 1
 --- !u!1 &7461166768132270426
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2185242905767987816}
   - component: {fileID: 6800601943889664317}
+  - component: {fileID: 6169385155194713173}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -452,6 +547,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6169385155194713173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7461166768132270426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &8756706698619259798
 GameObject:
   m_ObjectHideFlags: 0

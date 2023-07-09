@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8922cec5f7347f845af942a3f600a2a8, type: 3}
+  m_Name: SumoThrowModifier
+  m_EditorClassIdentifier: 
+  description: yo mama
+  throwForce: 7
+  throwDirection: {x: 0, y: -1}
+  throwForceRandomDelta: 0
+  throwAngleRandomDelta: 20
+  applyToThrower: 1
+  stompInterval: 1.4
+  stompForce: 7
+  stompForceVariance: 2
+  stompAngleVariance: 10

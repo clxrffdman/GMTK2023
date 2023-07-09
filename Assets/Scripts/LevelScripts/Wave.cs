@@ -17,9 +17,11 @@ public class Wave
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
     public int numPins;
     public float pinPosOffset = 0.5f;
+    [HideInInspector] public bool waveDone = false;
 
     // init the thrower
     public IEnumerator StartWave() {
+        waveDone = false;
         LevelManager.Instance.hasFailedCurrentWave = false;
         GameplayUIManager.Instance.portraitController.LoadProfile(profile);
         yield return PlayerController.Instance.SpawnAnim();
@@ -44,6 +46,7 @@ public class Wave
         PlayerController.Instance.locked = false;
         yield return new WaitUntil(() => CourseController.Instance.currentBalls.Count <= 0);
         Debug.Log("done with this wave");
+        waveDone = true;
         yield return new WaitForSeconds(1f);
         yield return CourseController.Instance.ClearInstances();
         // end wave in 1
@@ -58,6 +61,7 @@ public class Wave
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
         LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         LevelManager.Instance.currentCircuitWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
+        PlayerController.Instance.EndCharge();
     }
     public bool DoneThrowing() {
         foreach (Thrower thrower in CourseController.Instance.currentThrowers) {
@@ -78,12 +82,16 @@ public class ThrowerWave {
     public float bowlAngle;
     public List<BallModifier> ballMods;
 
-    public List<BallModifier> ApplyThrowerMod() {
+    public List<BallModifier> ApplyThrowerMod(Thrower thrower) {
         List<BallModifier> newModList = new List<BallModifier>(ballMods);
         BallModifier modClone = throwerMod.Clone();
         if(modClone is ThrowBase)
         {
             ((ThrowBase)modClone).throwAngleRandomDelta = bowlAngle;
+            if (((ThrowBase)modClone).applyToThrower) {
+                thrower.currThrowMods.Add(((ThrowBase)modClone));
+                //return newModList;
+            }
         }
         newModList.Add(modClone);
         

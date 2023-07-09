@@ -80,11 +80,16 @@ public class BallController : MonoBehaviour
     }
 
     public IEnumerator DeleteBall(float timer = 0.4f) {
-        ballCollider.enabled = false;
         GlobalFunctions.FadeOut(ballShadow, timer);
         yield return GlobalFunctions.FadeOut(ballSprite, timer);
         CourseController.Instance.currentPins.Remove(gameObject);
         Destroy(gameObject);
+    }
+
+    public void BallJump(float hgt=0.5f, float dur=0.23f) {
+        LeanTween.value(
+            ballSprite.gameObject, (float val)=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, val);}, 0f, hgt, dur/2f
+        ).setLoopPingPong(1).setEaseOutCirc().setOnComplete(()=>{ballSprite.transform.localPosition = new Vector2(ballSprite.transform.localPosition.x, 0f);});
     }
 
     public void AddModifier(BallModifier mod)
