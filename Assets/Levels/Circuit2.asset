@@ -15,8 +15,8 @@ MonoBehaviour:
   displayName: Circuit Two
   isEndless: 0
   levels:
-  - {fileID: 11400000, guid: a3f1a780353f93e49aeb10e5c28e4531, type: 2}
   - {fileID: 11400000, guid: 762212dd5d68cf440b6dc0d0e83afb10, type: 2}
+  - {fileID: 11400000, guid: a3f1a780353f93e49aeb10e5c28e4531, type: 2}
   - {fileID: 11400000, guid: 8117984106c928a41b6d893a2ce85f60, type: 2}
   circuitMusic:
     Guid:
