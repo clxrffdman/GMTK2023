@@ -20,6 +20,8 @@ MonoBehaviour:
   throwForceRandomDelta: 1
   throwAngleRandomDelta: 20
   applyToThrower: 0
+  useCustomSprite: 0
+  customSprite: {fileID: 0}
   fakeBallModifier: {fileID: 11400000, guid: 984eadbb9a1c24d4c9185693b222a118, type: 2}
   splitCount: 2
   projectileSpread: 40

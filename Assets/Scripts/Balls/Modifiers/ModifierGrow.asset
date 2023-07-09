@@ -15,5 +15,5 @@ MonoBehaviour:
   description: 
   hasColorOverride: 1
   outlineColor: {r: 0.9014714, g: 5.9921575, b: 0, a: 0}
-  scalePerSecond: 0.4
+  scalePerSecond: 0.3
   scaleCap: 3

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SamuralSplitModifier : ThrowBase
 {
-    public float splitTime = 3f;
-    private float currentSplitTimer = 0f;
+    public float splitTime;
+    public float currentSplitTimer = 0f;
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 30;
@@ -29,8 +29,8 @@ public class SamuralSplitModifier : ThrowBase
 
     public IEnumerator SamuraiSplit(Thrower thrower)
     {
-        GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 1.15f, 0.1f);
-        yield return new WaitForSeconds(1.25f);
+        GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
+        yield return new WaitForSeconds(2.9f);
 
         GameplayUIManager.Instance.transitionPanelController.BeginFlash(0.05f, 0.05f, 0.02f);
         yield return new WaitForSeconds(0.1f);
