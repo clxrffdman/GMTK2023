@@ -1272,3 +1272,17 @@ MonoBehaviour:
       Data3: 1337409704
       Data4: -530329557
     Path: event:/Ball_Rolling
+  <ChargingSound>k__BackingField:
+    Guid:
+      Data1: 78194214
+      Data2: 1194403151
+      Data3: -2013227370
+      Data4: -1538264005
+    Path: event:/Player_Charge
+  <JumpSound>k__BackingField:
+    Guid:
+      Data1: -742945366
+      Data2: 1222740642
+      Data3: 102939834
+      Data4: 2089192016
+    Path: event:/Player_Jump

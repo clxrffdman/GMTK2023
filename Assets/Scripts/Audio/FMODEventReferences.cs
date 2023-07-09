@@ -11,6 +11,10 @@ public class FMODEventReferences : MonoBehaviour
     [field: Header("Ball SFX")]  
     [field: SerializeField] public EventReference BallRolling {get; private set;}
 
+    [field: Header("Player SFX")]  
+    [field: SerializeField] public EventReference ChargingSound {get; private set;}
+    [field: SerializeField] public EventReference JumpSound {get; private set;}
+
     public static FMODEventReferences instance {get; private set;}
     
     private void Awake()
