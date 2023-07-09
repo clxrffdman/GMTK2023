@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1690076900465767348, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1592439260, guid: 93cf670bdc9afd84e98441b064d3f177, type: 3}
     - target: {fileID: 6572457717074805505, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56,13 +52,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7270586965908117740, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 51bcb99f1ae23324291a677ccd000364, type: 2}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
-      value: SamuraiThrower
+      value: Thrower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

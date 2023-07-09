@@ -105,10 +105,7 @@ public class BallController : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallPit);
         GlobalFunctions.FadeOut(ballShadow, timer);
         yield return GlobalFunctions.FadeOut(ballSprite, timer);
-        if (CourseController.Instance.currentPins.Contains(gameObject))
-        {
-            CourseController.Instance.currentPins.Remove(gameObject);
-        }
+        CourseController.Instance.currentPins.Remove(gameObject);
         Destroy(gameObject);
     }
 

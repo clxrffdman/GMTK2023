@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7ab2e34b52e95e408a1ca3be1010988
+guid: 94e30b8484850324b8169e1e4add6044
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,37 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ball_slow_0
+      name: ball_32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9038b524963a11647b8039179bf404ce
-      internalID: -1790648666
+      spriteID: 1f937a9c402d676468fc5307eb4e46cb
+      internalID: 1709124153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_slow_1
+      name: ball_32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -171,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f1759117acef047a03e614fb2d75b2
-      internalID: 1562328369
+      spriteID: 1c59aedc1fb5dc448b136cd8567c5865
+      internalID: -770820927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_slow_2
+      name: ball_32_2
       rect:
         serializedVersion: 2
         x: 64
@@ -192,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec4b89eb3126d1d4da07c7dd230dbc99
-      internalID: 1249822638
+      spriteID: 0be6581f190164840b16a769ce2a2250
+      internalID: 1544201557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_slow_3
+      name: ball_32_3
       rect:
         serializedVersion: 2
         x: 96
@@ -213,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf2c60c5a3b63024695d390950acfb2c
-      internalID: -353622290
+      spriteID: 02f62c3be8d6831469791bfcb326815c
+      internalID: -943207685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_slow_4
+      name: ball_32_4
       rect:
         serializedVersion: 2
         x: 128
@@ -234,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91c497f3514fb9a41a71dff90d121fd3
-      internalID: -318400723
+      spriteID: 59185b1a0ab7f0e40a4fff3164057ba3
+      internalID: 1758254079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_slow_5
+      name: ball_32_5
       rect:
         serializedVersion: 2
         x: 160
@@ -255,8 +229,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee4a9a9b6dce09942ada39c066a10453
-      internalID: 2040075420
+      spriteID: 81a7e2f7fbb7ad348800c6c7bf6b733e
+      internalID: 478463692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_32_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74f547699424e548aac8f26ec32df64
+      internalID: -334292852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_32_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59c67a6b27947a4089a3ce547827f65
+      internalID: 2093578219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_32_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7b878c770204f4e8f161a02e0422c1
+      internalID: 783853617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_32_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f84203095e3efb42a73aa8bda2cb371
+      internalID: 1966961705
       vertices: []
       indices: 
       edges: []
@@ -272,12 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ball_slow_0: -1790648666
-      ball_slow_1: 1562328369
-      ball_slow_2: 1249822638
-      ball_slow_3: -353622290
-      ball_slow_4: -318400723
-      ball_slow_5: 2040075420
+      ball_32_0: 1709124153
+      ball_32_1: -770820927
+      ball_32_2: 1544201557
+      ball_32_3: -943207685
+      ball_32_4: 1758254079
+      ball_32_5: 478463692
+      ball_32_6: -334292852
+      ball_32_7: 2093578219
+      ball_32_8: 783853617
+      ball_32_9: 1966961705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1690076900465767348, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 751369035, guid: 40d4f22a7086b8d40b7833b50ca3be5b, type: 3}
     - target: {fileID: 6572457717074805505, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56,61 +52,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7270586965908117740, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 5fa0e2765a9358f43b6557a9d8f249df, type: 2}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
-      value: HeadlessThrower
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: onThrowLines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: preThrowLines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: onThrowLines.Array.data[0]
-      value: Eyes on the ball...
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: onThrowLines.Array.data[1]
-      value: Your days are numbered.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: preThrowLines.Array.data[0]
-      value: Death rides down the lane tonight.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: preThrowLines.Array.data[1]
-      value: A wicked omen rings through the dark.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverWinLines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverLoseLines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverWinLines.Array.data[0]
-      value: Came right back to bite me...
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverWinLines.Array.data[1]
-      value: Tragedy was foretold.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverLoseLines.Array.data[0]
-      value: Get your head in the game...
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: roundOverLoseLines.Array.data[1]
-      value: A solo stampede.
+      value: Thrower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

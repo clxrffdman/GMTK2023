@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CthuluAnimator
+  m_Name: DJAnimator
   m_Controller: {fileID: 9100000, guid: aefb9c258029f3f469eaae8ea2e36186, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 31353c8bac7f6e5468e4bafb36a1d875, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 3adcfc964d6e5d94186a6b72c900685c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 75740c1a3b375464c95111f8e45043fb, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: e8cee576939f2e146a84738e8252fc2e, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 764abf384c6e9be4bb43fd5b56223534, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c5ff735f3ae33524288d204a49c7bf94, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6e5c35edd7890d443995393aacf6e954, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 3936ac7498f0e0e4e9e106f1e4b9db40, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9348741f0ba58b6429dc6bfb742aa78c, type: 2}

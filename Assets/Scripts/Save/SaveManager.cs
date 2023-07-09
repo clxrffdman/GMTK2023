@@ -22,13 +22,6 @@ public class SaveManager : UnitySingleton<SaveManager>
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-
-        }
-    }
-
+    
 
 }
