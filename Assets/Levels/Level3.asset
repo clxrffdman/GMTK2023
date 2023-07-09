@@ -25,7 +25,7 @@ MonoBehaviour:
       xOffset: 0
       bowlAngle: 0
       ballMods: []
-    numPins: 4
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
@@ -48,7 +48,7 @@ MonoBehaviour:
       xOffset: 0.5
       bowlAngle: 20
       ballMods: []
-    numPins: 4
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
@@ -62,7 +62,7 @@ MonoBehaviour:
       xOffset: 0.2
       bowlAngle: 0
       ballMods: []
-    numPins: 5
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 0
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
@@ -78,7 +78,7 @@ MonoBehaviour:
       bowlAngle: 0
       ballMods:
       - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
-    numPins: 5
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
@@ -100,7 +100,7 @@ MonoBehaviour:
       xOffset: 0.3
       bowlAngle: 0
       ballMods: []
-    numPins: 4
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
@@ -124,7 +124,7 @@ MonoBehaviour:
       bowlAngle: 20
       ballMods:
       - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
-    numPins: 4
+    numPins: 6
     pinPosOffset: 1.5
     waveDone: 1
   currWave:

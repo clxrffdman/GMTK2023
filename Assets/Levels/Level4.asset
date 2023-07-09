@@ -72,7 +72,6 @@ MonoBehaviour:
       bowlAngle: 0
       ballMods:
       - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
-      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       balls:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
@@ -82,7 +81,6 @@ MonoBehaviour:
       bowlAngle: 0
       ballMods:
       - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
-      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
     numPins: 7
     pinPosOffset: 1.5
     waveDone: 1
@@ -97,8 +95,8 @@ MonoBehaviour:
       xOffset: 0.3
       bowlAngle: 90
       ballMods:
-      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
       - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       balls:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
@@ -122,8 +120,8 @@ MonoBehaviour:
       xOffset: 0.3
       bowlAngle: 20
       ballMods:
-      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
       - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+      - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       balls:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
@@ -132,8 +130,8 @@ MonoBehaviour:
       xOffset: -0.3
       bowlAngle: 20
       ballMods:
-      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
       - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
     numPins: 7
     pinPosOffset: 1.5
     waveDone: 1
@@ -149,8 +147,8 @@ MonoBehaviour:
       xOffset: 0.3
       bowlAngle: 20
       ballMods:
-      - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
       - {fileID: 11400000, guid: a1d3bc825996b5743908a68b673b6cf3, type: 2}
+      - {fileID: 11400000, guid: d18b37de6f3c72b40930ff74430add7a, type: 2}
     - thrower: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       balls:
       - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
