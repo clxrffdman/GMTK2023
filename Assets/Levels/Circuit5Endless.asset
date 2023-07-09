@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b31610957109f24d8a24e0bc7021035, type: 3}
-  m_Name: Circuit1
+  m_Name: Circuit5Endless
   m_EditorClassIdentifier: 
-  displayName: Circuit One
-  isEndless: 0
-  levels:
-  - {fileID: 11400000, guid: b6084be3dc820fb4ebb6f41b9c7e733e, type: 2}
-  - {fileID: 11400000, guid: e818f44fed2b8eb45b42af8c82ec24eb, type: 2}
-  - {fileID: 11400000, guid: 994d0fcd0459596409651900dacde4ae, type: 2}
+  displayName: Circuit Endless
+  isEndless: 1
+  levels: []
   circuitMusic:
     Guid:
       Data1: 0

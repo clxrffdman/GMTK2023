@@ -9,6 +9,7 @@ public class ScoreResultUIController : MonoBehaviour
 {
     [SerializeField] private Image medalImg;
     [SerializeField] private TextMeshProUGUI medalText;
+    [SerializeField] private GameObject nextCircuitButton;
 
     public List<Sprite> medalSprites;
 
@@ -24,23 +25,28 @@ public class ScoreResultUIController : MonoBehaviour
         
     }
 
+    public void DisableNextCircuitButton()
+    {
+        nextCircuitButton.SetActive(false);
+    }
+
     public void SetScore(int score)
     {
         medalText.text = score + "/" + LevelManager.Instance.currentCircuit.GetMaxFrames();
 
-        if(score >= 15)
+        if(score >= 18)
         {
             medalImg.sprite = medalSprites[3];
             return;
         }
 
-        if (score >= 13)
+        if (score >= 15)
         {
             medalImg.sprite = medalSprites[2];
             return;
         }
 
-        if (score >= 11)
+        if (score >= 13)
         {
             medalImg.sprite = medalSprites[1];
             return;

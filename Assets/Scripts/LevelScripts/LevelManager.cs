@@ -10,7 +10,7 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     [Header("Pre Set Information")]
     public List<Circuit> circuits = new List<Circuit>();
-
+    public int lastNormalLevelIndex;
     public FMODUnity.EventReference currentCircuitMusic;
     public EventInstance circuitMusic;
 
@@ -128,6 +128,11 @@ public class LevelManager : UnitySingleton<LevelManager>
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
+        if(SaveManager.Instance.circuitIndex++ > lastNormalLevelIndex)
+        {
+            GameplayUIManager.Instance.scoreResultUIController.DisableNextCircuitButton();
+        }
+
         if (SaveManager.Instance.scoreDictionary.ContainsKey(SaveManager.Instance.circuitIndex))
         {
             SaveManager.Instance.scoreDictionary[SaveManager.Instance.circuitIndex] = 
