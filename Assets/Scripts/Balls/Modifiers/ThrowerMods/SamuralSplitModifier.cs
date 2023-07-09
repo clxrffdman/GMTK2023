@@ -64,7 +64,7 @@ public class SamuralSplitModifier : ThrowBase
     {
         Vector2 dir = Vector2Extension.Rotate(controller.GetComponent<Rigidbody2D>().velocity.normalized, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
-        BallController ballCont = GlobalFunctions.FindComponent<BallController>(bullet.gameObject);
+        BallController ballCont = bullet.gameObject.GetComponent<BallController>();
         ballCont.RemoveModifier(this);
         ballCont.rb.velocity = Vector2.zero;
         ballCont.rb.AddForce(dir * spreadForce, ForceMode2D.Impulse);

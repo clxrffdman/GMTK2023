@@ -34,7 +34,7 @@ public class Thrower : MonoBehaviour
 
     void Awake()
     {
-        anim = anim != null ? anim : GlobalFunctions.FindComponent<Animator>(gameObject);
+        anim = anim != null ? anim : GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -73,7 +73,7 @@ public class Thrower : MonoBehaviour
             var newBall = Instantiate(balls[i], fakeBall.transform.position, Quaternion.identity, CourseController.Instance.ballParentTransform);
             fakeBall.gameObject.SetActive(false);
             //CameraController.Instance.SetBowlerCamTarget(newBall.transform);
-            BallController ballController = GlobalFunctions.FindComponent<BallController>(newBall);
+            BallController ballController = newBall.GetComponent<BallController>();
             ballController.BallThrow();
             ballController.InitBall(this, ballMods);
             currThrowerBalls.Add(ballController);

@@ -4,21 +4,6 @@ using System;
 using UnityEngine;
 
 public static class GlobalFunctions {
-    public static T FindComponent<T>(GameObject obj) {
-        T returnVal = obj.GetComponent<T>();
-        if (!returnVal.Equals(null)) {
-            return returnVal;
-        }
-        returnVal = obj.GetComponentInChildren<T>();
-        if (!returnVal.Equals(null)) {
-            return returnVal;
-        }
-        returnVal = obj.GetComponentInParent<T>();
-        if (returnVal.Equals(null)) {
-            Debug.Log("ERROR: Could not Find Component");
-        }
-        return returnVal;
-    }
     public static Vector3 RandomPointInBounds(Bounds bounds) {
         return new Vector3(
             UnityEngine.Random.Range(bounds.min.x, bounds.max.x),

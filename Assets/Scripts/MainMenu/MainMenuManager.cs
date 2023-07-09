@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
 
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
+    public CanvasGroup transitionPanel;
 
     public EventInstance menuMusic;
     [SerializeField] private EventReference menuMusicReference;
@@ -107,8 +108,8 @@ public class MainMenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         LeanTween.alphaCanvas(promptGroup, 0, 0.2f);
-        LeanTween.value(this.gameObject, MoveButtonX, -450, 190, 0.8f);
-        LeanTween.value(this.gameObject, MoveLogoY, 260, -238, 0.8f);
+        LeanTween.value(this.gameObject, MoveButtonX, -450, 190, 0.8f).setEaseOutElastic();
+        LeanTween.value(this.gameObject, MoveLogoY, 260, -238, 0.8f).setEaseOutElastic();
 
         yield return new WaitForSeconds(0.85f);
 
@@ -118,12 +119,25 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadCircuit(int index)
     {
+        StartCoroutine(FadeToBlack(index));
+        /*
         SaveManager.Instance.forceCircuitPlay = true;
         SaveManager.Instance.circuitIndex = index;
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         menuMusic.release();
         SceneManager.LoadScene(1, LoadSceneMode.Single);
+        */
     }
-
+    public IEnumerator FadeToBlack(int index) {
+        transitionPanel.blocksRaycasts = true;
+        LeanTween.alphaCanvas(transitionPanel, 1f, 1.4f);
+        yield return new WaitForSeconds(1.6f);
+        SaveManager.Instance.forceCircuitPlay = true;
+        SaveManager.Instance.circuitIndex = index;
+        menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuMusic.release();
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        
+    }
 
 }

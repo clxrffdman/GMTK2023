@@ -53,7 +53,16 @@ public class LevelManager : UnitySingleton<LevelManager>
     public void StartFirstPlay()
     {
         SaveManager.Instance.firstTimePlaying = false;
-        PlayerController.Instance.locked = false;
+        PlayerController.Instance.locked = true;
+        StartCoroutine(FadeFromBlack());
+        //StartCoroutine(TransitionPanelController.Instance.FadeFromBlack(1f));
+        //StartCoroutine(BeginLoadedLevels());
+    }
+
+    public IEnumerator FadeFromBlack() {
+        PlayerController.Instance.locked = true;
+        GameplayUIManager.Instance.transitionPanelController.SetBlack();
+        yield return GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(1f);
         StartCoroutine(BeginLoadedLevels());
     }
 
@@ -96,8 +105,8 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     public IEnumerator BeginLoadedLevels()
     {
-        
-        yield return new WaitForSeconds(1f);
+        GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("Circuit Start!", 0.25f, 1.5f, 0.15f);
+        //yield return new WaitForSeconds(1f);
         for(int i = 0; i < currentCircuitLevels.Count; i++)
         {
             currentLevelWinCount = 0;

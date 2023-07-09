@@ -63,7 +63,7 @@ public class CameraController : UnitySingleton<CameraController>
             Debug.Log("no current cam");
             return;
         }
-        GlobalFunctions.FindComponent<CameraShake>(currCam.gameObject).StartShake(str, dur, freq);
+        currCam.GetComponent<CameraShake>().StartShake(str, dur, freq);
     }
 
     public void Update() {

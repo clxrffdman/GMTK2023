@@ -23,12 +23,12 @@ public class BallDetectionZone : MonoBehaviour
         if (coll.gameObject.layer != 3) return;
         if (!camera) {
             Debug.Log("kill ball");
-            CourseController.Instance.BallDodged(GlobalFunctions.FindComponent<BallController>(coll.gameObject));
+            CourseController.Instance.BallDodged(coll.gameObject.GetComponent<BallController>());
         }
         else {
             if (state == CameraController.CameraState.Ball && CameraController.Instance.currentCameraState == CameraController.CameraState.Player) return;
             Debug.Log("tracked "+ state.ToString());
-            CameraController.Instance.SetCameraState(state, GlobalFunctions.FindComponent<BallController>(coll.gameObject));
+            CameraController.Instance.SetCameraState(state, coll.gameObject.GetComponent<BallController>());
         }
     }
 }
