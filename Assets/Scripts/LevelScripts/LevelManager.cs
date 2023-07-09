@@ -37,11 +37,24 @@ public class LevelManager : UnitySingleton<LevelManager>
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
         circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
         circuitMusic.start();
-        if (SaveManager.Instance.forceCircuitPlay)
+        if (SaveManager.Instance.forceCircuitPlay && !SaveManager.Instance.firstTimePlaying)
         {
             StartCoroutine(BeginLoadedLevels());
         }
 
+        if(SaveManager.Instance.firstTimePlaying && SaveManager.Instance.forceCircuitPlay)
+        {
+            PlayerController.Instance.locked = true;
+            GameplayUIManager.Instance.tutorialPanel.SetActive(true);
+        }
+
+    }
+
+    public void StartFirstPlay()
+    {
+        SaveManager.Instance.firstTimePlaying = false;
+        PlayerController.Instance.locked = false;
+        StartCoroutine(BeginLoadedLevels());
     }
 
     public void SetCurrentCircuitFromIndex(int index)

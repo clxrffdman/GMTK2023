@@ -14,6 +14,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
     public TransitionPanelController transitionPanelController;
     public GameObject pausePanel;
     public GameObject scorePanel;
+    public GameObject tutorialPanel;
 
     private void Update()
     {
@@ -31,5 +32,11 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
     public void RequestTogglePause()
     {
         GameManager.Instance.TogglePause(!GameManager.Instance.isPaused);
+    }
+
+    public void RequestExitTutorial()
+    {
+        tutorialPanel.SetActive(false);
+        LevelManager.Instance.StartFirstPlay();
     }
 }
