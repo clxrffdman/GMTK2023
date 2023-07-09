@@ -8,6 +8,7 @@ public class TransitionPanelController : MonoBehaviour {
     public Image backdrop;
     public bool isFlashing = false;
     public bool isTransitioning = false;
+    public bool isBlack = false;
 
     private void Start()
     {
@@ -59,13 +60,16 @@ public class TransitionPanelController : MonoBehaviour {
     }
 
     public void SetBlack() {
+        gameObject.SetActive(true);
+        isBlack = true;
         backdrop.color = Color.black;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1;
         Debug.Log("set to black pleeeeeeease man");
     }
 
-    public IEnumerator FadeToBlack(float dur, bool fadeBack=true) {
+    public IEnumerator FadeToBlack(float dur, float blackDur=0.23f, bool fadeBack=true) {
+        gameObject.SetActive(true);
         isTransitioning = true;
         backdrop.color = Color.black;
         canvasGroup.blocksRaycasts = true;
@@ -73,6 +77,9 @@ public class TransitionPanelController : MonoBehaviour {
 
         LeanTween.alphaCanvas(canvasGroup, 1f, dur);
         yield return new WaitForSeconds(dur);
+        isBlack = true;
+        yield return new WaitForSeconds(blackDur);
+        
         if (fadeBack) {
             yield return FadeFromBlack(0.5f);
         }
@@ -81,6 +88,7 @@ public class TransitionPanelController : MonoBehaviour {
     public IEnumerator FadeFromBlack(float dur) {
         LeanTween.alphaCanvas(canvasGroup, 0, dur);
         yield return new WaitForSeconds(dur);
+        isBlack = false;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0;
         isTransitioning = false;

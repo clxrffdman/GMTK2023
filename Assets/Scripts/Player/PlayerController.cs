@@ -31,12 +31,13 @@ public class PlayerController : UnitySingleton<PlayerController>
         anim = anim != null ? anim : GetComponent<Animator>();
     }
     public void Start() {
-        StartCoroutine(SpawnAnim());
+        //StartCoroutine(SpawnAnim());
         chargingSound = AudioManager.instance.CreateEventInstance(FMODEventReferences.instance.ChargingSound);        
     }
 
     public IEnumerator SpawnAnim() {
         transform.position = CourseController.Instance.playerSpawnPosition.position;
+        cursor.gameObject.SetActive(false);
         rb.velocity = Vector2.zero;
         locked = true;
         isHeld = false;
@@ -44,11 +45,37 @@ public class PlayerController : UnitySingleton<PlayerController>
         anim.Play("PlayerIdle");
         Color spriteColor = playerSprite.color;
         Color prevColor = spriteColor;
+        Color newColor = spriteColor;
         prevColor.a = 0f;
-        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, spriteColor, 0.2f);
+        newColor.a = 1f;
+        PlayerController.Instance.playerSprite.gameObject.SetActive(true);
+        playerSprite.color = prevColor;
+        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
         LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 5f, 0f, 0.3f);
         yield return new WaitForSeconds(0.6f);
-        locked = false;
+        cursor.gameObject.SetActive(true);
+    }
+
+    public IEnumerator PickUpAnim(bool intoSpawn=true) {
+        cursor.gameObject.SetActive(false);
+        //transform.position = CourseController.Instance.playerSpawnPosition.position;
+        rb.velocity = Vector2.zero;
+        locked = true;
+        isHeld = false;
+        anim.SetBool("Jump", false);
+        anim.Play("PlayerIdle");
+        Color spriteColor = playerSprite.color;
+        Color prevColor = spriteColor;
+        Color newColor = spriteColor;
+        prevColor.a = 1f;
+        newColor.a = 0f;
+        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
+        LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 0f, 5f, 0.3f);
+        yield return new WaitForSeconds(1f);
+        if (intoSpawn) {
+            yield return SpawnAnim();
+        }
+        cursor.gameObject.SetActive(true);
     }
 
     public void PlayerMovement(InputAction.CallbackContext context)
@@ -84,7 +111,6 @@ public class PlayerController : UnitySingleton<PlayerController>
                     cooldownTimer = baseMovementCooldown;
                 }
                 anim.SetBool("Jump", false);
-                chargingSound.stop(STOP_MODE.ALLOWFADEOUT);
                 rb.AddForce(cursor.GetDirection() * charge * rb.mass);
                 playerSprite.transform.localScale = baseSpriteScale;
                 LeanTween.scale(playerSprite.gameObject, baseSpriteScale*1.06f, 0.15f).setEaseOutQuint().setLoopPingPong(1).setOnComplete(()=>{ playerSprite.transform.localScale = baseSpriteScale; });
@@ -130,6 +156,7 @@ public class PlayerController : UnitySingleton<PlayerController>
     {
         LeanTween.cancel(this.gameObject);
         LeanTween.cancel(cursor.gameObject);
+        chargingSound.stop(STOP_MODE.ALLOWFADEOUT);
         cursor.ResetColor();
         isHeld = false;
         holdDuration = 0;
