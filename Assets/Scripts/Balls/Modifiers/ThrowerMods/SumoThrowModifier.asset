@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: SumoThrowModifier
   m_EditorClassIdentifier: 
   description: yo mama
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 7
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 20
   applyToThrower: 1
+  useCustomSprite: 1
+  customSprite: {fileID: 0}
   stompInterval: 1.4
   stompForce: 7
   stompForceVariance: 2

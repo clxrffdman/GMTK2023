@@ -20,7 +20,7 @@ MonoBehaviour:
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 20
   applyToThrower: 1
-  useCustomSprite: 0
+  useCustomSprite: 1
   customSprite: {fileID: 0}
   splitTime: 0
   currentSplitTimer: 0.5
