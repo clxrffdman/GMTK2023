@@ -13,6 +13,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public FMODUnity.EventReference currentCircuitMusic;
 
     [Header("Current Circuit Information")]
+    public CourseState currentCourseState;
     public Circuit currentCircuit;
     public int currentCircuitWinCount = 0;
     public List<Level> currentCircuitLevels = new List<Level>();
