@@ -103,7 +103,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         {            
             cooldownTimer -= Time.deltaTime;
         }
-        if (!cursor.isLocked && !anim.GetBool("Hit")) {
+        if (!cursor.isLocked && !GameManager.Instance.isPaused && !anim.GetBool("Hit")) {
             playerSprite.flipX = cursor.GetCursorPos().x < 0;
         }
     }
@@ -153,6 +153,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         }
     }
     public IEnumerator PlayerHit() {
+        EndCharge();
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;
         StartCoroutine(CourseController.Instance.DeleteBalls(false));

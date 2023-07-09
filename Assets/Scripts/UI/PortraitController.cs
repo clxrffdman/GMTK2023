@@ -74,7 +74,7 @@ public class PortraitController : MonoBehaviour
         string selectedQuip = "";
         if(currentThrower == null)
         {
-            GameplayUIManager.Instance.portraitQuipController.RequestQuip("Invalid Quip", 1);
+            GameplayUIManager.Instance.portraitQuipController.RequestQuip("Invalid Quip", 0.6f);
             return;
         }
         switch (LevelManager.Instance.currentCourseState)
@@ -105,6 +105,6 @@ public class PortraitController : MonoBehaviour
                 break;
         }
 
-        GameplayUIManager.Instance.portraitQuipController.RequestQuip(selectedQuip, 1f);
+        GameplayUIManager.Instance.portraitQuipController.RequestQuip(selectedQuip, 0.6f);
     }
 }

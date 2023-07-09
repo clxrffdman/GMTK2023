@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7554387172550115345
 MonoBehaviour:
@@ -48,8 +48,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   medalSprites:
   - {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
   - {fileID: 21300000, guid: 010fea2c4a4c7574e8fe81054363b607, type: 3}
   - {fileID: 21300000, guid: 15767ee615cdc0e4fa1f3eab8f9558af, type: 3}
   - {fileID: 21300000, guid: cd8ddb6d83d4af0469763af8ef6701fd, type: 3}
+  promptGroup: {fileID: 0}
+  buttonGroup: {fileID: 0}
+  hasPrompted: 0
+  hiddenCircuitButton: {fileID: 0}

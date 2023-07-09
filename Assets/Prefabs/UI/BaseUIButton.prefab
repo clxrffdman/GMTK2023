@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 4595019200956213452}
   - component: {fileID: 906733618543314632}
   - component: {fileID: 3297039397121710079}
+  - component: {fileID: 7844198924252003856}
   m_Layer: 5
   m_Name: BaseUIButton
   m_TagString: Untagged
@@ -406,3 +407,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7844198924252003856}
+          m_TargetAssemblyTypeName: BaseButtonClick, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7844198924252003856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486174022603829485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185c88fd177e16948b1835447ea268cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickRef:
+    Guid:
+      Data1: -1065020556
+      Data2: 1309800515
+      Data3: -1163959400
+      Data4: -1456304942
+    Path: event:/Menu_Click

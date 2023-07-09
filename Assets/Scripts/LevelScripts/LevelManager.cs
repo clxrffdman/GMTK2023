@@ -4,14 +4,15 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using FMODUnity;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
 
     [Header("Pre Set Information")]
     public List<Circuit> circuits = new List<Circuit>();
+    public List<EventReference> musicReferences = new List<EventReference>();
     public int lastNormalLevelIndex;
-    public FMODUnity.EventReference currentCircuitMusic;
     public EventInstance circuitMusic;
 
     [Header("Current Circuit Information")]
@@ -28,14 +29,32 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        circuitMusic = AudioManager.instance.CreateEventInstance(currentCircuitMusic);
-        circuitMusic.start();
+        musicReferences.Add(FMODEventReferences.instance.BowlingAlleyMusic);
+        musicReferences.Add(FMODEventReferences.instance.JapaneseMusic);
+        musicReferences.Add(FMODEventReferences.instance.HalloweenMusic);
+        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
+        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
-        if (SaveManager.Instance.forceCircuitPlay)
+        circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
+        circuitMusic.start();
+        if (SaveManager.Instance.forceCircuitPlay && !SaveManager.Instance.firstTimePlaying)
         {
             StartCoroutine(BeginLoadedLevels());
         }
 
+        if(SaveManager.Instance.firstTimePlaying && SaveManager.Instance.forceCircuitPlay)
+        {
+            PlayerController.Instance.locked = true;
+            GameplayUIManager.Instance.tutorialPanel.SetActive(true);
+        }
+
+    }
+
+    public void StartFirstPlay()
+    {
+        SaveManager.Instance.firstTimePlaying = false;
+        PlayerController.Instance.locked = false;
+        StartCoroutine(BeginLoadedLevels());
     }
 
     public void SetCurrentCircuitFromIndex(int index)
@@ -123,12 +142,20 @@ public class LevelManager : UnitySingleton<LevelManager>
         return false;
     }
 
+    public void StopCircuitMusic()
+    {
+        circuitMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        circuitMusic.release();
+    }
+
     public IEnumerator CircuitCompleteRoutine()
     {
+        StopCircuitMusic();
+
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
-        if(SaveManager.Instance.circuitIndex++ > lastNormalLevelIndex)
+        if(SaveManager.Instance.circuitIndex + 1 > lastNormalLevelIndex)
         {
             GameplayUIManager.Instance.scoreResultUIController.DisableNextCircuitButton();
         }

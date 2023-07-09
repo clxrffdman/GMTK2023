@@ -21,7 +21,6 @@ public class Circuit : ScriptableObject
     [ShowIf("isEndless")]
     public List<BallModifier> ballMods = new List<BallModifier>();
 
-
     public int GetMaxFrames()
     {
         int rv = 0;

@@ -6,6 +6,8 @@ public class SaveManager : UnitySingleton<SaveManager>
 {
     public int circuitIndex = 0;
     public bool forceCircuitPlay = false;
+    public bool firstTimePlaying = true;
+
 
     public Dictionary<int, int> scoreDictionary = new Dictionary<int, int>() { };
 
@@ -22,6 +24,13 @@ public class SaveManager : UnitySingleton<SaveManager>
         DontDestroyOnLoad(this.gameObject);
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+
+        }
+    }
+
 
 }

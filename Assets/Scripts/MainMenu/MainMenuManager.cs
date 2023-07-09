@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
+using FMODUnity;
+
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -10,10 +13,25 @@ public class MainMenuManager : MonoBehaviour
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
 
+    public EventInstance menuMusic;
+    [SerializeField] private EventReference menuMusicReference;
+
+    public CanvasGroup promptGroup;
+    public CanvasGroup buttonGroup;
+    public GameObject logo;
+    public bool hasPrompted = false;
     public GameObject hiddenCircuitButton;
 
     private void Start()
     {
+        menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
+        menuMusic.start();
+
+        Time.timeScale = 1;
+        promptGroup.alpha = 1;
+
+        LeanTween.value(this.gameObject, SetPromptAlpha, 0, 1, 0.8f).setLoopPingPong();
+
         bool showHidden = true;
 
         for(int i = 0; i < medalDisplays.Count; i++)
@@ -28,30 +46,28 @@ public class MainMenuManager : MonoBehaviour
                 if (score >= 18)
                 {
                     medalDisplays[i].sprite = medalSprites[3];
-                    return;
+                    continue;
                 }
-
-                showHidden = false;
 
                 if (score >= 15)
                 {
                     medalDisplays[i].sprite = medalSprites[2];
-                    return;
+                    continue;
                 }
 
                 if (score >= 13)
                 {
                     medalDisplays[i].sprite = medalSprites[1];
-                    return;
+                    continue;
                 }
 
                 if (score >= 9)
                 {
                     medalDisplays[i].sprite = medalSprites[0];
-                    return;
+                    continue;
                 }
             }
-            else if (i != 3)
+            else if (i < 3)
             {
                 showHidden = false;
             }
@@ -61,10 +77,51 @@ public class MainMenuManager : MonoBehaviour
         hiddenCircuitButton.SetActive(showHidden);
     }
 
+    public void SetPromptAlpha(float alpha)
+    {
+        promptGroup.alpha = alpha;
+    }
+
+    public void MoveButtonX(float xVal)
+    {
+        buttonGroup.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(xVal, -724, 0);
+    }
+
+    public void MoveLogoY(float yVal)
+    {
+        logo.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(530, yVal, 0);
+    }
+
+    public void Update()
+    {
+        if (Input.anyKeyDown && !hasPrompted)
+        {
+            hasPrompted = true;
+            LeanTween.cancel(this.gameObject);
+            StartCoroutine(TweenRoutine());
+        }
+    }
+
+
+    public IEnumerator TweenRoutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        LeanTween.alphaCanvas(promptGroup, 0, 0.2f);
+        LeanTween.value(this.gameObject, MoveButtonX, -450, 190, 0.8f);
+        LeanTween.value(this.gameObject, MoveLogoY, 260, -238, 0.8f);
+
+        yield return new WaitForSeconds(0.85f);
+
+        LeanTween.value(this.gameObject, MoveLogoY, -238, -251, 0.8f).setEaseInOutQuad().setLoopPingPong();
+
+    }
+
     public void LoadCircuit(int index)
     {
         SaveManager.Instance.forceCircuitPlay = true;
         SaveManager.Instance.circuitIndex = index;
+        menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuMusic.release();
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 

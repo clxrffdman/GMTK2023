@@ -26,6 +26,8 @@ public class BowlerQuipController : MonoBehaviour
     public IEnumerator QuipRoutine(string text, float lingerDuration)
     {
         isQuipping = true;
+        quipText.text = "";
+        typewriter.StopShowingText();
         quipText.text = text;
         typewriter.StartShowingText();
         LeanTween.scale(gameObject, new Vector3(1.05f, 1.05f, 1.05f), 0.15f).setEaseInQuad();

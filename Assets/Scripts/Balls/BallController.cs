@@ -161,5 +161,9 @@ public class BallController : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallBumper, ballCollider.transform.position);
         }
+        if(collision.gameObject.layer == 3)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallOnBall, ballCollider.transform.position);
+        }
     }
 }
