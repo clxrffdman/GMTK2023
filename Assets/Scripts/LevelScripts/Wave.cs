@@ -31,8 +31,9 @@ public class Wave
         GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].balls[0].GetComponent<BallController>());
         Debug.Log("portraiting");
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
-        Debug.Log("spawn anim about");
-        yield return PlayerController.Instance.SpawnAnim();
+        if (LevelManager.Instance.currentWaveIndex != 0) {
+            yield return PlayerController.Instance.SpawnAnim();
+        }
         PlayerController.Instance.locked = true;
         Debug.Log("begin placing pins");
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
@@ -63,15 +64,13 @@ public class Wave
         LevelManager.Instance.currentCourseState = LevelManager.Instance.hasFailedCurrentWave ? CourseState.RoundEndFail : CourseState.RoundEndSuccess;
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         GameManager.Instance.canPause = true;
-        yield return new WaitForSeconds(2f);
-
+        yield return PlayerController.Instance.PickUpAnim(false);
         EndWave();
     }
 
     public void EndWave() {
         Debug.Log("wave over");
         PlayerController.Instance.anim.SetBool("Hit", false);
-        
         GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, !LevelManager.Instance.hasFailedCurrentWave);
         LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         LevelManager.Instance.currentCircuitWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
