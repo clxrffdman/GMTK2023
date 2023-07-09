@@ -57,6 +57,7 @@ public class Wave
         yield return new WaitForSeconds(1f);
         yield return CourseController.Instance.ClearInstances();
         // end wave in 1
+        yield return new WaitForSeconds(0.7f);
         LevelManager.Instance.currentCourseState = LevelManager.Instance.hasFailedCurrentWave ? CourseState.RoundEndFail : CourseState.RoundEndSuccess;
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
         GameManager.Instance.canPause = true;
