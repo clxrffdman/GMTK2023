@@ -17,6 +17,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         promptGroup.alpha = 1;
 
         LeanTween.value(this.gameObject, SetPromptAlpha, 0, 1, 0.8f).setLoopPingPong();
