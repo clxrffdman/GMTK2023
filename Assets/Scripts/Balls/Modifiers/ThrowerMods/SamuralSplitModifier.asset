@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: SamuralSplitModifier
   m_EditorClassIdentifier: 
   description: 
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 7
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 20
   applyToThrower: 1
-  splitTime: 3
+  useCustomSprite: 0
+  customSprite: {fileID: 0}
+  splitTime: 1.5
   splitCount: 2
   projectileSpread: 50
   spreadForce: 15
