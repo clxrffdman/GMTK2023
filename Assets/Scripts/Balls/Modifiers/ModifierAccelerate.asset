@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ModifierAccelerate
   m_EditorClassIdentifier: 
   description: 
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   accelForce: 0.8
