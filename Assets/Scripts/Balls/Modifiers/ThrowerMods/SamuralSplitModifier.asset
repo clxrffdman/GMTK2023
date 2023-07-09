@@ -28,5 +28,5 @@ MonoBehaviour:
   hasStarted: 0
   hasSplit: 0
   currentCoursePercent: 0
-  coursePercentDark: 0.7
-  coursePercentSplit: 0.75
+  coursePercentDark: 0.65
+  coursePercentSplit: 0.7
