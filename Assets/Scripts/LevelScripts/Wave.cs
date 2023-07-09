@@ -24,6 +24,7 @@ public class Wave
     public IEnumerator StartWave() {
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
+        GameManager.Instance.canPause = false;
         LevelManager.Instance.hasFailedCurrentWave = false;
         LevelManager.Instance.currentCourseState = CourseState.PreppingThrow;
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
@@ -58,8 +59,9 @@ public class Wave
         // end wave in 1
         LevelManager.Instance.currentCourseState = LevelManager.Instance.hasFailedCurrentWave ? CourseState.RoundEndFail : CourseState.RoundEndSuccess;
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
-
+        GameManager.Instance.canPause = true;
         yield return new WaitForSeconds(2f);
+
         EndWave();
     }
 

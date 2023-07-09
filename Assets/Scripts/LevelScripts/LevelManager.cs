@@ -128,7 +128,7 @@ public class LevelManager : UnitySingleton<LevelManager>
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);
-        if(SaveManager.Instance.circuitIndex++ > lastNormalLevelIndex)
+        if(SaveManager.Instance.circuitIndex + 1 > lastNormalLevelIndex)
         {
             GameplayUIManager.Instance.scoreResultUIController.DisableNextCircuitButton();
         }
