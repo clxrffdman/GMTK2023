@@ -118,7 +118,6 @@ public class PlayerController : UnitySingleton<PlayerController>
 
     public void SlowTime(float value)
     {
-        Debug.Log(Time.timeScale);
         Time.timeScale = value;
     }
 

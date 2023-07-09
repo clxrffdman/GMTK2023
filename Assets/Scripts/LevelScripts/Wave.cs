@@ -30,9 +30,12 @@ public class Wave
         GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
         GameplayUIManager.Instance.portraitController.LoadBallType(throwerWaves[0].balls[0].GetComponent<BallController>());
+        Debug.Log("portraiting");
         GameplayUIManager.Instance.portraitController.RequestPortraitQuip();
+        Debug.Log("spawn anim about");
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
+        Debug.Log("begin placing pins");
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);
         yield return new WaitForSeconds(1.3f);
 
