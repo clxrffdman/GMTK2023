@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class TransitionPanelController : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
+    public Image backdrop;
+    public bool isFlashing = false;
     public bool isTransitioning = false;
 
     private void Start()
@@ -25,9 +27,20 @@ public class TransitionPanelController : MonoBehaviour
         StartCoroutine(TransitionRoutine(inDuration, lingerDuration, exitDuration));
     }
 
+    public void BeginFlash(float inDuration, float lingerDuration, float exitDuration)
+    {
+        if (isFlashing)
+        {
+            return;
+        }
+
+        StartCoroutine(FlashRoutine(inDuration, lingerDuration, exitDuration));
+    }
+
     public IEnumerator TransitionRoutine(float inDuration, float lingerDuration, float exitDuration)
     {
         isTransitioning = true;
+        backdrop.color = Color.black;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 0;
 
@@ -44,5 +57,33 @@ public class TransitionPanelController : MonoBehaviour
         isTransitioning = false;
         gameObject.SetActive(false);
 
+    }
+
+    public IEnumerator FlashRoutine(float inDuration, float lingerDuration, float exitDuration)
+    {
+        backdrop.color = Color.black;
+        isFlashing = true;
+        LeanTween.value(gameObject, 0, 1, inDuration).setOnUpdate(
+                    (float val) =>
+                    {
+                        SetTransitionColor(val);
+                    }
+                );
+        yield return new WaitForSeconds(inDuration + lingerDuration);
+        LeanTween.value(gameObject, 1, 0, inDuration).setOnUpdate(
+                    (float val) =>
+                    {
+                        SetTransitionColor(val);
+                    }
+                );
+        yield return new WaitForSeconds(exitDuration);
+
+        isFlashing = false;
+
+    }
+
+    public void SetTransitionColor(float val)
+    {
+        backdrop.color = new Color(val, val, val, 1);
     }
 }

@@ -25,7 +25,7 @@ public class Wave
         waveDone = false;
         leadBowler = null;
         LevelManager.Instance.hasFailedCurrentWave = false;
-        GameplayUIManager.Instance.portraitController.LoadProfile(profile);
+        GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
         CourseController.Instance.PlaceRandomPins(numPins, pinPosOffset);

@@ -31,8 +31,9 @@ public class Thrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (ThrowBase mod in currThrowMods) {
-            mod.OnThrowerUpdate(this);
+        for(int i = currThrowMods.Count-1; i >= 0; i--)
+        {
+            currThrowMods[i].OnThrowerUpdate(this);
         }
     }
 

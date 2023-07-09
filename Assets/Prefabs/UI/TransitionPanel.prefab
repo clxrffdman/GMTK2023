@@ -103,4 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 285421521284027461}
+  backdrop: {fileID: 6247962638996893209}
+  isFlashing: 0
   isTransitioning: 0

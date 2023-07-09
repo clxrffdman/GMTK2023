@@ -33,6 +33,22 @@ public class PortraitController : MonoBehaviour
         portraitText.text = profile.displayName;
     }
 
+    public void LoadProfile(Thrower profile)
+    {
+        if (profile == null)
+        {
+            currentProfile = null;
+            portraitSprite.sprite = null;
+            portraitSprite.color = Color.clear;
+            portraitText.text = "";
+            return;
+        }
+
+        portraitSprite.sprite = profile.portraitSprite;
+        portraitSprite.color = Color.white;
+        portraitText.text = profile.displayName;
+    }
+
     public void RequestPortraitQuip()
     {
 
