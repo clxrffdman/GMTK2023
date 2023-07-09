@@ -66,6 +66,8 @@ public class PlayerController : UnitySingleton<PlayerController>
 
     public IEnumerator PickUpAnim(bool intoSpawn=true) {
         cursor.gameObject.SetActive(false);
+        playerSprite.gameObject.SetActive(true);
+        playerShadow.gameObject.SetActive(true);
         playerShadow.transform.localScale = shadowScale;
         //transform.position = CourseController.Instance.playerSpawnPosition.position;
         rb.velocity = Vector2.zero;

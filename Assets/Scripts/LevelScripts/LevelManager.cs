@@ -194,8 +194,8 @@ public class LevelManager : UnitySingleton<LevelManager>
         {
             SaveManager.Instance.scoreDictionary[SaveManager.Instance.circuitIndex] = currentCircuitWinCount;
         }
-        
-        yield return GameplayUIManager.Instance.transitionPanelController.FadeToBlack(1.5f);
+        yield return null;
+        // yield return GameplayUIManager.Instance.transitionPanelController.FadeToBlack(1.5f);
     }
 
     public Level GetLevel(int levelNum) {
