@@ -30,9 +30,11 @@ public class SamuralSplitModifier : ThrowBase
     public IEnumerator SamuraiSplit(Thrower thrower)
     {
         GameplayUIManager.Instance.transitionPanelController.BeginTransition(0.35f, 2.5f, .3f);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlowdown);
         yield return new WaitForSeconds(2.9f);
 
         GameplayUIManager.Instance.transitionPanelController.BeginFlash(0.05f, 0.05f, 0.02f);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.SamuraiSlash);
         yield return new WaitForSeconds(0.1f);
 
         for (int i = CourseController.Instance.currentBalls.Count - 1; i >= 0; i--)
