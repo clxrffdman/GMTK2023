@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -18.999985}
+  m_AnchoredPosition: {x: 0, y: -34}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3822866724202530453
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 80.3
+  m_fontSizeBase: 80.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -626,7 +626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 64.25
+      value: 58.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 58.6
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
@@ -752,7 +756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 63.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 63.25
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
@@ -903,7 +911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 63.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 63.25
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
