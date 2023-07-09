@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CthuluBall
+  m_Controller: {fileID: 9100000, guid: 1903146583f80104ab9f059b5bf6e1d2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4f5c524f1177dbb48b79ee31ebfac6a6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f165f6d68a117624f96ca3861670b68a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 62038f9619a48cd4e9c30f0d97b457f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2b87b009d77ed9a448649f33d4de2d16, type: 2}

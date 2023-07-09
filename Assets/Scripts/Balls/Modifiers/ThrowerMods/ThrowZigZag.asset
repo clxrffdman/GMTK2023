@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: ThrowZigZag
   m_EditorClassIdentifier: 
   description: 
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 8
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 0
-  zigZagForce: 1500
-  zigZagDirection: {x: 1, y: 0}
+  applyToThrower: 0
+  useCustomSprite: 0
+  customSprite: {fileID: 0}
+  zigZagForce: 800
+  zigZagDirection: {x: 1, y: -0.2}
   doZigZag: 0
-  zigZagInterval: 0.15
+  zigZagInterval: 0.2
   intervalOffset: 0

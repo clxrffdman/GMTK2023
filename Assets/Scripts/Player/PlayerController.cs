@@ -153,6 +153,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         }
     }
     public IEnumerator PlayerHit() {
+        EndCharge();
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;
         StartCoroutine(CourseController.Instance.DeleteBalls(false));
