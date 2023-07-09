@@ -1369,3 +1369,17 @@ MonoBehaviour:
       Data3: -2069571188
       Data4: 1744409867
     Path: event:/Sumo_Stomp
+  <SamuraiSlowdown>k__BackingField:
+    Guid:
+      Data1: -1213337638
+      Data2: 1178118063
+      Data3: -267877980
+      Data4: 1989129329
+    Path: event:/Samurai_Slowdown
+  <SamuraiSlash>k__BackingField:
+    Guid:
+      Data1: -602148502
+      Data2: 1294005200
+      Data3: -61036413
+      Data4: -558093638
+    Path: event:/Samurai_Slash

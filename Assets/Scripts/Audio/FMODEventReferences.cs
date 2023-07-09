@@ -29,6 +29,8 @@ public class FMODEventReferences : MonoBehaviour
 
     [field: Header("Thrower SFX")]   
     [field: SerializeField] public EventReference SumoStomp {get; private set;}   
+    [field: SerializeField] public EventReference SamuraiSlowdown {get; private set;}    
+    [field: SerializeField] public EventReference SamuraiSlash {get; private set;}       
 
     public static FMODEventReferences instance {get; private set;}
     
