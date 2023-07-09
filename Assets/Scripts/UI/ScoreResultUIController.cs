@@ -55,7 +55,7 @@ public class ScoreResultUIController : MonoBehaviour
 
     public void ContinueToNextCircuit()
     {
-        SaveManager.Instance.circuitIndex = SaveManager.Instance.circuitIndex++;
+        SaveManager.Instance.circuitIndex++;
         SaveManager.Instance.forceCircuitPlay = true;
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
