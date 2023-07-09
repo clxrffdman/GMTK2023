@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1709124153, guid: 94e30b8484850324b8169e1e4add6044, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,7 +240,10 @@ MonoBehaviour:
   type: 0
   displayName: 
   portraitSprite: {fileID: 0}
-  quipLines: []
+  preThrowLines: []
+  onThrowLines: []
+  roundOverLoseLines: []
+  roundOverWinLines: []
   throwerType: 0
   doneThrowing: 0
   xOffset: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2248477824751121876
+--- !u!1001 &343494818801317012
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1690076900465767348, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -809337562, guid: 58858d07258a9eb4a8f0563266481767, type: 3}
     - target: {fileID: 6572457717074805505, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56,24 +52,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7270586965908117740, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 5fa0e2765a9358f43b6557a9d8f249df, type: 2}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
-      value: DJMikeThrower
+      value: Thrower
       objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: displayName
-      value: DJ Mike
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
-      propertyPath: portraitSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
-    m_RemovedComponents:
-    - {fileID: 1539864510303653810, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
