@@ -1204,6 +1204,13 @@ MonoBehaviour:
       Data3: 1612482700
       Data4: -1120119816
     Path: event:/Halloween_Music
+  <MainMenuMusic>k__BackingField:
+    Guid:
+      Data1: -823350768
+      Data2: 1178742541
+      Data3: -889139549
+      Data4: 2005616952
+    Path: event:/MainMenu_Music
   <Success>k__BackingField:
     Guid:
       Data1: 1425495773
@@ -1302,3 +1309,24 @@ MonoBehaviour:
       Data3: -61036413
       Data4: -558093638
     Path: event:/Samurai_Slash
+  <Dialogue>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <SamuraiSlowSnapshot>k__BackingField:
+    Guid:
+      Data1: -1803665841
+      Data2: 1107554180
+      Data3: -377644113
+      Data4: -1520982349
+    Path: snapshot:/SamuraiSlow
+  <PauseMenu>k__BackingField:
+    Guid:
+      Data1: 1982434354
+      Data2: 1187104997
+      Data3: -1788973675
+      Data4: 195767099
+    Path: snapshot:/PauseMenu

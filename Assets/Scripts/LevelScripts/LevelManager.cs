@@ -33,6 +33,7 @@ public class LevelManager : UnitySingleton<LevelManager>
         musicReferences.Add(FMODEventReferences.instance.JapaneseMusic);
         musicReferences.Add(FMODEventReferences.instance.HalloweenMusic);
         musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
+        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
         circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
         circuitMusic.start();
