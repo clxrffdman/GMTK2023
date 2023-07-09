@@ -7,10 +7,9 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-   private List<EventInstance> eventInstances;
-
     public static AudioManager instance {get; private set; }
-
+  
+    private List<EventInstance> eventInstances;
 
     private void Awake()
     {
@@ -37,6 +36,7 @@ public class AudioManager : MonoBehaviour
             eventInstance.release();
         }
     }
+    
     private void OnDesstroy()
     {
         CleanUp();

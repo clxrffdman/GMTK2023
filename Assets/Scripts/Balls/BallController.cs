@@ -45,6 +45,7 @@ public class BallController : MonoBehaviour
         ignoreBallDuration -= ignoreBallDuration > 0 ? Time.deltaTime : 0;
         float coursePercentage = Mathf.InverseLerp(courseController.courseHeightBounds.x, courseController.courseHeightBounds.y, transform.position.y);
 
+
         for(int i = modifiers.Count-1; i >= 0; i--)
         {
             modifiers[i].OnUpdate(this, activeTime, coursePercentage);
@@ -66,6 +67,7 @@ public class BallController : MonoBehaviour
     public void InitBall(Thrower thrower, List<BallModifier> ballMods) {
 
         ballRolling = AudioManager.instance.CreateEventInstance(FMODEventReferences.instance.BallRolling);
+        ballRolling.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         ballRolling.start();
         courseController = CourseController.Instance;
         transform.position = thrower.transform.position;
@@ -87,6 +89,7 @@ public class BallController : MonoBehaviour
 
     public IEnumerator DeleteBall(float timer = 0.4f) {
         ballRolling.stop(STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallPit);
         GlobalFunctions.FadeOut(ballShadow, timer);
         yield return GlobalFunctions.FadeOut(ballSprite, timer);
         CourseController.Instance.currentPins.Remove(gameObject);
@@ -126,6 +129,9 @@ public class BallController : MonoBehaviour
         {
             modifiers[i].OnBounce(this);
         }
-
+        if(collision.gameObject.tag == "Bumper")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallBumper, ballCollider.transform.position);
+        }
     }
 }
