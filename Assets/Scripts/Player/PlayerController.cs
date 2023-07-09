@@ -61,6 +61,7 @@ public class PlayerController : UnitySingleton<PlayerController>
                 isHeld = true;
                 anim.SetBool("Jump", true);
                 LeanTween.value(this.gameObject, ChargeRoutine, 0, maxChargeTimer, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
+                LeanTween.value(this.gameObject, SlowTime, 1, .5f, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(cursor.gameObject, cursor.ChargeRoutine, cursor.baseRadius, cursor.maxRadius, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.color(cursor.gameObject, Color.red, maxChargeTimer).setEaseOutCubic().setLoopPingPong();
                 LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, 0, 0.3f, maxChargeTimer).setEaseOutCubic();
@@ -104,6 +105,12 @@ public class PlayerController : UnitySingleton<PlayerController>
         charge = value * chargeIncrement;
     }
 
+    public void SlowTime(float value)
+    {
+        Debug.Log(Time.timeScale);
+        Time.timeScale = value;
+    }
+
     
     public void EndCharge()
     {
@@ -114,6 +121,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         holdDuration = 0;
         charge = 0;
         cursor.LockCursorMovement(false);
+        Time.timeScale = 1;
 
         LeanTween.value(this.gameObject, CameraController.Instance.SetVignetteStrength, CameraController.Instance.GetVignetteStrength(), 0, baseMovementCooldown).setEaseOutQuint();
         LeanTween.value(this.gameObject, CameraController.Instance.SetPlayerCamZoom,
