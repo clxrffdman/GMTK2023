@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class HazardPin : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class HazardPin : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collider) {
         shadow.SetActive(false);
+        string collidedObject = collider.gameObject.tag;
+        if (collidedObject != "Bumper" && collidedObject != "Player")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallCollision, sprite.transform.position);
+        }
     }
 }

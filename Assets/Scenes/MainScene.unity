@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPin
       objectReference: {fileID: 0}
+    - target: {fileID: 5231096366445769732, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8031358764327787105, guid: 6f46f542ea5ae1f4197859913d09e1c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -719,7 +723,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7640138040417027499, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071827144}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
 --- !u!1001 &1233959547
@@ -749,6 +756,10 @@ PrefabInstance:
     - target: {fileID: 1557828345508561164, guid: 53ee63cef12ef8f42970695050339834, type: 3}
       propertyPath: m_Name
       value: CourseController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899549165930762171, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+      propertyPath: m_TagString
+      value: Bumper
       objectReference: {fileID: 0}
     - target: {fileID: 3327646331742946388, guid: 53ee63cef12ef8f42970695050339834, type: 3}
       propertyPath: m_LocalPosition.y
@@ -805,6 +816,10 @@ PrefabInstance:
     - target: {fileID: 5832845494715418045, guid: 53ee63cef12ef8f42970695050339834, type: 3}
       propertyPath: m_LocalPosition.y
       value: 14.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219030277567424370, guid: 53ee63cef12ef8f42970695050339834, type: 3}
+      propertyPath: m_TagString
+      value: Bumper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1020,6 +1035,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd6740566c0de1b4eb2e60093b012e82, type: 3}
+--- !u!4 &1588650811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7640138040417027499, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
+  m_PrefabInstance: {fileID: 1190399134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631938787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,6 +1095,26 @@ PrefabInstance:
     - target: {fileID: 1520820801166593881, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
       propertyPath: m_Name
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Path
+      value: event:/BowlingAlley_Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data1
+      value: 734634999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data2
+      value: 1268949039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data3
+      value: -1192849753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data4
+      value: 1312539233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1194,3 +1234,96 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
+--- !u!1 &2071827143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071827144}
+  - component: {fileID: 2071827145}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071827144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071827143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1588650811}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2071827145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071827143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90473914512079d4882bb58d7db0221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BowlingAlleyMusic>k__BackingField:
+    Guid:
+      Data1: 734634999
+      Data2: 1268949039
+      Data3: -1192849753
+      Data4: 1312539233
+    Path: event:/BowlingAlley_Music
+  <BallRolling>k__BackingField:
+    Guid:
+      Data1: -2078121415
+      Data2: 1118874356
+      Data3: 1337409704
+      Data4: -530329557
+    Path: event:/Ball_Rolling
+  <BallBumper>k__BackingField:
+    Guid:
+      Data1: 2020759886
+      Data2: 1207025125
+      Data3: -1475558505
+      Data4: 1766562099
+    Path: event:/Ball_Bumper
+  <BallPit>k__BackingField:
+    Guid:
+      Data1: 620888555
+      Data2: 1168383842
+      Data3: -1285326968
+      Data4: 1419893355
+    Path: event:/Ball_Pit
+  <ChargingSound>k__BackingField:
+    Guid:
+      Data1: 78194214
+      Data2: 1194403151
+      Data3: -2013227370
+      Data4: -1538264005
+    Path: event:/Player_Charge
+  <JumpSound>k__BackingField:
+    Guid:
+      Data1: -742945366
+      Data2: 1222740642
+      Data3: 102939834
+      Data4: 2089192016
+    Path: event:/Player_Jump
+  <BallCollision>k__BackingField:
+    Guid:
+      Data1: -615878598
+      Data2: 1235151934
+      Data3: -1504635518
+      Data4: 765672206
+    Path: event:/Pin_Ballhit

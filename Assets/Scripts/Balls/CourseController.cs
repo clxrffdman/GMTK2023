@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using FMOD.Studio;
 
 public class CourseController : UnitySingleton<CourseController>
 {
@@ -85,12 +86,20 @@ public class CourseController : UnitySingleton<CourseController>
         StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(thrower), wave.consecBallOffset));
     }
 
+    private void ClearSoundEffects()
+    {
+        Bus soundEffectsBus = FMODUnity.RuntimeManager.GetBus("bus:/Sound Effects");
+        soundEffectsBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+
     public IEnumerator ClearInstances() {
         for (int i = currentThrowers.Count-1; i >= 0; i--) {
             Destroy(currentThrowers[i].gameObject);
         }
         currentThrowers.Clear();
         StartCoroutine(DeleteBalls(false));
+        ClearSoundEffects();
         yield return DeletePins();
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class LevelManager : UnitySingleton<LevelManager>
 {
@@ -11,6 +12,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public List<Circuit> circuits = new List<Circuit>();
 
     public FMODUnity.EventReference currentCircuitMusic;
+    public EventInstance circuitMusic;
 
     [Header("Current Circuit Information")]
     public CourseState currentCourseState;
@@ -26,11 +28,14 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
+        circuitMusic = AudioManager.instance.CreateEventInstance(currentCircuitMusic);
+        circuitMusic.start();
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
         if (SaveManager.Instance.forceCircuitPlay)
         {
             StartCoroutine(BeginLoadedLevels());
         }
+
     }
 
     public void SetCurrentCircuitFromIndex(int index)
@@ -40,7 +45,6 @@ public class LevelManager : UnitySingleton<LevelManager>
             Debug.Log("circuit " + index + " is an invalid circuit (too small or too large index)");
             return;
         }
-
         currentCircuit = circuits[index];
         currentCircuitLevels = currentCircuit.levels;
         CourseController.Instance.SetCircuitObjects(currentCircuit);
