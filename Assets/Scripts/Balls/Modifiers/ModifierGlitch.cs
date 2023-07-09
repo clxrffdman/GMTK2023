@@ -29,6 +29,8 @@ public class ModifierGlitch : BallModifier
         }
         else
         {
+            Debug.Log("checking glitch validity");
+
             bool leftValid = false;
             bool rightValid = false;
 

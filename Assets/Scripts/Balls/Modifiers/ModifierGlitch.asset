@@ -15,9 +15,9 @@ MonoBehaviour:
   description: 
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  minTeleportDistance: 0.5
+  minTeleportDistance: 0.25
   maxTeleportDistance: 1.5
-  teleportInterval: 1
+  teleportInterval: 0.5
   teleportCheckLayerMask:
     serializedVersion: 2
     m_Bits: 1
