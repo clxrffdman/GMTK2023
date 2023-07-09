@@ -38,7 +38,7 @@ public class ThrowZigZag : ThrowBase
             }
 
             zigZagDirection *= -1;
-            controller.rb.AddForce(zigZagDirection * zigZagForce * Time.deltaTime, ForceMode2D.Impulse);
+            controller.rb.AddForce(zigZagDirection * zigZagForce, ForceMode2D.Impulse);
             Debug.Log(zigZagDirection * zigZagForce);
             counter = zigZagInterval;
         }
