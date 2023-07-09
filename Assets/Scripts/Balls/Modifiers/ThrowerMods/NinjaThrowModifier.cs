@@ -5,6 +5,7 @@ using UnityEngine;
 public class NinjaThrowModifier : ThrowBase
 {
     public BallModifier fakeBallModifier;
+    public RuntimeAnimatorController fakeAnim;
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 20;
@@ -50,6 +51,8 @@ public class NinjaThrowModifier : ThrowBase
     {
         Vector2 dir = Vector2Extension.Rotate(baseDir, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
+        GlobalFunctions.FindComponent<Animator>(bullet.gameObject).runtimeAnimatorController = fakeAnim;
+        GlobalFunctions.FindComponent<Animator>(bullet.gameObject).SetBool("thrown", true);
         bullet.transform.GetComponent<BallController>().AddModifier(fakeBallModifier);
         bullet.transform.GetComponent<BallController>().defaultLayerMask = ignoreCollLayermask;
         bullet.transform.GetComponent<BallController>().rb.velocity = dir * controller.rb.velocity.magnitude;

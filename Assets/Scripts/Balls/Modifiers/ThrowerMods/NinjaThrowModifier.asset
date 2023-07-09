@@ -23,6 +23,7 @@ MonoBehaviour:
   useCustomSprite: 0
   customSprite: {fileID: 0}
   fakeBallModifier: {fileID: 11400000, guid: 984eadbb9a1c24d4c9185693b222a118, type: 2}
+  fakeAnim: {fileID: 22100000, guid: 830fe4f510e1e824cbfb4a87ff82443f, type: 2}
   splitCount: 2
   projectileSpread: 40
   spreadForce: 8
