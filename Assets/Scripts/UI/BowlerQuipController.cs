@@ -9,6 +9,7 @@ public class BowlerQuipController : MonoBehaviour
 {
 
     public TextMeshProUGUI quipText;
+    public TextAnimator_TMP textAnimator;
     public TypewriterByCharacter typewriter;
     public bool isQuipping;
 
@@ -27,6 +28,7 @@ public class BowlerQuipController : MonoBehaviour
     {
         isQuipping = true;
         quipText.text = "";
+        typewriter.SkipTypewriter();
         typewriter.StopShowingText();
         quipText.text = text;
         typewriter.StartShowingText();
@@ -40,6 +42,8 @@ public class BowlerQuipController : MonoBehaviour
         yield return new WaitForSeconds(lingerDuration);
         LeanTween.scale(gameObject, new Vector3(1f, 1f, 1f), 0.2f);
         typewriter.StartDisappearingText();
+
+        yield return new WaitForSeconds(0.4f);
         isQuipping = false;
 
     }

@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2108484248, guid: 544b1e95558837143863391c9936f028, type: 3}
+    - target: {fileID: 5719259362889700187, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      propertyPath: displayName
+      value: Rhythm Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 6182808276054253719, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
       propertyPath: m_Controller
       value: 

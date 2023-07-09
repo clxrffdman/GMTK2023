@@ -48,25 +48,12 @@ public class PortraitController : MonoBehaviour
         portraitText.text = profile.displayName;
     }
 
-    public void LoadBallType(BallModifier throwType)
+    public void LoadBallType(BallController ball)
     {
-        if(throwType == null || !(throwType is ThrowBase))
-        {
-            return;
-        }
 
-        if(((ThrowBase)throwType).useCustomSprite && ((ThrowBase)throwType).customSprite != null)
-        {
-            ballImg.sprite = ((ThrowBase)throwType).customSprite;
-            ballImg.color = Color.white;
-            ballInfoText.text = throwType.description;
-        }
-        else
-        {
-            ballImg.sprite = null;
-            ballImg.color = Color.clear;
-            ballInfoText.text = "";
-        }
+        ballImg.sprite = ball.ballSprite.sprite;
+        ballImg.color = Color.white;
+        ballInfoText.text = ball.displayName;
     }
 
     public void RequestPortraitQuip()

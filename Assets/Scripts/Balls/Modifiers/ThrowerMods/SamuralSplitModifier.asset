@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe8934a2b542b74996f2bffd5b04c4b, type: 3}
   m_Name: SamuralSplitModifier
   m_EditorClassIdentifier: 
-  description: 
+  description: Splitter Ball
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 7
@@ -21,7 +21,7 @@ MonoBehaviour:
   throwAngleRandomDelta: 20
   applyToThrower: 1
   useCustomSprite: 1
-  customSprite: {fileID: 0}
+  customSprite: {fileID: -1993869845, guid: d66113b3b5bbe4c4d837e64ede1e3350, type: 3}
   splitTime: 0
   currentSplitTimer: 0.5
   splitCount: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8922cec5f7347f845af942a3f600a2a8, type: 3}
   m_Name: SumoThrowModifier
   m_EditorClassIdentifier: 
-  description: yo mama
+  description: Sumo Ball
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   throwForce: 5
@@ -21,7 +21,7 @@ MonoBehaviour:
   throwAngleRandomDelta: 20
   applyToThrower: 1
   useCustomSprite: 1
-  customSprite: {fileID: 0}
+  customSprite: {fileID: 154962273, guid: 3c7db57ab10dab240a84e781788e60c8, type: 3}
   stompInterval: 1.4
   stompForce: 7
   stompForceVariance: 2

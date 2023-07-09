@@ -1137,6 +1137,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: waitLong
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: waitMiddle
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: waitForNewLines
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: waitForNormalChars
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: waitForLastCharacter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743838000949608824, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: hideAppearancesOnSkip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963238457397095964, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: typewriterStartsAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704767860423808543, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.499985
+      objectReference: {fileID: 0}
     - target: {fileID: 4930983286147609921, guid: 1869f6394e72ede4d853d42f90f8b159, type: 3}
       propertyPath: m_Name
       value: BowlerQuipPanel
@@ -1299,6 +1331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BowlerPortrait
       objectReference: {fileID: 0}
+    - target: {fileID: 2266850810738474275, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -173.29999
+      objectReference: {fileID: 0}
     - target: {fileID: 4901897579783914009, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_text
       value: 
@@ -1377,7 +1413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906319667827338256, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.99997
+      value: -104
       objectReference: {fileID: 0}
     - target: {fileID: 4906319667827338256, guid: b965eb078fb2c5b488deb8a57953a906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
