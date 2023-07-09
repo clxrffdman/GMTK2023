@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DJIdle
+  m_Name: FrankIdle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.25
-        value: {x: -1.37, y: -1.36, z: 0}
+        value: {x: -1.37, y: -1.39, z: 0}
         inSlope: {x: Infinity, y: Infinity, z: Infinity}
         outSlope: {x: Infinity, y: Infinity, z: Infinity}
         tangentMode: 0
@@ -46,9 +46,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -809337562, guid: 58858d07258a9eb4a8f0563266481767, type: 3}
+      value: {fileID: -417782509, guid: 7dccc4d8fa161434e9736672003c2325, type: 3}
     - time: 0.25
-      value: {fileID: 2136905181, guid: 58858d07258a9eb4a8f0563266481767, type: 3}
+      value: {fileID: 565250754, guid: 7dccc4d8fa161434e9736672003c2325, type: 3}
     attribute: m_Sprite
     path: Sprite
     classID: 212
@@ -80,8 +80,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -809337562, guid: 58858d07258a9eb4a8f0563266481767, type: 3}
-    - {fileID: 2136905181, guid: 58858d07258a9eb4a8f0563266481767, type: 3}
+    - {fileID: -417782509, guid: 7dccc4d8fa161434e9736672003c2325, type: 3}
+    - {fileID: 565250754, guid: 7dccc4d8fa161434e9736672003c2325, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -148,7 +148,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -1.36
+        value: -1.39
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
