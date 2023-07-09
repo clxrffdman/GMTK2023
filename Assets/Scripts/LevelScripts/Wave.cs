@@ -25,6 +25,7 @@ public class Wave
         waveDone = false;
         leadBowler = throwerWaves[0].thrower.GetComponent<Thrower>();
         LevelManager.Instance.hasFailedCurrentWave = false;
+        GameplayUIManager.Instance.scorecardUIController.SetSelected(LevelManager.Instance.currentWaveIndex);
         GameplayUIManager.Instance.portraitController.LoadProfile(leadBowler);
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.locked = true;
@@ -60,7 +61,7 @@ public class Wave
         Debug.Log("wave over");
         PlayerController.Instance.anim.SetBool("Hit", false);
         
-        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, LevelManager.Instance.hasFailedCurrentWave);
+        GameplayUIManager.Instance.scorecardUIController.SetScore(LevelManager.Instance.currentWaveIndex, !LevelManager.Instance.hasFailedCurrentWave);
         LevelManager.Instance.currentLevelWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         LevelManager.Instance.currentCircuitWinCount += LevelManager.Instance.hasFailedCurrentWave ? 0 : 1;
         PlayerController.Instance.EndCharge();

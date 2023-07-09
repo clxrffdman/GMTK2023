@@ -1089,6 +1089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205345806061310150, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.499985
+      objectReference: {fileID: 0}
     - target: {fileID: 2825118900103109238, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -1097,6 +1101,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1016828540}
+    - target: {fileID: 5178784619817115534, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -173.29999
+      objectReference: {fileID: 0}
     - target: {fileID: 7346355830696186101, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
       propertyPath: m_Pivot.x
       value: 0

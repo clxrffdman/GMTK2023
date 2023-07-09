@@ -17,8 +17,9 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   minTeleportDistance: 0.25
   maxTeleportDistance: 1.5
-  teleportInterval: 0.5
+  teleportInterval: 0.3
   teleportCheckLayerMask:
     serializedVersion: 2
     m_Bits: 1
+  teleportIndicatorPrefab: {fileID: 8027621192842508263, guid: 911152ff7c5dd494c9594dc4a7c88379, type: 3}
   teleportIndicator: {fileID: 0}
