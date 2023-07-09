@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40d4f22a7086b8d40b7833b50ca3be5b
+guid: 93cf670bdc9afd84e98441b064d3f177
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: headlessSpriteSheet_0
+      name: samuraiSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ba0b622567c1c4daeb2816660ebae8
-      internalID: 751369035
+      spriteID: 553009eb5bd154d4d8d71e3f99dff046
+      internalID: 1592439260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_1
+      name: samuraiSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a25819675ec6314cbf1f28fa1bd1585
-      internalID: -1572159175
+      spriteID: d162092e14fd6ee409edff02066caf8f
+      internalID: 1503834184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_2
+      name: samuraiSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bb31aa6b997e96479466ddd750bfe6d
-      internalID: 106418435
+      spriteID: 790827f80a0e2e74ca4fae5efefae8b6
+      internalID: 2087604392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_3
+      name: samuraiSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c828638f6b9d9da42a8a0b76ed2dff18
-      internalID: 778919902
+      spriteID: 1ab284a9d42df9b4eaf565ddca67d6cd
+      internalID: 919052250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_4
+      name: samuraiSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85314f0ee5388ab4690b137b48125bd6
-      internalID: 1356683676
+      spriteID: 31a18fc7b086f264b9c9385186efdb38
+      internalID: 828954115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_5
+      name: samuraiSpriteSheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55a52f661441ee141a358f8df6568f62
-      internalID: -1713025582
+      spriteID: 4340e027876def242aed498eaa811918
+      internalID: 1164022172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_6
+      name: samuraiSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 500c71f6285fe6f45b3aaafc53961820
-      internalID: 1049739295
+      spriteID: a03d2a566b0960f4abf873a90737b63a
+      internalID: 757246198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_7
+      name: samuraiSpriteSheet_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a82310341c7f7424c91add419d477362
-      internalID: -1221367322
+      spriteID: 0f708a232b72b1d4fb9e5763ae624511
+      internalID: 1610938251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: headlessSpriteSheet_8
+      name: samuraiSpriteSheet_8
       rect:
         serializedVersion: 2
         x: 512
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4041356634902b64d8ddf92106ef1e74
-      internalID: 1249271086
+      spriteID: 3601357e30a5fe74c933794b05a275c3
+      internalID: -2046499752
       vertices: []
       indices: 
       edges: []
@@ -309,15 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      headlessSpriteSheet_0: 751369035
-      headlessSpriteSheet_1: -1572159175
-      headlessSpriteSheet_2: 106418435
-      headlessSpriteSheet_3: 778919902
-      headlessSpriteSheet_4: 1356683676
-      headlessSpriteSheet_5: -1713025582
-      headlessSpriteSheet_6: 1049739295
-      headlessSpriteSheet_7: -1221367322
-      headlessSpriteSheet_8: 1249271086
+      samuraiSpriteSheet_0: 1592439260
+      samuraiSpriteSheet_1: 1503834184
+      samuraiSpriteSheet_2: 2087604392
+      samuraiSpriteSheet_3: 919052250
+      samuraiSpriteSheet_4: 828954115
+      samuraiSpriteSheet_5: 1164022172
+      samuraiSpriteSheet_6: 757246198
+      samuraiSpriteSheet_7: 1610938251
+      samuraiSpriteSheet_8: -2046499752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
