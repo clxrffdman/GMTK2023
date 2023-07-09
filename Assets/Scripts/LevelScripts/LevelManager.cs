@@ -33,6 +33,7 @@ public class LevelManager : UnitySingleton<LevelManager>
         musicReferences.Add(FMODEventReferences.instance.JapaneseMusic);
         musicReferences.Add(FMODEventReferences.instance.HalloweenMusic);
         musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);
+        musicReferences.Add(FMODEventReferences.instance.MainMenuMusic);        
         SetCurrentCircuitFromIndex(SaveManager.Instance.circuitIndex);
         circuitMusic = AudioManager.instance.CreateEventInstance(musicReferences[SaveManager.Instance.circuitIndex]);
         circuitMusic.start();
@@ -130,6 +131,8 @@ public class LevelManager : UnitySingleton<LevelManager>
 
     public IEnumerator CircuitCompleteRoutine()
     {
+        circuitMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        circuitMusic.release();
         GameManager.Instance.pauseUIPanels.Push(GameplayUIManager.Instance.scorePanel);
         GameManager.Instance.TogglePause(true);
         GameplayUIManager.Instance.scoreResultUIController.SetScore(currentCircuitWinCount);

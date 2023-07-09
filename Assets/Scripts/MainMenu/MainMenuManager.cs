@@ -60,6 +60,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadCircuit(int index)
     {
+        menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuMusic.release();
         SaveManager.Instance.forceCircuitPlay = true;
         SaveManager.Instance.circuitIndex = index;
         SceneManager.LoadScene(1, LoadSceneMode.Single);
