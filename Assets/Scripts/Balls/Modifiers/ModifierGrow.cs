@@ -13,7 +13,7 @@ public class ModifierGrow : BallModifier
         base.OnUpdate(controller, activeTime, coursePercentage);
 
         controller.transform.localScale += Vector3.one * scalePerSecond * Time.deltaTime;
-        controller.transform.localScale = Vector3.one * Mathf.Clamp(controller.transform.localScale.magnitude, 0, scaleCap);
+        controller.transform.localScale = Vector3.ClampMagnitude(controller.transform.localScale, scaleCap);
     }
 
 

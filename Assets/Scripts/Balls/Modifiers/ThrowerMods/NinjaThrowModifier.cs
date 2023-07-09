@@ -18,24 +18,41 @@ public class NinjaThrowModifier : ThrowBase
 
     public void SpawnFakeBalls(BallController controller)
     {
-        float angleBetweenProjectiles = projectileSpread / (splitCount - 1);
-
-        for (int i = 0; i < splitCount; i++)
+        float angleBetweenProjectiles = projectileSpread / (splitCount);
+        int randomReal = Random.Range(0, splitCount + 1);
+        Vector2 baseDir = controller.GetComponent<Rigidbody2D>().velocity.normalized;
+        for (int i = 0; i < splitCount+1; i++)
         {
             float spread = -(projectileSpread / 2) + (i * angleBetweenProjectiles);
-            SpawnFakeBall(controller, spread);
+            if (i == randomReal)
+            {
+                RealignExistingBall(controller, spread, baseDir);
+            }
+            else
+            {
+                SpawnFakeBall(controller, spread, baseDir);
+            }
+            
+            
         }
         controller.RemoveModifier(this);
     }
-
-    public void SpawnFakeBall(BallController controller, float spread)
+    
+    public void RealignExistingBall(BallController controller, float spread, Vector2 baseDir)
     {
-        Vector2 dir = Vector2Extension.Rotate(controller.GetComponent<Rigidbody2D>().velocity.normalized, spread);
+        Vector2 dir = Vector2Extension.Rotate(baseDir, spread);
+        controller.rb.velocity = dir * controller.rb.velocity.magnitude;
+        controller.SetIgnoreBallDuration(0.2f);
+        controller.RemoveModifier(this);
+    }
+
+    public void SpawnFakeBall(BallController controller, float spread, Vector2 baseDir)
+    {
+        Vector2 dir = Vector2Extension.Rotate(baseDir, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
         bullet.transform.GetComponent<BallController>().AddModifier(fakeBallModifier);
         bullet.transform.GetComponent<BallController>().defaultLayerMask = ignoreCollLayermask;
-        bullet.transform.GetComponent<BallController>().rb.velocity = Vector2.zero;
-        bullet.transform.GetComponent<BallController>().rb.AddForce(dir * spreadForce, ForceMode2D.Impulse);
+        bullet.transform.GetComponent<BallController>().rb.velocity = dir * controller.rb.velocity.magnitude;
         bullet.transform.GetComponent<BallController>().SetIgnoreBallDuration(0.2f);
         bullet.transform.GetComponent<BallController>().RemoveModifier(this);
     }

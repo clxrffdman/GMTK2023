@@ -9,6 +9,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private List<BallModifier> modifiers = new List<BallModifier>();
     private float activeTime = 0f;
     private float ignoreBallDuration = 0f;
+    public float lifetime = 14;
 
     [Header("References")]
     public CourseController courseController;
@@ -24,6 +25,17 @@ public class BallController : MonoBehaviour
     void Start()
     {
         ballAnim.SetBool("thrown", true);
+        Invoke("LifespanKill", lifetime);
+    }
+
+    public void LifespanKill()
+    {
+        if (CourseController.Instance.currentBalls.Contains(this))
+        {
+            CourseController.Instance.currentBalls.Remove(this);
+        }
+
+        Destroy(gameObject);
     }
 
     void Awake() {
@@ -66,7 +78,8 @@ public class BallController : MonoBehaviour
         CourseController.Instance.currentBalls.Add(this);
 
         foreach (BallModifier mod in ballMods) {
-            modifiers.Add(mod);
+            BallModifier clonedMod = mod.Clone();
+            modifiers.Add(clonedMod);
         }
 
         for (int i = modifiers.Count - 1; i >= 0; i--)

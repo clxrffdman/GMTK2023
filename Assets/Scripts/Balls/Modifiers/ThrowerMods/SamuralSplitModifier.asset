@@ -22,7 +22,8 @@ MonoBehaviour:
   applyToThrower: 1
   useCustomSprite: 0
   customSprite: {fileID: 0}
-  splitTime: 1.5
+  splitTime: 0
+  currentSplitTimer: 0.5
   splitCount: 2
   projectileSpread: 50
   spreadForce: 15
