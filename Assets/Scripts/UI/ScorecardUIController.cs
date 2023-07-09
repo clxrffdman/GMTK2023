@@ -27,6 +27,22 @@ public class ScorecardUIController : MonoBehaviour
         scorecardElements[index].SetScore(isWin);
     }
 
+    public void SetSelected(int index)
+    {
+        for(int i = 0; i < scorecardElements.Count; i++)
+        {
+            if (i == index)
+            {
+                scorecardElements[i].SetSelected(true);
+            }
+            else
+            {
+                scorecardElements[i].SetSelected(false);
+            }
+        }
+        
+    }
+
     public void ClearElements()
     {
         for(int i = scorecardElements.Count-1; i >= 0; i--)
