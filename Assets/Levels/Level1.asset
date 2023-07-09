@@ -15,7 +15,7 @@ MonoBehaviour:
   levelNumber: 1
   waves:
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
-    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    leadBowler: {fileID: 4269870714872352023, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
     throwerWaves:
     - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
       balls:
@@ -29,7 +29,7 @@ MonoBehaviour:
     pinPosOffset: 2
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
-    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    leadBowler: {fileID: 4269870714872352023, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
     throwerWaves:
     - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
       balls:
@@ -44,7 +44,7 @@ MonoBehaviour:
     pinPosOffset: 2
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
-    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    leadBowler: {fileID: 4269870714872352023, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
     throwerWaves:
     - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
       balls:
@@ -59,7 +59,7 @@ MonoBehaviour:
     pinPosOffset: 2
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
-    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    leadBowler: {fileID: 4269870714872352023, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
     throwerWaves:
     - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
       balls:
@@ -81,7 +81,7 @@ MonoBehaviour:
     pinPosOffset: 2
     waveDone: 1
   - profile: {fileID: 11400000, guid: b6eadae40cfcbb34f8a1d3eb76e0c17a, type: 2}
-    leadBowler: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+    leadBowler: {fileID: 4269870714872352023, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
     throwerWaves:
     - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
       balls:
