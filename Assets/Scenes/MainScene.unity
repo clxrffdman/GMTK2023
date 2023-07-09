@@ -659,10 +659,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 108595208853128557, guid: 53ee63cef12ef8f42970695050339834, type: 3}
-      propertyPath: circuitObjects.Array.data[2].objectType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 108595208853128557, guid: 53ee63cef12ef8f42970695050339834, type: 3}
       propertyPath: circuitObjects.Array.data[1].levelObject
       value: 
       objectReference: {fileID: 930191589}
