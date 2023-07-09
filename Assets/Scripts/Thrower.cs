@@ -7,7 +7,6 @@ public class Thrower : MonoBehaviour
 {
     //public List<BallModifier> throwerMods;
     
-    public ThrowerType type;
     public string displayName;
     public Sprite portraitSprite;
 
@@ -23,7 +22,6 @@ public class Thrower : MonoBehaviour
     [ResizableTextArea]
     public List<string> roundOverWinLines = new List<string>();
 
-    public ThrowerType throwerType;
     public bool doneThrowing = false;
 
     //[ToolTip("range of -90 - 90 degrees")]

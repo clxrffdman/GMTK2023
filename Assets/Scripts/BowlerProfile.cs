@@ -6,7 +6,6 @@ using NaughtyAttributes;
 
 public class BowlerProfile : ScriptableObject
 {
-    public ThrowerType type;
     public string displayName;
     public Sprite portraitSprite;
 
