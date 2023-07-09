@@ -17,8 +17,8 @@ public class BallController : MonoBehaviour
     public SpriteRenderer ballSprite;
     public SpriteRenderer ballShadow;
     public Animator ballAnim;
-    [SerializeField] private LayerMask defaultLayerMask;
-    [SerializeField] private LayerMask ballLayerMask;
+    public LayerMask defaultLayerMask;
+    public LayerMask ballLayerMask;
 
     // Start is called before the first frame update
     void Start()
