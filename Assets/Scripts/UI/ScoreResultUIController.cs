@@ -76,7 +76,8 @@ public class ScoreResultUIController : MonoBehaviour
 
     public void MainMenu()
     {
-        StartCoroutine(ToScene(0));
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        //StartCoroutine(ToScene(0));
     }
     public IEnumerator ToScene(int scene) {
         yield return (GameplayUIManager.Instance.transitionPanelController.FadeToBlack(1.5f, 0.23f, false));
