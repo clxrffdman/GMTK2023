@@ -10,8 +10,12 @@ public class MainMenuManager : MonoBehaviour
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
 
+    public GameObject hiddenCircuitButton;
+
     private void Start()
     {
+        bool showHidden = true;
+
         for(int i = 0; i < medalDisplays.Count; i++)
         {
             medalDisplays[i].color = Color.clear;
@@ -26,6 +30,8 @@ public class MainMenuManager : MonoBehaviour
                     medalDisplays[i].sprite = medalSprites[3];
                     return;
                 }
+
+                showHidden = false;
 
                 if (score >= 15)
                 {
@@ -44,10 +50,15 @@ public class MainMenuManager : MonoBehaviour
                     medalDisplays[i].sprite = medalSprites[0];
                     return;
                 }
-
-                
             }
+            else if (i != 3)
+            {
+                showHidden = false;
+            }
+
         }
+
+        hiddenCircuitButton.SetActive(showHidden);
     }
 
     public void LoadCircuit(int index)

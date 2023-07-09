@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a51fa614f33726459a61a6377cd5269
+guid: 5c97f52bf58af9c4cb4b74300b24a6a4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,17 +106,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ball_0_0
+      name: ball_accelerator_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dc5c16b775c62846ba6348f589bc940
-      internalID: -782180620
+      spriteID: fff600f4f7575ba4ab4c37d79a61fcbc
+      internalID: 612547911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_0_1
+      name: ball_accelerator_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 32
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 721532f6ffa8b204d87a89a8bae0d781
-      internalID: 901325518
+      spriteID: 032eee6cd128b6f42b348f8d242e18e5
+      internalID: 2001528765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_0_2
+      name: ball_accelerator_2
       rect:
         serializedVersion: 2
-        x: 88
+        x: 64
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fccbc81244e0aef42a7e203677a7989d
-      internalID: -1519267182
+      spriteID: d1128f20cb2579d48b21fe2a053755f0
+      internalID: -1852238411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_0_3
+      name: ball_accelerator_3
       rect:
         serializedVersion: 2
-        x: 132
+        x: 96
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d3b53a8e4301ce40bebe3288d4356dd
-      internalID: 2097233963
+      spriteID: 9059133c282dcea4fa3036e130087276
+      internalID: 135684823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_0_4
+      name: ball_accelerator_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 128
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 614d4840c1c92724e98e69c2d222f02b
-      internalID: -218650727
+      spriteID: cc392ba1edf8fc34797f9060d97a072a
+      internalID: -309007948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_0_5
+      name: ball_accelerator_5
       rect:
         serializedVersion: 2
-        x: 220
+        x: 160
         y: 0
-        width: 44
-        height: 44
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +255,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 520f5eed0f59d9c46ad749cc910aea84
-      internalID: 61701030
+      spriteID: cc4573cb310144c44ac323424e9cd558
+      internalID: 1122595743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_accelerator_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079a591f0ee03414799bcb17dd830bbf
+      internalID: 1880295046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_accelerator_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dadd6279628ca8488f3c74b2cc69b45
+      internalID: -507026008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_accelerator_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090400df3c7f62044a98d17681e609d6
+      internalID: -996649809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_accelerator_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477a4a2f03062a245b22619264fbc9e1
+      internalID: 15803515
       vertices: []
       indices: 
       edges: []
@@ -246,12 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ball_0_0: -782180620
-      ball_0_1: 901325518
-      ball_0_2: -1519267182
-      ball_0_3: 2097233963
-      ball_0_4: -218650727
-      ball_0_5: 61701030
+      ball_accelerator_0: 612547911
+      ball_accelerator_1: 2001528765
+      ball_accelerator_2: -1852238411
+      ball_accelerator_3: 135684823
+      ball_accelerator_4: -309007948
+      ball_accelerator_5: 1122595743
+      ball_accelerator_6: 1880295046
+      ball_accelerator_7: -507026008
+      ball_accelerator_8: -996649809
+      ball_accelerator_9: 15803515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
