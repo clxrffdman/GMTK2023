@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576437c5427b50b4a84406b80603e6d5, type: 3}
   m_Name: ModifierGrow
   m_EditorClassIdentifier: 
-  scalePerSecond: 0.5
+  description: 
+  scalePerSecond: 0.3
