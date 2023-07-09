@@ -9,6 +9,7 @@ public class PlayerController : UnitySingleton<PlayerController>
     public PlayerCursor cursor;
     public Rigidbody2D rb;
     public SpriteRenderer playerSprite;
+    public SpriteRenderer playerShadow;
     public Animator anim;
     public bool isHeld = false;
     public bool locked = true;
@@ -23,9 +24,11 @@ public class PlayerController : UnitySingleton<PlayerController>
     private Vector3 baseSpriteScale;
     private EventInstance chargingSound;
     private float convertedRadius;
+    private Vector3 shadowScale;
 
     public override void Awake() {
         base.Awake();
+        shadowScale = playerShadow.transform.localScale;
         playerSprite = playerSprite != null ? playerSprite : GetComponentInChildren<SpriteRenderer>();
         baseSpriteScale = playerSprite.transform.localScale;
         anim = anim != null ? anim : GetComponent<Animator>();
@@ -38,6 +41,7 @@ public class PlayerController : UnitySingleton<PlayerController>
     public IEnumerator SpawnAnim() {
         transform.position = CourseController.Instance.playerSpawnPosition.position;
         cursor.gameObject.SetActive(false);
+        playerShadow.transform.localScale = Vector3.zero;
         rb.velocity = Vector2.zero;
         locked = true;
         isHeld = false;
@@ -48,16 +52,21 @@ public class PlayerController : UnitySingleton<PlayerController>
         Color newColor = spriteColor;
         prevColor.a = 0f;
         newColor.a = 1f;
-        PlayerController.Instance.playerSprite.gameObject.SetActive(true);
+        playerSprite.gameObject.SetActive(true);
+        playerShadow.gameObject.SetActive(true);
         playerSprite.color = prevColor;
         LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
         LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 5f, 0f, 0.3f);
+
+        LeanTween.scale(playerShadow.gameObject, shadowScale, 0.2f);
+
         yield return new WaitForSeconds(0.6f);
         cursor.gameObject.SetActive(true);
     }
 
     public IEnumerator PickUpAnim(bool intoSpawn=true) {
         cursor.gameObject.SetActive(false);
+        playerShadow.transform.localScale = shadowScale;
         //transform.position = CourseController.Instance.playerSpawnPosition.position;
         rb.velocity = Vector2.zero;
         locked = true;
@@ -71,11 +80,11 @@ public class PlayerController : UnitySingleton<PlayerController>
         newColor.a = 0f;
         LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
         LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 0f, 5f, 0.3f);
+        LeanTween.scale(playerShadow.gameObject, Vector3.zero, 0.2f);
         yield return new WaitForSeconds(1f);
         if (intoSpawn) {
             yield return SpawnAnim();
         }
-        cursor.gameObject.SetActive(true);
     }
 
     public void PlayerMovement(InputAction.CallbackContext context)

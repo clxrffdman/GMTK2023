@@ -109,12 +109,16 @@ public class LevelManager : UnitySingleton<LevelManager>
     {
         GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("Circuit Start!", 0.25f, 1.5f, 0.15f);
         PlayerController.Instance.playerSprite.gameObject.SetActive(false);
+        PlayerController.Instance.playerShadow.gameObject.SetActive(false);
         yield return PlayerController.Instance.SpawnAnim();
         PlayerController.Instance.cursor.gameObject.SetActive(true);
         //yield return new WaitForSeconds(1f);
         for(int i = 0; i < currentCircuitLevels.Count; i++)
         {
-            if ( GameplayUIManager.Instance.transitionPanelController.isBlack) yield return GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.6f);
+            if ( GameplayUIManager.Instance.transitionPanelController.isBlack) {
+                yield return GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.6f);
+                yield return PlayerController.Instance.SpawnAnim();
+            }
             currentLevelWinCount = 0;
             currentLevel = currentCircuitLevels[i];
             if (!currentLevel)
