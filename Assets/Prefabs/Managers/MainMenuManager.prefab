@@ -50,11 +50,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   medalSprites:
-  - {fileID: 21300000, guid: 77c635b234101ef4aa750e5f219070f3, type: 3}
-  - {fileID: 21300000, guid: 010fea2c4a4c7574e8fe81054363b607, type: 3}
-  - {fileID: 21300000, guid: 15767ee615cdc0e4fa1f3eab8f9558af, type: 3}
-  - {fileID: 21300000, guid: cd8ddb6d83d4af0469763af8ef6701fd, type: 3}
+  - {fileID: 21300000, guid: 34b4a47a466f390439e778536eeb2ab4, type: 3}
+  - {fileID: 21300000, guid: db2d3a9ea06bca74aa050945489f1fb2, type: 3}
+  - {fileID: 21300000, guid: af9903d7231250a4fb264cee0b91866a, type: 3}
+  - {fileID: 21300000, guid: 58689d95fa837074d9ca166bda39fc7b, type: 3}
+  transitionPanel: {fileID: 0}
+  menuMusicReference:
+    Guid:
+      Data1: -823350768
+      Data2: 1178742541
+      Data3: -889139549
+      Data4: 2005616952
+    Path: event:/MainMenu_Music
   promptGroup: {fileID: 0}
   buttonGroup: {fileID: 0}
+  logo: {fileID: 0}
   hasPrompted: 0
   hiddenCircuitButton: {fileID: 0}
