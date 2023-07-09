@@ -45,25 +45,25 @@ public class MainMenuManager : MonoBehaviour
                 if (score >= 18)
                 {
                     medalDisplays[i].sprite = medalSprites[3];
-                    return;
+                    continue;
                 }
 
                 if (score >= 15)
                 {
                     medalDisplays[i].sprite = medalSprites[2];
-                    return;
+                    continue;
                 }
 
                 if (score >= 13)
                 {
                     medalDisplays[i].sprite = medalSprites[1];
-                    return;
+                    continue;
                 }
 
                 if (score >= 9)
                 {
                     medalDisplays[i].sprite = medalSprites[0];
-                    return;
+                    continue;
                 }
             }
             else if (i < 3)
