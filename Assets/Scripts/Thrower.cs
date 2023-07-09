@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class Thrower : MonoBehaviour
 {
     //public List<BallModifier> throwerMods;
     
+    public ThrowerType type;
+    public string displayName;
+    public Sprite portraitSprite;
+
+    [ResizableTextArea]
+    public List<string> quipLines;
+
     public ThrowerType throwerType;
     public bool doneThrowing = false;
 
