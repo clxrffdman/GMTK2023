@@ -11,6 +11,8 @@ public class FMODEventReferences : MonoBehaviour
     [field: SerializeField] public EventReference HalloweenMusic {get; private set;}
     [field: SerializeField] public EventReference MainMenuMusic {get; private set;}        
 
+    
+
     [field: Header("Menu/Game SFX")]
     [field: SerializeField] public EventReference Success {get; private set;}   
     [field: SerializeField] public EventReference Failure {get; private set;}
@@ -33,7 +35,13 @@ public class FMODEventReferences : MonoBehaviour
     [field: Header("Thrower SFX")]   
     [field: SerializeField] public EventReference SumoStomp {get; private set;}   
     [field: SerializeField] public EventReference SamuraiSlowdown {get; private set;}    
-    [field: SerializeField] public EventReference SamuraiSlash {get; private set;}       
+    [field: SerializeField] public EventReference SamuraiSlash {get; private set;}  
+    [field: SerializeField] public EventReference Dialogue {get; private set;}          
+
+    [field: Header("Thrower SFX")]   
+    [field: SerializeField] public EventReference SamuraiSlowSnapshot {get; private set;}   
+    [field: SerializeField] public EventReference PauseMenu {get; private set;} 
+
 
     public static FMODEventReferences instance {get; private set;}
     
