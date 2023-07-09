@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1690076900465767348, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 592355407, guid: a49ca8531a33d904f97b64e0691cdcca, type: 3}
+    - target: {fileID: 3930509157719138779, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: fcd8e5b2b08e54f4d847b700fc4b97fb, type: 2}
     - target: {fileID: 6572457717074805505, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -52,11 +60,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7270586965908117740, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: fcd8e5b2b08e54f4d847b700fc4b97fb, type: 2}
     - target: {fileID: 7469962131717360920, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Name
-      value: Thrower
+      value: SumoThrower
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3930509157719138779, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
