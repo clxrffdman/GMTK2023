@@ -38,6 +38,11 @@ public class FMODEventReferences : MonoBehaviour
     [field: SerializeField] public EventReference SamuraiSlash {get; private set;}  
     [field: SerializeField] public EventReference Dialogue {get; private set;}          
 
+    [field: Header("Thrower SFX")]   
+    [field: SerializeField] public EventReference SamuraiSlowSnapshot {get; private set;}   
+    [field: SerializeField] public EventReference PauseMenu {get; private set;} 
+
+
     public static FMODEventReferences instance {get; private set;}
     
     private void Awake()

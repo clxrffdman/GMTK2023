@@ -1316,3 +1316,17 @@ MonoBehaviour:
       Data3: 322260377
       Data4: -328082255
     Path: event:/Thrower_Dialogue
+  <SamuraiSlowSnapshot>k__BackingField:
+    Guid:
+      Data1: -1803665841
+      Data2: 1107554180
+      Data3: -377644113
+      Data4: -1520982349
+    Path: snapshot:/SamuraiSlow
+  <PauseMenu>k__BackingField:
+    Guid:
+      Data1: 1982434354
+      Data2: 1187104997
+      Data3: -1788973675
+      Data4: 195767099
+    Path: snapshot:/PauseMenu
