@@ -21,4 +21,5 @@ MonoBehaviour:
   teleportCheckLayerMask:
     serializedVersion: 2
     m_Bits: 1
+  teleportIndicatorPrefab: {fileID: 8027621192842508263, guid: 911152ff7c5dd494c9594dc4a7c88379, type: 3}
   teleportIndicator: {fileID: 0}

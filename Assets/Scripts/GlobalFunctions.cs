@@ -34,6 +34,16 @@ public static class GlobalFunctions {
         yield return new WaitForSeconds(timer);
     }
 
+    public static IEnumerator FadeIn(SpriteRenderer sprite, float timer = 0.4f)
+    {
+        Color spriteColor = sprite.color;
+        spriteColor.a = 0;
+        Color newColor = spriteColor;
+        newColor.a = 1;
+        LeanTween.value(sprite.gameObject, (Color val) => { sprite.color = val; }, spriteColor, newColor, timer);
+        yield return new WaitForSeconds(timer);
+    }
+
 }
 
 [Serializable]
