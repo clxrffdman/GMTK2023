@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
+using FMODUnity;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -10,8 +12,14 @@ public class MainMenuManager : MonoBehaviour
     public List<Image> medalDisplays = new List<Image>();
     public List<Sprite> medalSprites;
 
+    public EventInstance menuMusic;
+    [SerializeField] private EventReference menuMusicReference;
+
     private void Start()
     {
+        menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
+        menuMusic.start();
+
         for(int i = 0; i < medalDisplays.Count; i++)
         {
             medalDisplays[i].color = Color.clear;
