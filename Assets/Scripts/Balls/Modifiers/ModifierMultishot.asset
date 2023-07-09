@@ -16,6 +16,6 @@ MonoBehaviour:
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   splitPercentage: 0.5
-  splitCount: 4
+  splitCount: 3
   projectileSpread: 50
   spreadForce: 20
