@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
 using FMODUnity;
+using TMPro;
 
 
 public class MainMenuManager : MonoBehaviour
@@ -75,7 +76,18 @@ public class MainMenuManager : MonoBehaviour
 
         }
 
-        hiddenCircuitButton.SetActive(showHidden);
+        if (showHidden)
+        {
+            hiddenCircuitButton.GetComponent<Button>().interactable = true;
+            hiddenCircuitButton.GetComponent<Image>().color = Color.white;
+            hiddenCircuitButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+        }
+        else
+        {
+            hiddenCircuitButton.GetComponent<Button>().interactable = false;
+            hiddenCircuitButton.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+            hiddenCircuitButton.GetComponentInChildren<TextMeshProUGUI>().color = new Color(1,1,1,0.5f);
+        }
     }
 
     public void SetPromptAlpha(float alpha)

@@ -1796,12 +1796,36 @@ PrefabInstance:
       value: 61.83
       objectReference: {fileID: 0}
     - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_fontSizeMax
       value: 61.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008570275661751132, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2164260863
       objectReference: {fileID: 0}
     - target: {fileID: 8486174022603829485, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
       propertyPath: m_Name
       value: BaseUIButton (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994158508484210533, guid: f282235ef6c49d740a01514e771b96c6, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
