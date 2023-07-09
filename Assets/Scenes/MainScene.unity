@@ -719,7 +719,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7640138040417027499, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071827144}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
 --- !u!1001 &1233959547
@@ -1020,6 +1023,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd6740566c0de1b4eb2e60093b012e82, type: 3}
+--- !u!4 &1588650811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7640138040417027499, guid: 48a28bdfb13064047837ada3084530f9, type: 3}
+  m_PrefabInstance: {fileID: 1190399134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631938787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,6 +1083,26 @@ PrefabInstance:
     - target: {fileID: 1520820801166593881, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
       propertyPath: m_Name
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Path
+      value: event:/BowlingAlley_Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data1
+      value: 734634999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data2
+      value: 1268949039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data3
+      value: -1192849753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317101671490052853, guid: 24e4270a33717a4489a32831b0e70d57, type: 3}
+      propertyPath: currentCircuitMusic.Guid.Data4
+      value: 1312539233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1186,3 +1214,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ed389362cd044043a822b21cc021c48, type: 3}
+--- !u!1 &2071827143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071827144}
+  - component: {fileID: 2071827145}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071827144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071827143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1588650811}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2071827145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071827143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90473914512079d4882bb58d7db0221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BowlingAlleyMusic>k__BackingField:
+    Guid:
+      Data1: 734634999
+      Data2: 1268949039
+      Data3: -1192849753
+      Data4: 1312539233
+    Path: event:/BowlingAlley_Music
+  <BallRolling>k__BackingField:
+    Guid:
+      Data1: -2078121415
+      Data2: 1118874356
+      Data3: 1337409704
+      Data4: -530329557
+    Path: event:/Ball_Rolling
