@@ -10,6 +10,7 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
     public BannerQuipController bannerQuipController;
     public ScorecardUIController scorecardUIController;
     public ScoreResultUIController scoreResultUIController;
+    public TransitionPanelController transitionPanelController;
     public GameObject pausePanel;
     public GameObject scorePanel;
 
@@ -18,6 +19,11 @@ public class GameplayUIManager : UnitySingleton<GameplayUIManager>
         if (Input.GetKeyDown(KeyCode.Y))
         {
             bannerQuipController.RequestBannerQuip("Spared!", 0.2f, 2f, 0.1f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            transitionPanelController.BeginTransition(0.3f, 2, 0.2f);
         }
     }
 

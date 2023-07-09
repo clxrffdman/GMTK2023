@@ -163,6 +163,7 @@ MonoBehaviour:
   bannerQuipController: {fileID: 231011704535934659}
   scorecardUIController: {fileID: 9103112599306109926}
   scoreResultUIController: {fileID: 3018336233705093062}
+  transitionPanelController: {fileID: 3184340150692238222}
   pausePanel: {fileID: 4094540205891450643}
   scorePanel: {fileID: 650615785030699986}
 --- !u!1001 &2527562799151380822
@@ -390,6 +391,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1874169070125756465, guid: 24ea73703b584584f8ee90b37d2557fe, type: 3}
   m_PrefabInstance: {fileID: 3490092467601484498}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3184340150692238222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2044142634282350940, guid: 24ea73703b584584f8ee90b37d2557fe, type: 3}
+  m_PrefabInstance: {fileID: 3490092467601484498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f70cd1e9905b124d9be7abaad33f202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3699044420700192172
 PrefabInstance:
   m_ObjectHideFlags: 0

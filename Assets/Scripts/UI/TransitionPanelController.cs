@@ -21,6 +21,7 @@ public class TransitionPanelController : MonoBehaviour
             return;
         }
 
+        gameObject.SetActive(true);
         StartCoroutine(TransitionRoutine(inDuration, lingerDuration, exitDuration));
     }
 
@@ -40,6 +41,8 @@ public class TransitionPanelController : MonoBehaviour
 
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0;
+        isTransitioning = false;
+        gameObject.SetActive(false);
 
     }
 }
