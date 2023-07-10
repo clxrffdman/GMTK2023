@@ -204,6 +204,9 @@ public class PlayerController : UnitySingleton<PlayerController>
     }
     public IEnumerator PlayerHit() {
         EndCharge();
+        if (GameplayUIManager.Instance.transitionPanelController.isBlack) {
+            GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.5f);
+        }
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;
         StartCoroutine(CourseController.Instance.DeleteBalls(false));

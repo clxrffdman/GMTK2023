@@ -63,24 +63,17 @@ public class ScoreResultUIController : MonoBehaviour
     {
         SaveManager.Instance.circuitIndex++;
         SaveManager.Instance.forceCircuitPlay = true;
-        StartCoroutine(ToScene(1));
-        //SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     public void RestartCircuit()
     {
         SaveManager.Instance.forceCircuitPlay = true;
-        StartCoroutine(ToScene(1));
-        //SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0, LoadSceneMode.Single);
-        //StartCoroutine(ToScene(0));
-    }
-    public IEnumerator ToScene(int scene) {
-        yield return (GameplayUIManager.Instance.transitionPanelController.FadeToBlack(1.5f, 0.23f, false));
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }
