@@ -35,12 +35,7 @@ public class BallController : MonoBehaviour
 
     public void LifespanKill()
     {
-        if (CourseController.Instance.currentBalls.Contains(this))
-        {
-            CourseController.Instance.currentBalls.Remove(this);
-        }
-
-        Destroy(gameObject);
+        StartCoroutine(DeleteBall());
     }
 
     void Awake() {
@@ -110,7 +105,8 @@ public class BallController : MonoBehaviour
         {
             CourseController.Instance.currentBalls.Remove(this);
         }
-        Destroy(gameObject);
+        if (gameObject)
+            Destroy(gameObject);
     }
 
     public void BallJump(float hgt=0.5f, float dur=0.23f, bool shake=true) {
@@ -135,6 +131,9 @@ public class BallController : MonoBehaviour
                 CameraController.Instance.Shake(1f, 0.2f, 5f);
             });
         });
+        Vector3 shadowScale = ballShadow.transform.localScale;
+        ballShadow.transform.localScale = Vector3.zero;
+        LeanTween.scale(ballShadow.gameObject, shadowScale, 0.3f);
     }
 
     public void AddModifier(BallModifier mod)
@@ -154,9 +153,12 @@ public class BallController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        for(int i = modifiers.Count-1; i >= 0; i--)
+        if(collision.gameObject.tag == "Bumper" || collision.gameObject.layer == 3)
         {
-            modifiers[i].OnBounce(this);
+            for(int i = modifiers.Count-1; i >= 0; i--)
+            {
+                modifiers[i].OnBounce(this);
+            }
         }
         if(collision.gameObject.tag == "Bumper")
         {
@@ -166,5 +168,10 @@ public class BallController : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot(FMODEventReferences.instance.BallOnBall, ballCollider.transform.position);
         }
+    }
+    public void FadeOut(float dur=0.5f) {
+        Debug.Log("fade out ball");
+        StartCoroutine(GlobalFunctions.FadeOut(ballSprite, dur));
+        StartCoroutine(GlobalFunctions.FadeOut(ballShadow, dur));
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SumoThrowModifier : ThrowBase
 {
     public float stompInterval = 1.4f;
-    private float stompTimer = 0f;
+    private float stompTimer = 1.4f;
     private bool left = true;
     public float stompForce;
     public float stompForceVariance;

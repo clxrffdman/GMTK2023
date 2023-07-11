@@ -25,4 +25,4 @@ MonoBehaviour:
   stompInterval: 1.4
   stompForce: 7
   stompForceVariance: 2
-  stompAngleVariance: 10
+  stompAngleVariance: 5

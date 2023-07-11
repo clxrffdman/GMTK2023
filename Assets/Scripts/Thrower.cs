@@ -58,9 +58,9 @@ public class Thrower : MonoBehaviour
         // spawn dudes
     }
 
-    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.35f) {
+    public IEnumerator ThrowBall(List<GameObject> balls, List<BallModifier> ballMods, float consecOffset=0.35f, float throwDelay=0f) {
         Debug.Log("begin throw");
-        
+        yield return new WaitForSeconds(throwDelay);       
         yield return new WaitForSeconds(1.3f); // do ball throw animation
         anim.SetBool("Run", true);
         LeanTween.move(gameObject, new Vector3(transform.position.x, transform.position.y-3.5f, transform.position.z), 1f);

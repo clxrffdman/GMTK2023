@@ -15,6 +15,7 @@ public static class GlobalFunctions {
         Color spriteColor = sprite.color;
         Color newColor = spriteColor;
         newColor.a = 0f;
+        Debug.Log("fading!");
         LeanTween.value(sprite.gameObject, (Color val) => { sprite.color = val; }, spriteColor, newColor, timer);
         yield return new WaitForSeconds(timer);
     }

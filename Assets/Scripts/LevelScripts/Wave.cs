@@ -13,7 +13,6 @@ and each wave would have a variable amount of thrower waves: usually one i guess
 [Serializable]
 public class Wave
 {
-    public BowlerProfile profile;
     [HideInInspector] public Thrower leadBowler;
     public List<ThrowerWave> throwerWaves = new List<ThrowerWave>();
     public int numPins;
@@ -91,8 +90,10 @@ public class ThrowerWave {
     public List<GameObject> balls;
     public BallModifier throwerMod;
     public float consecBallOffset = 0.35f;
+    public float throwDelay = 0f;
     public float xOffset;
     public float bowlAngle;
+    public float bowlAngleVariance;
     public List<BallModifier> ballMods;
 
     public List<BallModifier> ApplyThrowerMod(Thrower thrower) {
@@ -100,7 +101,8 @@ public class ThrowerWave {
         BallModifier modClone = throwerMod.Clone();
         if(modClone is ThrowBase)
         {
-            ((ThrowBase)modClone).throwAngleRandomDelta = bowlAngle;
+            ((ThrowBase)modClone).throwDirection = new Vector2(Mathf.Cos((-90f+bowlAngle)*Mathf.Deg2Rad), Mathf.Sin((-90f+bowlAngle)*Mathf.Deg2Rad));
+            ((ThrowBase)modClone).throwAngleRandomDelta = bowlAngleVariance;
             if (((ThrowBase)modClone).applyToThrower) {
                 thrower.currThrowMods.Add(((ThrowBase)modClone));
                 //return newModList;

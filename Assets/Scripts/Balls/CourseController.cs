@@ -84,7 +84,7 @@ public class CourseController : UnitySingleton<CourseController>
     }
 
     public void ThrowBalls(Thrower thrower, ThrowerWave wave) {
-        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(thrower), wave.consecBallOffset));
+        StartCoroutine(thrower.ThrowBall(wave.balls, wave.ApplyThrowerMod(thrower), wave.consecBallOffset, wave.throwDelay));
     }
 
     private void ClearSoundEffects()

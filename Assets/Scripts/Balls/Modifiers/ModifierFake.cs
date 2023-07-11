@@ -18,15 +18,21 @@ public class ModifierFake : BallModifier
 
         if(coursePercentage >= courseActivationPercentage)
         {
-            FadeBall(controller);
+            //controller.FadeOut(fadeoutDuration);
+            Color spriteColor = controller.ballSprite.color;
+            Color newColor = spriteColor;
+            newColor.a = 0f;
+            LeanTween.value(controller.ballSprite.gameObject, (Color val) => { controller.ballSprite.color = val; }, spriteColor, newColor, fadeoutDuration);
+            //FadeBall(controller);
             controller.RemoveModifier(this);
         }
 
     }
 
-    public void FadeBall(BallController controller)
+    /*public void FadeBall(BallController controller)
     {
+        
         controller.StartCoroutine(GlobalFunctions.FadeOut(controller.ballSprite, fadeoutDuration));
-        controller.StartCoroutine(GlobalFunctions.FadeOut(controller.ballShadow, fadeoutDuration));
-    }
+        //controller.StartCoroutine(GlobalFunctions.FadeOut(controller.ballShadow, fadeoutDuration));
+    }*/
 }

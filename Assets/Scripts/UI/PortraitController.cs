@@ -16,20 +16,6 @@ public class PortraitController : MonoBehaviour
     public bool isQuipping;
 
     public Thrower currentThrower = null;
-    public void LoadProfile(BowlerProfile profile)
-    {
-        if(profile == null)
-        {
-            portraitSprite.sprite = null;
-            portraitSprite.color = Color.clear;
-            portraitText.text = "";
-            return;
-        }
-
-        portraitSprite.sprite = profile.portraitSprite;
-        portraitSprite.color = Color.white;
-        portraitText.text = profile.displayName;
-    }
 
     public void LoadProfile(Thrower profile)
     {

@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a9391ccfa0bfa4980a5f0f0548b427, type: 3}
   m_Name: DefaultBallGravity
   m_EditorClassIdentifier: 
+  description: 
+  hasColorOverride: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   gravity: 50
+  upGravity: 100
   direction: {x: 0, y: -1}

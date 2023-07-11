@@ -20,8 +20,8 @@ public class ThrowBase : BallModifier
     {
         base.OnSpawn(controller);
         SetCustomSprite(controller.ballSprite);
-
-        controller.rb.AddForce(Vector2Extension.Rotate((throwDirection * (throwForce + Random.Range(-throwForceRandomDelta, throwForceRandomDelta))), 
+        
+        controller.rb.AddForce(Vector2Extension.Rotate((throwDirection.normalized * (throwForce + Random.Range(-throwForceRandomDelta, throwForceRandomDelta))), 
             Random.Range(-throwAngleRandomDelta, throwAngleRandomDelta)), ForceMode2D.Impulse); 
     }
     public bool SetCustomSprite(SpriteRenderer sprite) {

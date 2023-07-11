@@ -6,6 +6,7 @@ public class NinjaThrowModifier : ThrowBase
 {
     public BallModifier fakeBallModifier;
     public RuntimeAnimatorController fakeAnim;
+    public Color fakeColor;
     public int splitCount = 2;
     public float projectileSpread = 50;
     public float spreadForce = 20;
@@ -51,15 +52,16 @@ public class NinjaThrowModifier : ThrowBase
     {
         Vector2 dir = Vector2Extension.Rotate(baseDir, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
-        bullet.gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = fakeAnim;
-        bullet.gameObject.GetComponentInChildren<Animator>().SetBool("thrown", true);
+        bullet.gameObject.GetComponentInChildren<SpriteRenderer>().transform.localPosition = new Vector2(0f, 0f);
+        bullet.gameObject.GetComponentInChildren<SpriteRenderer>().color = fakeColor;//new Color(220f,220f,220f,1f);
+        //bullet.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        bullet.transform.Find("Shadow").gameObject.SetActive(false);
+        //bullet.gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = fakeAnim;
+        //bullet.gameObject.GetComponentInChildren<Animator>().SetBool("thrown", true);
         bullet.transform.GetComponent<BallController>().AddModifier(fakeBallModifier);
         bullet.transform.GetComponent<BallController>().defaultLayerMask = ignoreCollLayermask;
         bullet.transform.GetComponent<BallController>().rb.velocity = dir * controller.rb.velocity.magnitude;
         bullet.transform.GetComponent<BallController>().SetIgnoreBallDuration(0.2f);
         bullet.transform.GetComponent<BallController>().RemoveModifier(this);
     }
-
-
-
 }

@@ -107,6 +107,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            // endless mode baby
+        }
         if (Input.anyKeyDown && !hasPrompted)
         {
             hasPrompted = true;

@@ -47,17 +47,10 @@ public class PlayerController : UnitySingleton<PlayerController>
         isHeld = false;
         anim.SetBool("Jump", false);
         anim.Play("PlayerIdle");
-        Color spriteColor = playerSprite.color;
-        Color prevColor = spriteColor;
-        Color newColor = spriteColor;
-        prevColor.a = 0f;
-        newColor.a = 1f;
         playerSprite.gameObject.SetActive(true);
         playerShadow.gameObject.SetActive(true);
-        playerSprite.color = prevColor;
-        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
+        StartCoroutine(GlobalFunctions.FadeIn(playerSprite, 0.2f));
         LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 5f, 0f, 0.3f);
-
         LeanTween.scale(playerShadow.gameObject, shadowScale, 0.2f);
 
         yield return new WaitForSeconds(0.6f);
@@ -75,12 +68,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         isHeld = false;
         anim.SetBool("Jump", false);
         anim.Play("PlayerIdle");
-        Color spriteColor = playerSprite.color;
-        Color prevColor = spriteColor;
-        Color newColor = spriteColor;
-        prevColor.a = 1f;
-        newColor.a = 0f;
-        LeanTween.value(playerSprite.gameObject, (Color val) => { playerSprite.color = val; }, prevColor, newColor, 0.2f);
+        StartCoroutine(GlobalFunctions.FadeOut(playerSprite, 0.2f));
         LeanTween.value(playerSprite.gameObject, (float val) => { playerSprite.transform.localPosition = new Vector2(0f, val); }, 0f, 5f, 0.3f);
         LeanTween.scale(playerShadow.gameObject, Vector3.zero, 0.2f);
         yield return new WaitForSeconds(1f);

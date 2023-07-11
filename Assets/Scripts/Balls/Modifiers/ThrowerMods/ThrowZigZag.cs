@@ -11,6 +11,8 @@ public class ThrowZigZag : ThrowBase
     private float counter = 0;
     public float zigZagInterval = 1f;
     private bool initialThrow = true;
+    public float zigZagPauseInterval = 1.5f;
+    private float zigZagPauseTimer = 0f;
 
     [Header("Variance")]
     public float intervalOffset = 0;
@@ -24,30 +26,27 @@ public class ThrowZigZag : ThrowBase
     public override void OnUpdate(BallController controller, float activeTime, float coursePercentage)
     {
         base.OnUpdate(controller, activeTime, coursePercentage);
-        if (counter >= 0)
-        {
-            counter -= Time.deltaTime;
-        }     
-        else
+        zigZagPauseTimer = zigZagPauseTimer > 0f ? zigZagPauseTimer - Time.deltaTime : 0f;
+        counter = counter > 0 ? counter - Time.deltaTime : 0f;
+        if (zigZagPauseTimer <= 0f && counter <= 0f)
         {
             controller.rb.velocity = new Vector2(0, controller.rb.velocity.y);
-            if (initialThrow)
-            {
-                initialThrow = false;
-                zigZagForce *= 2;
-            }
 
             zigZagDirection *= -1;
             controller.rb.AddForce(zigZagDirection * zigZagForce, ForceMode2D.Impulse);
             Debug.Log(zigZagDirection * zigZagForce);
             counter = zigZagInterval;
+            if (initialThrow)
+            {
+                counter = zigZagInterval / 2f;
+                initialThrow = false;
+            }
         }
     }
 
     public override void OnBounce(BallController controller)
     {
         base.OnBounce(controller);
-
-        controller.RemoveModifier(this);
+        zigZagPauseTimer = zigZagPauseInterval;
     }
 }
