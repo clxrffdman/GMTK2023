@@ -16,10 +16,10 @@ MonoBehaviour:
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
   boomerangForce: 10
-  constantUpForce: 40
+  constantUpForce: 100
   boomerangDirection: {x: 0, y: 1}
   courseThreshhold: 0.8
-  trackingForce: 60
+  trackingForce: 120
   trackingDist: 0.3
   killThreshhold: 0.45
   crossedThreshhold: 0

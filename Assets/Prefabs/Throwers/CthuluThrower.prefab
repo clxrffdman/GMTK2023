@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: onThrowLines.Array.data[1]
-      value: GREAHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEE
+      value: <rainb>GREAHHHHH HHHHHHHH HHHHHHHHHEEEEEEEEEEEE
       objectReference: {fileID: 0}
     - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: preThrowLines.Array.data[0]
@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8253206908563630176, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: roundOverLoseLines.Array.data[1]
-      value: blurblurblurblurblurblurblurblurblurblurblurb
+      value: blur blur blur blur blur blur blur blur blur blurblurb
       objectReference: {fileID: 0}
     - target: {fileID: 8460717524836791878, guid: b6d4ae887d0b68c49907498c44040e7e, type: 3}
       propertyPath: m_Sprite

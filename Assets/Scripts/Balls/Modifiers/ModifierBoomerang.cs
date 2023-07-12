@@ -13,6 +13,7 @@ public class ModifierBoomerang : BallModifier
 
     public float killThreshhold = 0.45f;
     public bool crossedThreshhold = false;
+    private bool deleted=false;
 
     public override void OnUpdate(BallController controller, float activeTime, float coursePercentage)
     {
@@ -32,8 +33,9 @@ public class ModifierBoomerang : BallModifier
             controller.rb.AddForce(trackDir * trackingForce * Time.deltaTime);
         }
     
-        if(coursePercentage < killThreshhold && crossedThreshhold)
+        if(coursePercentage < killThreshhold && crossedThreshhold && !deleted)
         {
+            deleted = true;
             controller.StartCoroutine(controller.DeleteBall());
         }
 
