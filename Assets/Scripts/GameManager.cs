@@ -10,6 +10,7 @@ public class GameManager : UnitySingleton<GameManager>
     public bool canPause = true;
     public float baseSlowMoDuration = 0;
     public float slowMoDuration = 0;
+    private float toTimescale = 1f;
 
     public SpriteRenderer bgSr;
     public List<Sprite> bgList = new List<Sprite>();
@@ -34,19 +35,21 @@ public class GameManager : UnitySingleton<GameManager>
 
     }
 
-    public void StartSlowMotion(float duration) {
+    public void StartSlowMotion(float duration, float to=1f) {
         slowMoDuration = duration;
         baseSlowMoDuration = slowMoDuration;
+        toTimescale = to;
     }
 
     public void UpdateSlowMotion() {
         if (slowMoDuration <= 0) return;
         slowMoDuration = Mathf.Max(slowMoDuration-Time.unscaledDeltaTime, 0f);
-        Time.timeScale = Mathf.Max(1f-(slowMoDuration/baseSlowMoDuration), 0.2f);
+        Time.timeScale = Mathf.Max(toTimescale-(slowMoDuration/baseSlowMoDuration), 0.2f);
         Time.fixedDeltaTime = 0.01666667f * Time.timeScale;
 
-        if (Time.timeScale == 1)
+        if (Time.timeScale >= 1f)
         {
+            toTimescale = 1f;
             Time.fixedDeltaTime = 0.01666667f;
         } 
     }

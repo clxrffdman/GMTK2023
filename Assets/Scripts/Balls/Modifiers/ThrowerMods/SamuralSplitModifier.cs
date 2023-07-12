@@ -59,7 +59,7 @@ public class SamuralSplitModifier : ThrowBase
             SplitBall(CourseController.Instance.currentBalls[i]);
         }
 
-        GameManager.Instance.StartSlowMotion(1f);
+        GameManager.Instance.StartSlowMotion(1f, Time.timeScale);
 
         controller.RemoveModifier(this);
 
@@ -84,6 +84,7 @@ public class SamuralSplitModifier : ThrowBase
         Vector2 dir = Vector2Extension.Rotate(controller.GetComponent<Rigidbody2D>().velocity.normalized, spread);
         var bullet = Instantiate(controller.transform.gameObject, controller.transform.position, Quaternion.identity);
         BallController ballCont = bullet.gameObject.GetComponent<BallController>();
+        bullet.GetComponentInChildren<SpriteRenderer>().transform.localPosition = Vector2.zero;
         ballCont.RemoveModifier(this);
         ballCont.rb.velocity = Vector2.zero;
         ballCont.rb.AddForce(dir * spreadForce, ForceMode2D.Impulse);

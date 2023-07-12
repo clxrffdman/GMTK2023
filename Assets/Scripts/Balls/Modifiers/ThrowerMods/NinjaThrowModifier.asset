@@ -24,7 +24,7 @@ MonoBehaviour:
   customSprite: {fileID: 2039669057, guid: e7d4c9932a1a0de4890a04b2351619d7, type: 3}
   fakeBallModifier: {fileID: 11400000, guid: 984eadbb9a1c24d4c9185693b222a118, type: 2}
   fakeAnim: {fileID: 22100000, guid: 830fe4f510e1e824cbfb4a87ff82443f, type: 2}
-  fakeColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  fakeColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   splitCount: 2
   projectileSpread: 40
   spreadForce: 8

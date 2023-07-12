@@ -39,7 +39,7 @@ MonoBehaviour:
       consecBallOffset: 0.6
       throwDelay: 0
       xOffset: 0.5
-      bowlAngle: -37
+      bowlAngle: -36
       bowlAngleVariance: 2
       ballMods: []
     numPins: 7
@@ -64,7 +64,7 @@ MonoBehaviour:
       consecBallOffset: 0.35
       throwDelay: 0.35
       xOffset: -0.5
-      bowlAngle: 37
+      bowlAngle: 36
       bowlAngleVariance: 0
       ballMods: []
     numPins: 6
@@ -144,23 +144,25 @@ MonoBehaviour:
     - thrower: {fileID: 2240564489955417539, guid: 482a309c3b7d6084f8b4e2a2492acdaf, type: 3}
       balls:
       - {fileID: 4171927873816399681, guid: 8647245ef9811e249b9aab892d140b7a, type: 3}
-      throwerMod: {fileID: 11400000, guid: caafa73ed5371c24cbf81849da505925, type: 2}
-      consecBallOffset: 0.35
-      throwDelay: 0
-      xOffset: 0.5
-      bowlAngle: -37
-      bowlAngleVariance: 0
-      ballMods: []
-    - thrower: {fileID: 2240564489955417539, guid: 482a309c3b7d6084f8b4e2a2492acdaf, type: 3}
-      balls:
       - {fileID: 4171927873816399681, guid: 8647245ef9811e249b9aab892d140b7a, type: 3}
       throwerMod: {fileID: 11400000, guid: d4788bfdcdc9c484fa92f86c5fa6216a, type: 2}
       consecBallOffset: 0.35
-      throwDelay: 0.35
+      throwDelay: 0.5
       xOffset: -0.5
-      bowlAngle: 37
-      bowlAngleVariance: 0
+      bowlAngle: 34
+      bowlAngleVariance: 4
       ballMods: []
-    numPins: 6
+    - thrower: {fileID: 3342310587296213103, guid: 8d64c02073b5fb54f87342bd58cd7273, type: 3}
+      balls:
+      - {fileID: 7130666778165571663, guid: c6bfc14a308ed924095937cf8197cc37, type: 3}
+      throwerMod: {fileID: 11400000, guid: 180fa7daa9f25ae4a8ff065d72ad1a2e, type: 2}
+      consecBallOffset: 0.35
+      throwDelay: 0
+      xOffset: 0.4
+      bowlAngle: -33.6
+      bowlAngleVariance: 0
+      ballMods:
+      - {fileID: 11400000, guid: 38546ab8bc96df54995097f2ec4e7834, type: 2}
+    numPins: 7
     pinPosOffset: 1.5
     waveDone: 1
