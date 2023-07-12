@@ -78,6 +78,7 @@ public class TransitionPanelController : MonoBehaviour {
         LeanTween.alphaCanvas(canvasGroup, 1f, dur);
         yield return new WaitForSeconds(dur);
         isBlack = true;
+        isTransitioning = false;
         yield return new WaitForSeconds(blackDur);
         
         if (fadeBack) {
@@ -87,6 +88,7 @@ public class TransitionPanelController : MonoBehaviour {
 
     public IEnumerator FadeFromBlack(float dur) {
         LeanTween.alphaCanvas(canvasGroup, 0, dur);
+        isTransitioning = true;
         yield return new WaitForSeconds(dur);
         isBlack = false;
         canvasGroup.blocksRaycasts = false;

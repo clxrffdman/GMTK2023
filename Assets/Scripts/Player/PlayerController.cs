@@ -192,7 +192,8 @@ public class PlayerController : UnitySingleton<PlayerController>
     }
     public IEnumerator PlayerHit() {
         EndCharge();
-        if (GameplayUIManager.Instance.transitionPanelController.isBlack) {
+        if (GameplayUIManager.Instance.transitionPanelController.isBlack || GameplayUIManager.Instance.transitionPanelController.isTransitioning) {
+            LeanTween.cancel(GameplayUIManager.Instance.transitionPanelController.canvasGroup.gameObject);
             GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.5f);
         }
         anim.SetBool("Hit", true);
