@@ -167,6 +167,7 @@ public class PlayerController : UnitySingleton<PlayerController>
 
         if (!GameManager.Instance.isPaused)
         {
+            GameManager.Instance.toTimescale = 1f;
             Time.timeScale = 1;
         }
 

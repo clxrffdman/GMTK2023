@@ -10,7 +10,7 @@ public class GameManager : UnitySingleton<GameManager>
     public bool canPause = true;
     public float baseSlowMoDuration = 0;
     public float slowMoDuration = 0;
-    private float toTimescale = 1f;
+    [HideInInspector] public float toTimescale = 1f;
 
     public SpriteRenderer bgSr;
     public List<Sprite> bgList = new List<Sprite>();
