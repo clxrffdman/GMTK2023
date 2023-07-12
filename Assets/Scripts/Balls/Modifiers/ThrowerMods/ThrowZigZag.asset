@@ -15,16 +15,16 @@ MonoBehaviour:
   description: 
   hasColorOverride: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  throwForce: 8
+  throwForce: 13
   throwDirection: {x: 0, y: -1}
   throwForceRandomDelta: 0
   throwAngleRandomDelta: 0
   applyToThrower: 0
   useCustomSprite: 0
   customSprite: {fileID: 0}
-  zigZagForce: 9
+  zigZagForce: 14
   zigZagDirection: {x: 1, y: -0.2}
   doZigZag: 0
-  zigZagInterval: 0.2
+  zigZagInterval: 0.25
   zigZagPauseInterval: 1.5
   intervalOffset: 0
