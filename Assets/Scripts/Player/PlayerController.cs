@@ -195,7 +195,7 @@ public class PlayerController : UnitySingleton<PlayerController>
         EndCharge();
         if (GameplayUIManager.Instance.transitionPanelController.isBlack || GameplayUIManager.Instance.transitionPanelController.isTransitioning) {
             LeanTween.cancel(GameplayUIManager.Instance.transitionPanelController.canvasGroup.gameObject);
-            GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.5f);
+            StartCoroutine(GameplayUIManager.Instance.transitionPanelController.FadeFromBlack(0.5f));
         }
         anim.SetBool("Hit", true);
         LevelManager.Instance.hasFailedCurrentWave = true;

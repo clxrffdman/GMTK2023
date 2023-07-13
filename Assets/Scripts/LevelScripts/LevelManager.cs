@@ -139,7 +139,7 @@ public class LevelManager : UnitySingleton<LevelManager>
                 i--;
             }
             else {
-                GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("Wave Complete!", 0.25f, 1.5f, 0.15f);
+                GameplayUIManager.Instance.bannerQuipController.RequestBannerQuip("<rainb>Success!", 0.25f, 1.5f, 0.15f);
             }
             yield return new WaitForSeconds(2f);
             if (i < currentCircuitLevels.Count-1) yield return GameplayUIManager.Instance.transitionPanelController.FadeToBlack(1f, 0.23f, false);
