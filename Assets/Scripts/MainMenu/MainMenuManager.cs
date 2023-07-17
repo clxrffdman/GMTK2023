@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        
         menuMusic = RuntimeManager.CreateInstance(menuMusicReference);
         menuMusic.start();
 

@@ -93,6 +93,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (!currentLevel) {
                 Debug.Log("level not found");
@@ -102,6 +103,7 @@ public class LevelManager : UnitySingleton<LevelManager>
             StartCoroutine(StartLevel());
             // start level one
         }
+        */
     }
 
     public IEnumerator BeginLoadedLevels()
